@@ -1,3 +1,19 @@
+## Need to install:<br>
+- Node, just download the "Recomended for most users" (https://nodejs.org/en/)
+## Need to download:<br>
+- Create react app (https://github.com/facebookincubator/create-react-app)
+- React router (https://github.com/ReactTraining/react-router)
+
+## After pull:
+
+ - run: npm install create-react-app<br>
+to install all the required dependencies. 
+ - run: npm start<br>
+Then a window in your browser will open (http://localhost:3000/) and you can see our work.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
