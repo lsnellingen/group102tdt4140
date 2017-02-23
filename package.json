@@ -16,6 +16,7 @@
     "bootstrap": "^3.3.7",
     "express": "^4.14.1",
     "import-export": "^1.0.1",
+    "mysql": "^2.13.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
