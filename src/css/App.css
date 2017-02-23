@@ -1,0 +1,38 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.App label {
+    text-align: left;
+}
+
+.main-container {
+  width: 95%;
+  max-width: 780px;
+  padding-bottom: 2em;
+  margin: 0 auto 2em;
+  background: #eee;
+  border-radius: .5em;
+  box-shadow: 0 3px rgba(0,0,0, .1);
+  overflow: hidden;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+#studentFeedback {
+  height: 150px;
+}
+
+.btn {
+  margin: 0 6px;
+}
+
+.App-content {
+  margin-top: 20px;
+}
