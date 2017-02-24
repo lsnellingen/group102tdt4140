@@ -39,7 +39,7 @@ class Login extends Component {
           </div>
           <Checkbox label="Remember Me" > Remember Me </Checkbox>
           <Button type="submit" bsSize="large" bsStyle="success" block>Login</Button>
-          <Button type="submit" bsSize="large" bsStyle="danger" block>Login</Button>
+          <Button type="submit" bsSize="large" bsStyle="danger" block>Register</Button>
         </Panel>
         <div className="col-md-6 col-md-offset-3 m-t-30">
           <Link to="/lecturer"><button className="btn btn-primary btn-lg" type="button">Lecturer</button></Link>
