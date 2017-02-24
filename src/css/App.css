@@ -1,38 +1,36 @@
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 .App {
   text-align: center;
+
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+
+
+
 }
 
-.App label {
+
+.login-brand-text{
+  margin-top: 12%;
+  font-weight: bolder;
+  font-size: 150px;
+  color: #2cf439;
+  text-shadow: 2px 2px #000000;
+}
+.text-color {
+  color: #2cf439;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+
+}
+
+
+.login-panel {
+    margin-top: 3%;
+    margin-left: 36%;
+    margin-right: 36%;
     text-align: left;
-}
 
-.main-container {
-  width: 95%;
-  max-width: 780px;
-  padding-bottom: 2em;
-  margin: 0 auto 2em;
-  background: #eee;
-  border-radius: .5em;
-  box-shadow: 0 3px rgba(0,0,0, .1);
-  overflow: hidden;
-}
-
-.m-t-30 {
-  margin-top: 30px;
-}
-
-#studentFeedback {
-  height: 150px;
-}
-
-.btn {
-  margin: 0 6px;
-}
-
-.App-content {
-  margin-top: 20px;
 }
