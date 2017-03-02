@@ -14,12 +14,12 @@ const Routes = props => {
   return (
     <Router history={browserHistory}>
     <Route component={App}>
-      <Route path="/" component={Login} />
+      <Route path="/" /> // Home conponent goes here
       <Route path="lecturer" component={Lecturer} />
       <Route path="student" component={Student} />
     </Route>
     <Route path="*">
-      <IndexRedirect to="/" />
+      <IndexRedirect to="/login" />
     </Route>
   </Router>
   )

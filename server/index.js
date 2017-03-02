@@ -10,6 +10,7 @@ const express = require('express')
 const react = require('react')
 const reactDomServer = require('react-dom/server')
 const reactRouter = require('react-router')
+const stormpath = require('express-stormpath')
 
 const renderToString = reactDomServer.renderToString
 const match = reactRouter.match
@@ -27,7 +28,17 @@ const routes = require('../src/routes').default()
 
 const app = express()
 app.server = http.createServer(app)
-app.use(express.static('../build'))
+// app.use(express.static('../build'))
+app.use(stormpath.init(app, {
+  apiKey: {
+    id: '1UV54NYI5FOVJ0ZALMDI61H44',
+    secret: 'bTBWPPwfSCD1lo+V1JcX5WM9+SP04b3l8wvt66CNWck'
+  },
+  application: {
+    href: `https://api.stormpath.com/v1/applications/1wXstL8o0iF3jRr5Kf3zFk`
+  }
+}));
+
 
 staticFiles.forEach(file => {
   app.get(file, (req, res) => {
@@ -66,5 +77,10 @@ app.get('*', (req, res) => {
   })
 })
 
+
+
 app.server.listen( process.env.PORT || 8080 )
+app.on('stormpath.ready', function () {
+  console.log('Stormpath Ready!');
+});
 console.log(`Listening on http://localhost:${app.server.address().port}`)
