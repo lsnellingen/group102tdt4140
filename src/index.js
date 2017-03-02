@@ -13,6 +13,6 @@ import './css/App.css';
 import routes from './routes';
 
 ReactDOM.render(
-  routes,
+  <routes />,
   document.getElementById('root')
 );
