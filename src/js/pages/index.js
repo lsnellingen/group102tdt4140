@@ -1,8 +1,10 @@
-export MasterPage from './MasterPage'
+export ChangePasswordPage from './ChangePasswordPage'
 export IndexPage from './IndexPage'
 export LoginPage from './LoginPage'
+export MasterPage from './MasterPage'
+export ProfilePage from './ProfilePage'
 export RegisterPage from './RegisterPage'
 export ResetPasswordPage from './ResetPasswordPage'
+export SendFeedbackPage from './SendFeedbackPage'
 export VerifyEmailPage from './VerifyEmailPage'
-export ProfilePage from './ProfilePage'
-export ChangePasswordPage from './ChangePasswordPage'
+
