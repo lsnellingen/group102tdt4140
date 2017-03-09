@@ -13,7 +13,7 @@ ul.sidebar-nav {
 
 .sidebar-nav a:hover{
     color: #333;
-    font-size: 120%;
+    font-size: 110%;
     text-decoration: none;
 }
 
@@ -26,3 +26,17 @@ ul.sidebar-nav {
     font-size: 1.2vw;
 }
 
+#feedback {
+    max-width: 50vw;
+    height: 50vh;
+    font-size:14pt;
+    overflow-y: scroll;
+}
+
+#subject-selector {
+    max-width: 50vw;
+}
+
+#lecture-selector {
+    max-width: 50vw;
+}

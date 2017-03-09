@@ -12,8 +12,8 @@ export default class Sidebar extends React.Component {
 
             <Authenticated>
                 <li><Link to="/profile" activeClassName="active">Profile</Link></li>
-                <li><Link to="/profile" activeClassName="active">Send feedback</Link> </li>
-                <li> <a href="#">View feedback</a> </li>
+                <li><Link to="/SendFeedback" activeClassName="active">Send feedback</Link> </li>
+                <li> <Link to="/ViewFeedback" activeClassName="active">View feedback</Link> </li>
                 <li><LogoutLink /> </li>
             </Authenticated>
 

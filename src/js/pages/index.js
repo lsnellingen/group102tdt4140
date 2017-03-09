@@ -7,4 +7,5 @@ export RegisterPage from './RegisterPage'
 export ResetPasswordPage from './ResetPasswordPage'
 export SendFeedbackPage from './SendFeedbackPage'
 export VerifyEmailPage from './VerifyEmailPage'
+export ViewFeedbackPage from './ViewFeedbackPage'
 
