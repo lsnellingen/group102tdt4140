@@ -36,30 +36,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use('/css', express.static(__dirname + '/src/css'));
 
 app.use(stormpath.init(app, {
-  // Disable logging until startup, so that we can catch errors
-  // and display them nicely.
-  debug: 'none',
   web: {
-
-    // The produces option disables the default HTML views, which
-    // we want for our single-page react app.
-
     produces: ['application/json'],
     me: {
       expand: {
         customData: true
-      }
-    },
-    register: {
-      form: {
-        fields: {
-          color: {
-            enabled: true,
-            label: 'Color',
-            placeholder: 'E.g. blue',
-            type: 'text'
-          }
-        }
       }
     }
   }
@@ -71,14 +52,6 @@ var connection = mysql.createConnection({
   password : '54321',
   database : 'larssne_edubot',
   debug    : true
-});
-
-connection.connect(function(error) {
-  if(!!error) {
-    console.log("Error connecting to database");
-  }else {
-    console.log("Successfully connected to database");
-  }
 });
 
 app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (req, res) {
