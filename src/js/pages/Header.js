@@ -1,7 +1,10 @@
+// Libs
 import React from 'react';
 import { Link } from 'react-router';
-
 import { LoginLink, LogoutLink, NotAuthenticated, Authenticated } from 'react-stormpath';
+
+// Logo
+import Logo from '../svg/Logo';
 
 export default class Header extends React.Component {
   render() {
@@ -15,6 +18,9 @@ export default class Header extends React.Component {
             </button>
           </div>
           <div id="navbar-collapse" className="collapse navbar-collapse">
+            <a className="navbar-brand" href="#">
+
+            </a>
             <ul className="nav navbar-nav">
               <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
               <Authenticated>
