@@ -1,23 +1,25 @@
+// Libs
 import { Link } from 'react-router';
 import React, { PropTypes } from 'react';
 import DocumentTitle from 'react-document-title';
+import { LoginLink } from 'react-stormpath';
 
+// Components
 import Sidebar from './Sidebar';
 import Header from './Header';
-import { LoginLink } from 'react-stormpath';
+/*import Footer from './Footer'; */
+
 
 export default class MasterPage extends React.Component {
   render() {
     return (
-      <DocumentTitle title='Stormpath Express + React Example'>
+      <DocumentTitle title='eduBot - Feedback for students and lecturers'>
         <div className="MasterPage">
           <div className="row">
-            <div className='col-xs-12'>
-            <Header /> </div>
-            <div className= 'col-xs-2'> 
+            <Header />
+            <div className= 'col-md-2'>
               <Sidebar />
             </div>
-
             <div className = 'col-xs-10'>
               { this.props.children }
             </div>

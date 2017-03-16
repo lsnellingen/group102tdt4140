@@ -1,30 +1,76 @@
+/* COLORSCHEME
 
+BACKGROUND:
+  NAVBARS: #f8f8f8
+  CONTENTAREA: #ffffff
+  FOOTER: #f8f8f8
+
+BORDER FOOTER AND NAVS: #e7e7e7
+
+*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+/* ---------------------- TOP NAVBAR ------------------------- */
 .navbar {
-	margin :0px;
-} 
+	margin: 1px;
+}
+
+.headerAlign {
+  margin-left: 19.5%;
+}
 
 ul.sidebar-nav {
  list-style: none;
 }
 
+.sidebar-nav li {
+  margin-top: 5px;
+}
+
 .sidebar-nav a {
+  margin: auto;
     color: #777;
 }
 
 .sidebar-nav a:hover{
     color: #333;
-    font-size: 110%;
     text-decoration: none;
 }
 
 .sidebar-nav{
-	background-color: #F8F8F8;
-    border-color: #e7e7e7;
+	background-color: #f8f8f8;
+  border-right: 1px solid #e7e7e7;
 	min-height: 100vh;
 	padding-top: 30px;
 	color: #777;
-    font-size: 1.2vw;
+  font-size: 15px;
 }
+
+/* ------------------- FOOTER -------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  line-height: 80px; /* Vertically center the text there */
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+}
+
+/* ------------------- Index Page --------------------- */
+.notAuthenticated {
+  display: block !important;
+}
+
 
 #feedback {
     max-width: 50vw;

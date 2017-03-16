@@ -7,10 +7,9 @@ export default class Sidebar extends React.Component {
   render() {
     return (
         <ul className="sidebar-nav">
-            
-            <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
 
             <Authenticated>
+                <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
                 <li><Link to="/profile" activeClassName="active">Profile</Link></li>
                 <li><Link to="/SendFeedback" activeClassName="active">Send feedback</Link> </li>
                 <li> <Link to="/ViewFeedback" activeClassName="active">View feedback</Link> </li>
@@ -18,6 +17,7 @@ export default class Sidebar extends React.Component {
             </Authenticated>
 
             <NotAuthenticated>
+                <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
                 <li><LoginLink activeClassName="active" /> </li>
                 <li><Link to="/register" activeClassName="active">Create Account</Link></li>
                 <li><Link to="/forgot">Forgot Password</Link></li>
