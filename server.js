@@ -99,7 +99,7 @@ app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (r
 });
 
 app.get('/api/subject/', function(req, res) {
-  connection.query("SELECT * FROM subject", function(error, rows, fields) {
+  connection.query("SELECT * FROM feedback", function(error, rows, fields) {
     if(!!error) {
       console.log("Error");
     }else {

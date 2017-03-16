@@ -81,7 +81,7 @@ ul.sidebar-nav {
 
 #feedback {
     max-width: 50vw;
-    height: 50vh;
+    height: 25vh;
     font-size:14pt;
     overflow-y: scroll;
 }
