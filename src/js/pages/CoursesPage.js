@@ -22,7 +22,7 @@ class Courses extends Component {
   };
 
   componentDidMount() {
-    this.setState({ myCourses: (this.context.user ? this.context.user.customData.courses : ["Du har ingen emner"]) });
+    this.setState({ myCourses: (this.context.user ? (this.context.user.customData.courses == undefined ? ["Du har ingen emner"] : this.context.user.customData.courses) : []) });
     axios.get('http://www.ime.ntnu.no/api/course/-')
     .then(res => {
       this.setState({ allCourses: res.data.course });
