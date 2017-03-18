@@ -5,12 +5,25 @@ import { UserProfileForm } from 'react-stormpath';
 export default class SendFeedbackPage extends React.Component {
   constructor(props){
     super(props);
-    this.state ={selectedOption: '0'}
+    this.state ={selectedOption: '',subject:"", theme: "", pFeedback:"",nFeedback:"", date: new Date()}
   }
-  handleOptionChange(changeEvent){
+  handleOptionChange(field,changeEvent){
+    var object = {};
+    object[field] = changeEvent.target.value;
+
+    this.setState(object);
+  }
+  handleFormSubmit(formSubmitEvent){
+    alert('Subject:'+ this.state.subject + '\n' + 'theme:' + this.state.theme + '\n' + 'pFeedback:' + this.state.pFeedback + '\n' + 'nFeedback'
+    + this.state.nFeedback + '\n' + 'selectedOption' + this.state.selectedOption + '\n' + new Date());
     this.setState({
-      selectedOption: changeEvent.target.value
-    });
+      selectedOption: '',
+      subject: "",
+      theme: "",
+      pFeedback: "",
+      nFeedback:""
+
+    })
   }
 
 
@@ -23,7 +36,7 @@ export default class SendFeedbackPage extends React.Component {
   	return (
 
   		<DocumentTitle title={`Send Feedback`}>
-  			<div className="container">
+  			<div className="form" onSubmit={this.handleFormSubmit.bind(this)}>
 	        	<div className="row">
 	        		<div className="col-xs-12">
 		              <h3>Send Feedback</h3>
@@ -35,7 +48,7 @@ export default class SendFeedbackPage extends React.Component {
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
                   <p>Choose the subject to give feedback: </p>
-                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector">
+                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.subject}  onChange={this.handleOptionChange.bind(this,"subject")}>
                     <option value="chooseSubject">Choose subject</option>
                     <option value="subject1">Subject 1</option>
                     <option value="subject2">Subject 2</option>
@@ -49,12 +62,12 @@ export default class SendFeedbackPage extends React.Component {
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
                   <p>Choose the subject to give feedback: </p>
-                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector">
+                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.theme} onChange={this.handleOptionChange.bind(this,"theme")}>
                     <option value="chooseSubject">Choose subject</option>
-                    <option value="subject1">Lecture</option>
-                    <option value="subject2">Curriculum</option>
-                    <option value="subject3">Assignments</option>
-                    <option value="subject4">Other</option>
+                    <option value="Lecture">Lecture</option>
+                    <option value="Curriculum">Curriculum</option>
+                    <option value="Assignments">Assignments</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
@@ -62,52 +75,52 @@ export default class SendFeedbackPage extends React.Component {
   	        	<div className="form-group">
   		        	<div className="row">
   			            <div className="col-xs-12">
-  			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" placeholder="Write your positive feedback here... " required />
+  			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.pFeedback} onChange={this.handleOptionChange.bind(this,"pFeedback")} placeholder="Write your positive feedback here... " />
   			            </div>
   		          </div>
   	          </div>
                 <div className="form-group">
     		        	<div className="row">
     			            <div className="col-xs-12">
-    			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" placeholder="Write your negative feedback here... " required />
+    			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.nFeedback} onChange={this.handleOptionChange.bind(this,"nFeedback")} placeholder="Write your negative feedback here... " />
     			            </div>
     		            </div>
     	            </div>
                   <p> How would you rate the quality of this issue: </p>
-                  <form className='form-inline'>
+                  <form className='form-inline' onSubmit={this.handleFormSubmit.bind(this)}>
 
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="option1" checked={this.state.selectedOption ==='option1'}
-                        onChange={this.handleOptionChange.bind(this)}  />
+                        <input type="radio" value="1" checked={this.state.selectedOption ==='1'}
+                        onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
                           1
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="option2" checked={this.state.selectedOption ==='option2'}
-                        onChange={this.handleOptionChange.bind(this)}   />
+                        <input type="radio" value="2" checked={this.state.selectedOption ==='2'}
+                        onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
                           2
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="option3" checked={this.state.selectedOption ==='option3'}
-                        onChange={this.handleOptionChange.bind(this)}  />
+                        <input type="radio" value="3" checked={this.state.selectedOption ==='3'}
+                        onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                           3
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="option4" checked={this.state.selectedOption ==='option4'}
-                        onChange={this.handleOptionChange.bind(this)}  />
+                        <input type="radio" value="4" checked={this.state.selectedOption ==='4'}
+                        onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                           4
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="option5" checked={this.state.selectedOption ==='option5'}
-                        onChange={this.handleOptionChange.bind(this)}  />
+                        <input type="radio" value="5" checked={this.state.selectedOption ==='5'}
+                        onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                           5
                       </label>
                     </div>
@@ -117,7 +130,7 @@ export default class SendFeedbackPage extends React.Component {
 
 
   	            <div className="form-group">
-  		            	<button type="button" className="btn btn-primary">Submit</button>
+  		            	<button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
   	            </div>
                 {/* whenClicked is a property not an event, per se. */}
               </div>
