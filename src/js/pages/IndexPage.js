@@ -29,12 +29,10 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    const courses = this.context.user ? this.context.user.customData.courses : ["Du har ingen emner"]
     return (
       <div className="container">
-        { this.context.user ? console.log(this.context.user.customData.courses) : null }
         <h2 className="text-center">
-          Velkommen
+          Welcome
           { this.context.user ? ' ' + this.context.user.givenName : null }!
         </h2>
         <hr />
@@ -47,13 +45,11 @@ export default class IndexPage extends React.Component {
             <div className="col-xs-6 col-xs-offset-6">
               <div className="panel panel-info">
                 <div className="panel-heading">
-                  <h3 className="panel-title">Dine emner:</h3>
+                  <h3 className="panel-title">User information:</h3>
                 </div>
                 <div className="panel-body">
                   <ul className="list-group">
-                    { courses.map(function(course){
-                      return <li key={course} className="list-group-item">{course}</li>;
-                    })}
+
                   </ul>
                 </div>
               </div>
@@ -64,24 +60,24 @@ export default class IndexPage extends React.Component {
             <div className="col-xs-7">
               <div className="panel panel-info">
                 <div className="panel-heading">
-                  <h4 className="text-center">Kom i gang!</h4>
+                  <h4 className="text-center">Get started!</h4>
                 </div>
                 <div className="panel-body">
-                  <h5>Start med å sende tilbakemeldinger med en gang!</h5>
+                  <h5>Start sending feedback to your lecturers, right away!</h5>
                   <p><em>
-                    Lag deg en bruker, registrer deg for emner og send tilbakemelding
+                    Create a user, sign up for courses and send feedback
                   </em></p>
-                  <Link to="/register"><button className="btn btn-default">REGISTRER DEG</button></Link>
+                <Link to="/register"><button className="btn btn-default">REGISTER</button></Link>
                 </div>
               </div>
             </div>
             <div className="col-xs-5">
               <div className="panel panel-info">
                 <div className="panel-heading">
-                  <h4 className="text-center">Allerede bruker?</h4>
+                  <h4 className="text-center">Already have a user?</h4>
                 </div>
                 <div className="panel-body">
-                  <p>La foreleserene dine få høre hva du mener, logg inn nå for å sende tilbakemeldinger.</p>
+                  <p>Let your lecturers know what you think, logg in and start sending feedback now.</p>
                   <Link to="/login"><button className="btn btn-default">LOGG INN</button></Link>
                 </div>
               </div>

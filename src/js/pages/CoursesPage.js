@@ -22,7 +22,15 @@ class Courses extends Component {
   };
 
   componentDidMount() {
-    this.setState({ myCourses: (this.context.user ? this.context.user.customData.courses : ["Du har ingen emner"]) });
+    const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
+    axios.get('/getCourses/' + currentUser)
+    .then(res => {
+      if(res.data[0].courses == "") {
+        this.setState({ myCourses: ["You are not registered in any courses"] });
+      } else {
+        this.setState({ myCourses: res.data[0].courses.split(',') });
+      }
+    });
     axios.get('http://www.ime.ntnu.no/api/course/-')
     .then(res => {
       this.setState({ allCourses: res.data.course });
@@ -41,8 +49,26 @@ class Courses extends Component {
   }
 
   handleClickOnAddButton(course) {
-    const updatedList = this.state.myCourses.concat([course]);
-    this.setState({myCourses: updatedList})
+    var newCourseList = [];
+    if(this.state.myCourses.indexOf(course) != -1) {
+      console.log("You are already in this course");
+    } else {
+      if(this.state.myCourses[0] == ["You are not registered in any courses"]) {
+        this.setState({myCourses: [course]})
+        newCourseList = [course];
+      } else {
+        const updatedList = this.state.myCourses.concat([course]);
+        this.setState({myCourses: updatedList})
+        newCourseList = updatedList;
+      }
+      const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
+      const currentCourses = newCourseList.join();
+      axios.post('/addCourses/' + currentUser + '/' + currentCourses)
+      .then(res => {
+        console.log("Course added: " + course);
+      });
+    }
+
   }
 
   render() {
@@ -50,22 +76,22 @@ class Courses extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-12">
-            <h3>Dine emner:</h3>
+            <h3>Courses:</h3>
             <hr />
           </div>
 
           <div className="col-xs-7">
             <div className="panel panel-info">
               <div className="panel-heading">
-                <h3 className="panel-title">Finn emner:</h3>
+                <h3 className="panel-title">Find courses:</h3>
               </div>
               <div className="panel-body">
                  <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Emnekode" value={this.state.inputValue} onChange={this.handleChange}/>
                  <br></br>
                  <ul className="list-group">
-                   { (this.state.matchingCourses.length < 10 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,9)).map(course => {
+                   { (this.state.matchingCourses.length < 8 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,8)).map(course => {
                      return <li key={course} className="list-group-item">{course}
-                              <button className="btn btn-default pull-right" value="123" onClick={() => this.handleClickOnAddButton(course)}>Legg til emne</button>
+                              <button className="btn btn-default pull-right" value="123" onClick={() => this.handleClickOnAddButton(course)}>Add course</button>
                               <div className="clearfix"></div>
                              </li>;
                     })}
@@ -77,7 +103,7 @@ class Courses extends Component {
           <div className="col-xs-5">
             <div className="panel panel-info border-left">
               <div className="panel-heading">
-                <h3 className="panel-title">Dine emner</h3>
+                <h3 className="panel-title">Your courses:</h3>
               </div>
               <div className="panel-body">
                 <ul className="list-group">

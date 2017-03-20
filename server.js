@@ -43,6 +43,17 @@ app.use(stormpath.init(app, {
         customData: true
       }
     }
+  },
+  postRegistrationHandler: function (account, req, res, next) {
+    const username = account.email;
+    connection.query("INSERT INTO users (username) VALUES ('" + username + "')", function(error, result) {
+      if(!!error) {
+        console.log("Error");
+      } else {
+        console.log(result);
+      }
+    });
+    next();
   }
 }));
 
@@ -62,6 +73,7 @@ app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (r
   }
 
   function saveAccount() {
+    console.log(req.body);
     req.user.givenName = req.body.givenName;
     req.user.surname = req.body.surname;
     req.user.email = req.body.email;
@@ -107,6 +119,32 @@ app.get('/api/subject/', function(req, res) {
     }
   });
 });
+
+
+app.get('/getCourses/:username', function(req, res) {
+  var username = req.params.username;
+  connection.query("SELECT courses FROM users WHERE username = '" + username + "'", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
+app.post('/addCourses/:username/:course', function(req, res) {
+  var username = req.params.username;
+  var course = req.params.course;
+  connection.query("UPDATE users SET courses = '" + course + "'" + " WHERE username = '" + username + "'", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'src/html/index.html'));
