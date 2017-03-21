@@ -18,14 +18,11 @@ export default class Header extends React.Component {
             </button>
           </div>
           <div id="navbar-collapse" className="collapse navbar-collapse">
-            <a className="navbar-brand" href="#">
-
-            </a>
             <ul className="nav navbar-nav">
-              <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Hjem</Link></li>
+              <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
               <Authenticated>
                 <li>
-                  <Link to="/profile" activeClassName="active">Profil</Link>
+                  <Link to="/profile" activeClassName="active">Profile</Link>
                 </li>
               </Authenticated>
             </ul>
@@ -42,7 +39,7 @@ export default class Header extends React.Component {
               </Authenticated>
               <NotAuthenticated>
                 <li>
-                  <Link to="/register" activeClassName="active">Lag ny bruker</Link>
+                  <Link to="/register" activeClassName="active">Register</Link>
                 </li>
               </NotAuthenticated>
             </ul>

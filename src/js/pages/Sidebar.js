@@ -13,6 +13,7 @@ export default class Sidebar extends React.Component {
                 <li><Link to="/profile" activeClassName="active">Profile</Link></li>
                 <li><Link to="/SendFeedback" activeClassName="active">Send feedback</Link> </li>
                 <li> <Link to="/ViewFeedback" activeClassName="active">View feedback</Link> </li>
+                <li><Link to="/emner" activeClassName="active">Courses</Link></li>
                 <li><LogoutLink /> </li>
             </Authenticated>
 

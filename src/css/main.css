@@ -9,6 +9,8 @@ BORDER FOOTER AND NAVS: #e7e7e7
 
 */
 
+/*---------------------- BODY -------------------------------*/
+
 html {
   position: relative;
   min-height: 100%;
@@ -24,7 +26,7 @@ body {
 }
 
 .headerAlign {
-  margin-left: 19.5%;
+  margin-left: 20%;
 }
 
 ul.sidebar-nav {
@@ -53,6 +55,11 @@ ul.sidebar-nav {
 	color: #777;
   font-size: 15px;
 }
+/*----------------------OWN CLASSES ------------------- */
+.border-left {
+  border-left: 10px solid #d9edf7;
+}
+
 
 /* ------------------- FOOTER -------------- */
 .footer {
