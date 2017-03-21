@@ -7,6 +7,7 @@ import axios from 'axios';
 
 // Components
 import Logo from '../svg/Logo';
+import FeedbackIcon from 'react-icons/lib/md/speaker-notes';
 
 export default class IndexPage extends React.Component {
 
@@ -39,6 +40,7 @@ export default class IndexPage extends React.Component {
         <hr />
         <div className="row">
           <div className="jumbotron col-xs-12">
+            <FeedbackIcon size={100}/>
             <span className="text-center inline"><big>LEGG INN EN STOR FIN OVERSIKT HER OM HVA EDUBOT ER, HVA DEN GJØR, HVORFOR BRUKE DEN OSV</big></span>
           </div>
 

@@ -1,6 +1,7 @@
 // Libs
 import React, { Component } from 'react';
 import axios from 'axios';
+import DeleteIcon from 'react-icons/lib/md/delete';
 
 class Courses extends Component {
 
@@ -10,11 +11,14 @@ class Courses extends Component {
         allCourses: [],
         matchingCourses: [],
         myCourses: [],
-        inputValue: ''
+        inputValue: '',
+        showSuccessfulMessage: false,
+        successfulMessage: ''
       };
 
        this.handleChange = this.handleChange.bind(this);
        this.handleClickOnAddButton = this.handleClickOnAddButton.bind(this);
+       this.handleClickOnRemoveButton = this.handleClickOnRemoveButton.bind(this);
     }
 
   static contextTypes = {
@@ -28,7 +32,7 @@ class Courses extends Component {
       if(res.data[0].courses == "") {
         this.setState({ myCourses: ["You are not registered in any courses"] });
       } else {
-        this.setState({ myCourses: res.data[0].courses.split(',') });
+        this.setState({ myCourses: res.data[0].courses.split('+') });
       }
     });
     axios.get('http://www.ime.ntnu.no/api/course/-')
@@ -61,14 +65,34 @@ class Courses extends Component {
         this.setState({myCourses: updatedList})
         newCourseList = updatedList;
       }
+      this.setState({
+        successfulMessage: course + ' is added to your courses.',
+        showSuccessfulMessage: true
+      })
       const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
-      const currentCourses = newCourseList.join();
-      axios.post('/addCourses/' + currentUser + '/' + currentCourses)
+      const currentCourses = newCourseList.join('+');
+      axios.post('/updateCourses/' + currentUser + '/' + currentCourses)
       .then(res => {
         console.log("Course added: " + course);
       });
     }
+  }
 
+  handleClickOnRemoveButton(course) {
+    var index = this.state.myCourses.indexOf(course);
+    var updatedList = this.state.myCourses.concat();
+    updatedList.splice(index, 1);
+    const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
+    const currentCourses = updatedList.join('+');
+    axios.post('/updateCourses/' + currentUser + '/' + currentCourses)
+    .then(res => {
+      console.log("Course removed: " + course);
+    });
+    this.setState({
+      myCourses: updatedList,
+      successfulMessage: course + ' is removed from your courses.',
+      showSuccessfulMessage: true
+     })
   }
 
   render() {
@@ -91,7 +115,7 @@ class Courses extends Component {
                  <ul className="list-group">
                    { (this.state.matchingCourses.length < 8 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,8)).map(course => {
                      return <li key={course} className="list-group-item">{course}
-                              <button className="btn btn-default pull-right" value="123" onClick={() => this.handleClickOnAddButton(course)}>Add course</button>
+                              <button className="btn btn-default pull-right" onClick={() => this.handleClickOnAddButton(course)}>Add course</button>
                               <div className="clearfix"></div>
                              </li>;
                     })}
@@ -107,10 +131,14 @@ class Courses extends Component {
               </div>
               <div className="panel-body">
                 <ul className="list-group">
-                  { this.state.myCourses.map(function(course){
-                    return <li key={course} className="list-group-item">{course}</li>;
+                  { this.state.myCourses.map(course => {
+                    return <li key={course} className="list-group-item">{course}
+                              <DeleteIcon className="pull-right onHover" size={20} onClick={() => this.handleClickOnRemoveButton(course)}/>
+                              <div className="clearfix"></div>
+                           </li>;
                   })}
                 </ul>
+                {this.state.showSuccessfulMessage ? <p className="alert alert-success ">{this.state.successfulMessage}</p> : null }
               </div>
             </div>
           </div>

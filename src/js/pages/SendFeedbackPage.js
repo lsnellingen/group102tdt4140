@@ -1,11 +1,21 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { UserProfileForm } from 'react-stormpath';
+import axios from 'axios';
 
 export default class SendFeedbackPage extends React.Component {
   constructor(props){
     super(props);
-    this.state ={selectedOption: '',subject:"", theme: "", pFeedback:"",nFeedback:"", date: new Date()}
+    this.state = {
+      selectedOption: '',
+      subject: '',
+      theme: '',
+      pFeedback: '',
+      nFeedback: '',
+      date: new Date(),
+      myCourses: [],
+      showSuccessful: false
+    }
   }
   handleOptionChange(field,changeEvent){
     var object = {};
@@ -14,19 +24,47 @@ export default class SendFeedbackPage extends React.Component {
     this.setState(object);
   }
   handleFormSubmit(formSubmitEvent){
-    alert('Subject:'+ this.state.subject + '\n' + 'theme:' + this.state.theme + '\n' + 'pFeedback:' + this.state.pFeedback + '\n' + 'nFeedback'
-    + this.state.nFeedback + '\n' + 'selectedOption' + this.state.selectedOption + '\n' + new Date());
+    const username = this.context.user.email;
+    const selectedOption = this.state.selectedOption;
+    const subject = this.state.subject;
+    const theme = this.state.theme;
+    const pFeedback = this.state.pFeedback;
+    const nFeedback = this.state.nFeedback;
+    const date = this.state.date;
+    axios.post('/sendFeedback/' + username +
+               '/' + subject +
+               '/' + theme +
+               '/' + selectedOption +
+               '/' + pFeedback +
+               '/' + nFeedback)
+    .then(res => {
+      console.log("Feedback sendt");
+    });
     this.setState({
       selectedOption: '',
       subject: "",
       theme: "",
       pFeedback: "",
-      nFeedback:""
-
+      nFeedback:"",
+      showSuccessful: false
     })
   }
 
+  static contextTypes = {
+    user: React.PropTypes.object
+  };
 
+  componentDidMount() {
+    const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
+    axios.get('/getCourses/' + currentUser)
+    .then(res => {
+      if(res.data[0].courses == "") {
+        this.setState({ myCourses: ["You are not registered in any courses"] });
+      } else {
+        this.setState({ myCourses: res.data[0].courses.split('+') });
+      }
+    });
+  }
 
   render() {
     const radioButtonStyle = {
@@ -47,13 +85,12 @@ export default class SendFeedbackPage extends React.Component {
             <div className="form-group">
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
-                  <p>Choose the subject to give feedback: </p>
+                  <p>Choose the course to give feedback: </p>
                   <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.subject}  onChange={this.handleOptionChange.bind(this,"subject")}>
-                    <option value="chooseSubject">Choose subject</option>
-                    <option value="subject1">Subject 1</option>
-                    <option value="subject2">Subject 2</option>
-                    <option value="subject3">Subject 3</option>
-                    <option value="subject4">Subject 4</option>
+                    <option value="chooseSubject">Choose course</option>
+                      { this.state.myCourses.map(function(course){
+                        return <option key={course} value={course}>{course}</option>;
+                      })}
                   </select>
                 </div>
               </div>
@@ -127,7 +164,14 @@ export default class SendFeedbackPage extends React.Component {
 
                   </form>
 
-
+                  {this.state.showSuccessful ?
+                    <div className="form-group">
+                      <div className="row">
+                          <div className="col-xs-9">
+                            <p className="alert alert-success userMessage">Feedback sendt.</p>
+                          </div>
+                      </div>
+                    </div> : null }
 
   	            <div className="form-group">
   		            	<button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>

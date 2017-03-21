@@ -132,7 +132,7 @@ app.get('/getCourses/:username', function(req, res) {
   });
 });
 
-app.post('/addCourses/:username/:course', function(req, res) {
+app.post('/updateCourses/:username/:course', function(req, res) {
   var username = req.params.username;
   var course = req.params.course;
   connection.query("UPDATE users SET courses = '" + course + "'" + " WHERE username = '" + username + "'", function(error, result) {
@@ -144,6 +144,22 @@ app.post('/addCourses/:username/:course', function(req, res) {
   });
 });
 
+app.post('/sendFeedback/:username/:subject/:theme/:grade/:pFeedback/:nFeedback/', function(req, res) {
+  var username = req.params.username;
+  var subject = req.params.subject;
+  var theme = req.params.theme;
+  var grade = req.params.grade;
+  var pFeedback = req.params.pFeedback;
+  var nFeedback = req.params.nFeedback;
+  connection.query("INSERT INTO feedback (user, course, theme, grade, positiveFeedback, negativeFeedback) "
+      + "VALUES ('" + username + "','" + subject + "','" + theme + "','" + grade + "','" + pFeedback + "','" + nFeedback + "')", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 
 app.get('*', function (req, res) {
