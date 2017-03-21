@@ -17,7 +17,7 @@ export default class MasterPage extends React.Component {
         <div className="MasterPage">
           <div className="row">
             <Header />
-            <div className= 'col-md-2'>
+            <div className= 'col-xs-2'>
               <Sidebar />
             </div>
             <div className = 'col-xs-10'>

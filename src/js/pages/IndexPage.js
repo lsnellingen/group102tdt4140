@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
       this.state = {
         feedback: []
       };
-}
+    }
 
   static contextTypes = {
     user: React.PropTypes.object
@@ -45,13 +45,11 @@ export default class IndexPage extends React.Component {
 
           <Authenticated>
             <div className="col-xs-6 col-xs-offset-6">
-              <div className="panel panel-default">
+              <div className="panel panel-info">
                 <div className="panel-heading">
-                  <h3 className="panel-title">Informasjon</h3>
+                  <h3 className="panel-title">Dine emner:</h3>
                 </div>
                 <div className="panel-body">
-                  <h4>Dine emner:</h4>
-                  <br></br>
                   <ul className="list-group">
                     { courses.map(function(course){
                       return <li key={course} className="list-group-item">{course}</li>;
@@ -64,7 +62,7 @@ export default class IndexPage extends React.Component {
 
           <NotAuthenticated className="notAuthenticated">
             <div className="col-xs-7">
-              <div className="panel panel-default">
+              <div className="panel panel-info">
                 <div className="panel-heading">
                   <h4 className="text-center">Kom i gang!</h4>
                 </div>
@@ -78,7 +76,7 @@ export default class IndexPage extends React.Component {
               </div>
             </div>
             <div className="col-xs-5">
-              <div className="panel panel-default">
+              <div className="panel panel-info">
                 <div className="panel-heading">
                   <h4 className="text-center">Allerede bruker?</h4>
                 </div>
