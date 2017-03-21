@@ -29,7 +29,7 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    const courses = this.context.user ? this.context.user.customData.courses : ["Du har ingen emner"]
+    const courses = this.context.user ? (this.context.user.customData.courses == undefined ? ["Du har ingen emner"] : this.context.user.customData.courses) : [];
     return (
       <div className="container">
         { this.context.user ? console.log(this.context.user.customData.courses) : null }
