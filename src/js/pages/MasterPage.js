@@ -8,7 +8,7 @@ import axios from 'axios';
 // Components
 import Sidebar from './Sidebar';
 import Header from './Header';
-import Footer from './Footer';
+/*import Footer from './Footer'; */
 
 
 export default class MasterPage extends React.Component {
@@ -26,7 +26,6 @@ export default class MasterPage extends React.Component {
               { this.props.children }
             </div>
           </div>
-          <Footer />
         </div>
       </DocumentTitle>
     );

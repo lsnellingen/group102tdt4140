@@ -29,6 +29,7 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
+    const courses = this.context.user ? (this.context.user.customData.courses == undefined ? ["Du har ingen emner"] : this.context.user.customData.courses) : [];
     return (
       <div className="container">
         <h2 className="text-center">
