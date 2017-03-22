@@ -40,11 +40,18 @@ app.use(stormpath.init(app, {
     produces: ['application/json'],
     me: {
       expand: {
-        customData: true
+        customData: true,
+        groups: true
       }
     }
   },
   postRegistrationHandler: function (account, req, res, next) {
+    var lecturerHref = 'https://api.stormpath.com/v1/groups/6OkoIxnLjHPsYIdGZWVUG8';
+    var studentHref = 'https://api.stormpath.com/v1/groups/5n0iOS2EJpeQ1sqioFM8cq';
+    account.addToGroup(studentHref, function(err, membership) {
+                console.log(membership);
+            });
+
     const username = account.email;
     connection.query("INSERT INTO users (username) VALUES ('" + username + "')", function(error, result) {
       if(!!error) {
@@ -110,20 +117,20 @@ app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (r
   }
 });
 
-app.get('/api/subject/', function(req, res) {
-  connection.query("SELECT * FROM subject", function(error, rows, fields) {
+
+app.get('/getCourses/:username', function(req, res) {
+  var username = req.params.username;
+  connection.query("SELECT courses FROM users WHERE username = '" + username + "'", function(error, rows, fields) {
     if(!!error) {
       console.log("Error");
-    }else {
+    } else {
       res.send(rows);
     }
   });
 });
 
-
-app.get('/getCourses/:username', function(req, res) {
-  var username = req.params.username;
-  connection.query("SELECT courses FROM users WHERE username = '" + username + "'", function(error, rows, fields) {
+app.get('/getFeedback/', function(req, res) {
+  connection.query("SELECT * FROM feedback", function(error, rows, fields) {
     if(!!error) {
       console.log("Error");
     } else {

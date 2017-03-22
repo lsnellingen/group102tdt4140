@@ -46,7 +46,7 @@ export default class SendFeedbackPage extends React.Component {
       theme: "",
       pFeedback: "",
       nFeedback:"",
-      showSuccessful: false
+      showSuccessful: true
     })
   }
 
