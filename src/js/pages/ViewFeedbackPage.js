@@ -54,6 +54,7 @@ export default class ViewFeedbackPage extends React.Component {
     }
 
   render() {
+  	const courses = this.context.user ? this.context.user.customData.courses : ["Du har ingen emner"]
   	return (
   		<DocumentTitle title={`View Feedback`}>
   			<div className="container">
