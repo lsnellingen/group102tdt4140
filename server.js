@@ -141,7 +141,7 @@ app.get('/getFeedback/', function(req, res) {
 
 app.post('/updateCourses/:username/:course', function(req, res) {
   var username = req.params.username;
-  var course = req.params.course;
+  var course = req.params.course == 'Empty' ? '' : req.params.course;
   connection.query("UPDATE users SET courses = '" + course + "'" + " WHERE username = '" + username + "'", function(error, result) {
     if(!!error) {
       console.log("Error");

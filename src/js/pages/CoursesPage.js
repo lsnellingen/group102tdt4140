@@ -45,7 +45,7 @@ class Courses extends Component {
     this.setState({inputValue: event.target.value});
     const matches = []
     this.state.allCourses.forEach(function(course) {
-      if (course.code.toLowerCase().includes(event.target.value.toLowerCase())) {
+      if (course.code.toLowerCase().includes(event.target.value.toLowerCase()) || course.name.toLowerCase().includes(event.target.value.toLowerCase())) {
         matches.push(course.code + " - " + course.name);
       }
     });
@@ -84,12 +84,19 @@ class Courses extends Component {
     updatedList.splice(index, 1);
     const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
     const currentCourses = updatedList.join('+');
-    axios.post('/updateCourses/' + currentUser + '/' + currentCourses)
-    .then(res => {
-      console.log("Course removed: " + course);
-    });
+    if(updatedList.length > 0) {
+      axios.post('/updateCourses/' + currentUser + '/' + currentCourses)
+      .then(res => {
+        console.log("Course removed: " + course);
+      });
+    } else {
+      axios.post('/updateCourses/' + currentUser + '/Empty' )
+      .then(res => {
+        console.log("Course removed: " + course);
+      });
+    }
     this.setState({
-      myCourses: updatedList,
+      myCourses: updatedList.length > 0 ? updatedList : ["You are not registered in any courses"],
       successfulMessage: course + ' is removed from your courses.',
       showSuccessfulMessage: true
      })
@@ -111,14 +118,20 @@ class Courses extends Component {
                 <h3 className="panel-title">Your courses:</h3>
               </div>
               <div className="panel-body">
-                <ul className="list-group">
-                  { this.state.myCourses.map(course => {
-                    return <li key={course} className="list-group-item">{course}
-                              <DeleteIcon className="pull-right onHover" size={20} onClick={() => this.handleClickOnRemoveButton(course)}/>
-                              <div className="clearfix"></div>
-                           </li>;
-                  })}
-                </ul>
+                { this.state.myCourses[0] == "You are not registered in any courses" ?
+                    <ul className="list-group">
+                      <li className="list-group-item">{this.state.myCourses[0]}</li>
+                    </ul>
+                    :
+                    <ul className="list-group">
+                      { this.state.myCourses.map(course => {
+                        return <li key={course} className="list-group-item">{course}
+                                  <DeleteIcon className="pull-right onHover" size={20} onClick={() => this.handleClickOnRemoveButton(course)}/>
+                                  <div className="clearfix"></div>
+                               </li>;
+                      })}
+                    </ul>
+                  }
                 {this.state.showSuccessfulMessage ? <p className="alert alert-success ">{this.state.successfulMessage}</p> : null }
               </div>
             </div>

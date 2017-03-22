@@ -85,6 +85,10 @@ ul.sidebar-nav {
   margin-bottom: 5px;
 }
 
+.removePadding {
+  padding: 0px;
+}
+
 /*----------------------BOOTSTRAP CLASSES ---------------------------------*/
 .jumbotron {
   margin-top: 30px;
