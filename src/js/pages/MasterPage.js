@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import React, { PropTypes } from 'react';
 import DocumentTitle from 'react-document-title';
 import { LoginLink } from 'react-stormpath';
+import axios from 'axios';
 
 // Components
 import Sidebar from './Sidebar';
@@ -11,6 +12,7 @@ import Footer from './Footer';
 
 
 export default class MasterPage extends React.Component {
+
   render() {
     return (
       <DocumentTitle title='eduBot - Feedback for students and lecturers'>

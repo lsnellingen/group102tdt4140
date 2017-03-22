@@ -40,9 +40,27 @@ app.use(stormpath.init(app, {
     produces: ['application/json'],
     me: {
       expand: {
-        customData: true
+        customData: true,
+        groups: true
       }
     }
+  },
+  postRegistrationHandler: function (account, req, res, next) {
+    var lecturerHref = 'https://api.stormpath.com/v1/groups/6OkoIxnLjHPsYIdGZWVUG8';
+    var studentHref = 'https://api.stormpath.com/v1/groups/5n0iOS2EJpeQ1sqioFM8cq';
+    account.addToGroup(studentHref, function(err, membership) {
+                console.log(membership);
+            });
+
+    const username = account.email;
+    connection.query("INSERT INTO users (username) VALUES ('" + username + "')", function(error, result) {
+      if(!!error) {
+        console.log("Error");
+      } else {
+        console.log(result);
+      }
+    });
+    next();
   }
 }));
 
@@ -62,6 +80,7 @@ app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (r
   }
 
   function saveAccount() {
+    console.log(req.body);
     req.user.givenName = req.body.givenName;
     req.user.surname = req.body.surname;
     req.user.email = req.body.email;
@@ -98,15 +117,57 @@ app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (r
   }
 });
 
-app.get('/api/subject/', function(req, res) {
-  connection.query("SELECT * FROM feedback", function(error, rows, fields) {
+
+app.get('/getCourses/:username', function(req, res) {
+  var username = req.params.username;
+  connection.query("SELECT courses FROM users WHERE username = '" + username + "'", function(error, rows, fields) {
     if(!!error) {
       console.log("Error");
-    }else {
+    } else {
       res.send(rows);
     }
   });
 });
+
+app.get('/getFeedback/', function(req, res) {
+  connection.query("SELECT * FROM feedback", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
+app.post('/updateCourses/:username/:course', function(req, res) {
+  var username = req.params.username;
+  var course = req.params.course;
+  connection.query("UPDATE users SET courses = '" + course + "'" + " WHERE username = '" + username + "'", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.post('/sendFeedback/:username/:subject/:theme/:grade/:pFeedback/:nFeedback/', function(req, res) {
+  var username = req.params.username;
+  var subject = req.params.subject;
+  var theme = req.params.theme;
+  var grade = req.params.grade;
+  var pFeedback = req.params.pFeedback;
+  var nFeedback = req.params.nFeedback;
+  connection.query("INSERT INTO feedback (user, course, theme, grade, positiveFeedback, negativeFeedback) "
+      + "VALUES ('" + username + "','" + subject + "','" + theme + "','" + grade + "','" + pFeedback + "','" + nFeedback + "')", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'src/html/index.html'));
