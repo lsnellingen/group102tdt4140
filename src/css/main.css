@@ -7,6 +7,9 @@ BACKGROUND:
 
 BORDER FOOTER AND NAVS: #e7e7e7
 
+FONTS:
+  NAVBARS: #777
+
 */
 
 /*---------------------- BODY -------------------------------*/
@@ -57,7 +60,7 @@ ul.sidebar-nav {
 }
 /*----------------------OWN CLASSES ------------------- */
 .border-left {
-  border-left: 10px solid #d9edf7;
+  border-left: 10px solid;
 }
 
 .userMessage {
@@ -71,6 +74,30 @@ ul.sidebar-nav {
 }
 .onHover:active {
   transform: scale(1,1);
+}
+
+.vCenterIcon {
+  vertical-align: sub !important;
+  margin-right: 10px;
+}
+
+.vSpacing {
+  margin-bottom: 5px;
+}
+
+/*----------------------BOOTSTRAP CLASSES ---------------------------------*/
+.jumbotron {
+  margin-top: 30px;
+}
+
+.panel-info {
+  border-color: #4C5760;
+}
+
+.panel-info>.panel-heading {
+  background-color: #4C5760;
+  border-color: #4C5760;
+  color: #fff;
 }
 
 /* ------------------- FOOTER -------------- */

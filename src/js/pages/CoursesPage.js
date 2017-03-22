@@ -104,27 +104,8 @@ class Courses extends Component {
             <hr />
           </div>
 
-          <div className="col-xs-7">
-            <div className="panel panel-info">
-              <div className="panel-heading">
-                <h3 className="panel-title">Find courses:</h3>
-              </div>
-              <div className="panel-body">
-                 <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Emnekode" value={this.state.inputValue} onChange={this.handleChange}/>
-                 <br></br>
-                 <ul className="list-group">
-                   { (this.state.matchingCourses.length < 8 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,8)).map(course => {
-                     return <li key={course} className="list-group-item">{course}
-                              <button className="btn btn-default pull-right" onClick={() => this.handleClickOnAddButton(course)}>Add course</button>
-                              <div className="clearfix"></div>
-                             </li>;
-                    })}
-                 </ul>
-              </div>
-            </div>
-          </div>
 
-          <div className="col-xs-5">
+          <div className="col-xs-6">
             <div className="panel panel-info border-left">
               <div className="panel-heading">
                 <h3 className="panel-title">Your courses:</h3>
@@ -139,6 +120,26 @@ class Courses extends Component {
                   })}
                 </ul>
                 {this.state.showSuccessfulMessage ? <p className="alert alert-success ">{this.state.successfulMessage}</p> : null }
+              </div>
+            </div>
+          </div>
+
+          <div className="col-xs-6">
+            <div className="panel panel-info">
+              <div className="panel-heading">
+                <h3 className="panel-title">Find courses:</h3>
+              </div>
+              <div className="panel-body">
+                 <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Emnekode" value={this.state.inputValue} onChange={this.handleChange}/>
+                 <br></br>
+                 <ul className="list-group">
+                   { (this.state.matchingCourses.length < 7 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,7)).map(course => {
+                     return <li key={course} className="list-group-item">{course}
+                              <button className="btn btn-default pull-right" onClick={() => this.handleClickOnAddButton(course)}>Add course</button>
+                              <div className="clearfix"></div>
+                             </li>;
+                    })}
+                 </ul>
               </div>
             </div>
           </div>

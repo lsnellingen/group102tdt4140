@@ -74,14 +74,14 @@ export default class SendFeedbackPage extends React.Component {
   	return (
 
   		<DocumentTitle title={`Send Feedback`}>
-  			<div className="form" onSubmit={this.handleFormSubmit.bind(this)}>
+  			<div className="container" onSubmit={this.handleFormSubmit.bind(this)}>
 	        	<div className="row">
-	        		<div className="col-xs-12">
+	        		<div className="col-xs-10">
 		              <h3>Send Feedback</h3>
 		              <hr />
 	        		</div>
 	        	</div>
-            <div className="col-xs-10 col-xs-offset-1">
+            <div className="col-xs-10">
             <div className="form-group">
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
