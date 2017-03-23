@@ -13,7 +13,8 @@ class Courses extends Component {
         myCourses: [],
         inputValue: '',
         showSuccessfulMessage: false,
-        successfulMessage: ''
+        successfulMessage: '',
+        messageType: ''
       };
 
        this.handleChange = this.handleChange.bind(this);
@@ -56,6 +57,11 @@ class Courses extends Component {
     var newCourseList = [];
     if(this.state.myCourses.indexOf(course) != -1) {
       console.log("You are already in this course");
+      this.setState({
+        successfulMessage: 'You are already assigned to this course.',
+        messageType: 'alert-danger',
+        showSuccessfulMessage: true
+      })
     } else {
       if(this.state.myCourses[0] == ["You are not registered in any courses"]) {
         this.setState({myCourses: [course]})
@@ -67,6 +73,7 @@ class Courses extends Component {
       }
       this.setState({
         successfulMessage: course + ' is added to your courses.',
+        messageType: 'alert-success',
         showSuccessfulMessage: true
       })
       const currentUser = this.context.user ? this.context.user.email.toLowerCase() : 'No user';
@@ -98,6 +105,7 @@ class Courses extends Component {
     this.setState({
       myCourses: updatedList.length > 0 ? updatedList : ["You are not registered in any courses"],
       successfulMessage: course + ' is removed from your courses.',
+      messageType: 'alert-warning',
       showSuccessfulMessage: true
      })
   }
@@ -132,7 +140,7 @@ class Courses extends Component {
                       })}
                     </ul>
                   }
-                {this.state.showSuccessfulMessage ? <p className="alert alert-success ">{this.state.successfulMessage}</p> : null }
+                {this.state.showSuccessfulMessage ? <p className={"alert " + this.state.messageType} >{this.state.successfulMessage}</p> : null }
               </div>
             </div>
           </div>
