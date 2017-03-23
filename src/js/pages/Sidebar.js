@@ -9,20 +9,15 @@ export default class Sidebar extends React.Component {
         <ul className="sidebar-nav">
 
             <Authenticated>
-                <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
-                <li><Link to="/profile" activeClassName="active">Profile</Link></li>
+                <li><Link to="/emner" activeClassName="active">Courses</Link></li>
                 <li><Link to="/SendFeedback" activeClassName="active">Send feedback</Link> </li>
                 <li> <Link to="/ViewFeedback" activeClassName="active">View feedback</Link> </li>
-                <li><Link to="/emner" activeClassName="active">Courses</Link></li>
-                <li><LogoutLink /> </li>
             </Authenticated>
 
             <NotAuthenticated>
-                <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
                 <li><LoginLink activeClassName="active" /> </li>
                 <li><Link to="/register" activeClassName="active">Create Account</Link></li>
                 <li><Link to="/forgot">Forgot Password</Link></li>
-                <li><Link to="/profile">Custom Profile Data</Link></li>
             </NotAuthenticated>
 
         </ul>

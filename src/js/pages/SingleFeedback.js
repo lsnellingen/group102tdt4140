@@ -5,15 +5,15 @@ class SingleFeedback extends Component {
 
   render() {
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-info">
         <div className="panel-heading">{this.props.feedback.course}</div>
         <div className="panel-body">
-          <p>Matter of issue: {this.props.feedback.theme}</p>
+          <p><strong>Matter of issue:</strong> {this.props.feedback.theme}</p>
         </div>
         <ul className="list-group">
-          <li className="list-group-item">Positive: {this.props.feedback.positiveFeedback}</li>
-          <li className="list-group-item">Negative: {this.props.feedback.negativeFeedback}</li>
-          <li className="list-group-item">Rating: {this.props.feedback.grade}</li>
+          <li className="list-group-item"><strong>Positive:</strong> {this.props.feedback.positiveFeedback}</li>
+          <li className="list-group-item"><strong>Negative:</strong> {this.props.feedback.negativeFeedback}</li>
+          <li className="list-group-item"><strong>Rating:</strong> {this.props.feedback.grade}</li>
         </ul>
       </div>
     );
