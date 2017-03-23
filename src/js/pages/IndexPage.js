@@ -10,6 +10,7 @@ import Logo from '../svg/Logo';
 import FeedbackIcon from 'react-icons/lib/fa/comments';
 import LabelIcon from 'react-icons/lib/md/label';
 
+
 export default class IndexPage extends React.Component {
 
   static contextTypes = {
@@ -62,7 +63,7 @@ export default class IndexPage extends React.Component {
                         <td>{this.context.user ? Object.keys(this.context.user.groups)[0] : null}</td>
                       </tr>
                       <tr>
-                        <th>Joined the community:</th>
+                        <th>Member since:</th>
                         <td>{this.context.user ? this.context.user.createdAt.substring(0,10) : null}</td>
                       </tr>
                     </tbody>

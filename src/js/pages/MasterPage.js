@@ -19,10 +19,10 @@ export default class MasterPage extends React.Component {
         <div className="MasterPage">
           <div className="row">
             <Header />
-            <div className= 'col-xs-2'>
+            <div className='col-xs-2 marginTop50'>
               <Sidebar />
             </div>
-            <div className = 'col-xs-10'>
+            <div className = 'col-xs-10 marginTop50'>
               { this.props.children }
             </div>
             <Footer />

@@ -13,7 +13,8 @@ export default class ViewFeedbackPage extends React.Component {
         myCourses: [],
         filterOption: 'chooseCourse',
         feedback: [],
-        filteredFeedback: []
+        filteredFeedback: [],
+        showWarning: false
       };
       this.handleFiltering = this.handleFiltering.bind(this);
     }
@@ -27,7 +28,9 @@ export default class ViewFeedbackPage extends React.Component {
       axios.get('/getCourses/' + currentUser)
       .then(res => {
         if(res.data[0].courses == "") {
-          this.setState({ myCourses: ["You are not registered in any courses"] });
+          this.setState({
+            myCourses: [],
+            showWarning: true});
         } else {
           this.setState({ myCourses: res.data[0].courses.split('+') });
         }
@@ -84,7 +87,13 @@ export default class ViewFeedbackPage extends React.Component {
             </div>
             : <div className="col-xs-10">
               { this.state.filterOption == 'chooseCourse' ?
-                <h5>Choose a filtering option to see feedback.</h5>
+                <div>
+                  {this.state.showWarning ?
+                    <div className="col-xs-10 removePadding">
+                      <p className="alert alert-danger userMessage">You are not registered in any courses. Go to the course page and register for courses.</p>
+                    </div>
+                    : <h5>Choose an option to view feedback.</h5> }
+                </div>
               :
                 <h5>There is no feedback in this course.</h5>
               }
