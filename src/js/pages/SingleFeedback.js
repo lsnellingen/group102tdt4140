@@ -79,7 +79,6 @@ class SingleFeedback extends Component {
         </div>
         </div>
       </div>
-      </div>
     );
   }
 }
