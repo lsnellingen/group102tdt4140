@@ -4,6 +4,8 @@ import { IndexRoute, Route, browserHistory } from 'react-router';
 import ReactStormpath, { Router, HomeRoute, LoginRoute, AuthenticatedRoute } from 'react-stormpath';
 import { ChangePasswordPage, MasterPage, IndexPage, LoginPage, RegisterPage, ResetPasswordPage, VerifyEmailPage, ProfilePage, SendFeedbackPage, ViewFeedbackPage } from './pages';
 import CoursesPage from './pages/CoursesPage';
+import AskQueryPage from './pages/AskQueryPage';
+import ViewQueriesPage from './pages/ViewQueriesPage';
 
 ReactStormpath.init();
 
@@ -21,6 +23,12 @@ ReactDOM.render(
         <Route path='/emner' component={CoursesPage} />
         <Route path='/SendFeedback' component={SendFeedbackPage} />
         <Route path='/ViewFeedback' component={ViewFeedbackPage} />
+      </AuthenticatedRoute>
+      <AuthenticatedRoute inGroup="Lecturer">
+        <Route path='/AskQuery' component={AskQueryPage} />
+      </AuthenticatedRoute>
+      <AuthenticatedRoute inGroup="Student">
+        <Route path='/ViewQueries' component={ViewQueriesPage} />
       </AuthenticatedRoute>
     </HomeRoute>
   </Router>,

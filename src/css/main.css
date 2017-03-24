@@ -105,9 +105,9 @@ ul.sidebar-nav {
   vertical-align: sub !important;
   margin-right: 10px;
 }
-.hCenterIcon {
+.hCenter {
   display: block;
-  margin: 20px auto 0 auto;
+  margin: auto;
 }
 
 .vSpacing {
@@ -116,6 +116,10 @@ ul.sidebar-nav {
 
 .marginTop {
   margin-top: 15px;
+}
+
+.marginTop20 {
+  margin-top: 20px;
 }
 
 .marginTop50 {
@@ -136,7 +140,7 @@ ul.sidebar-nav {
 
 .likedFeedback {
   color: #046281;
-  transform: scale(1.1,1.1);  
+  transform: scale(1.1,1.1);
 }
 
 /*----------------------BOOTSTRAP CLASSES ---------------------------------*/

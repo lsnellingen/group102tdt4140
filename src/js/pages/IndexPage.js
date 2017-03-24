@@ -44,8 +44,27 @@ export default class IndexPage extends React.Component {
               </div>
             </div>
             <div className="container">
-              <div className="col-xs-5   col-xs-offset-7">
+              <div className="col-xs-7">
                 <div className="panel panel-info">
+                  <div className="panel-heading">
+                    <div className="">
+                      <button className="btn btn-info pull-left">Recent feedback</button>
+
+                      <button className="btn btn-info pull-right">Latest responses</button>
+                      <button className="btn btn-info hCenter">Most upvoted</button>
+                    </div>
+                  </div>
+                  <div className="panel-body">
+                    <ul className="list-group">
+                      <li className="list-group-item">First</li>
+                      <li className="list-group-item">Second</li>
+                      <li className="list-group-item">Third</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xs-5">
+                <div className="well">
                   <div className="panel-heading">
                     <h3 className="panel-title">User information:</h3>
                   </div>
