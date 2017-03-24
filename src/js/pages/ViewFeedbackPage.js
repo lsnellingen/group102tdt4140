@@ -42,6 +42,10 @@ export default class ViewFeedbackPage extends React.Component {
     }
 
     handleFiltering(event) {
+      axios.get('/getFeedback/')
+      .then(res => {
+        this.setState({ feedback: res.data})
+      });
       var course = event.target.value;
       var updatedFeedbackList = [];
       this.state.feedback.forEach(feedback => {
