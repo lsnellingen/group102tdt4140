@@ -27,7 +27,6 @@ class SingleFeedback extends Component {
     });
   };
 
-class SingleFeedback extends Component {
   render() {
     return (
       <div className="panel panel-info">
