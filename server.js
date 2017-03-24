@@ -45,12 +45,27 @@ app.use(stormpath.init(app, {
       }
     }
   },
+  preRegistrationHandler: function (formData, req, res, next) {
+    if (!(formData.email.includes("@stud.ntnu.no") || formData.email.includes("@ntnu.no"))) {
+      return next(new Error('You have to register with your \'@stud.ntnu.no\' or \'@ntnu.no\' email.'));
+    }
+
+    next();
+  },
   postRegistrationHandler: function (account, req, res, next) {
     var lecturerHref = 'https://api.stormpath.com/v1/groups/6OkoIxnLjHPsYIdGZWVUG8';
     var studentHref = 'https://api.stormpath.com/v1/groups/5n0iOS2EJpeQ1sqioFM8cq';
-    account.addToGroup(studentHref, function(err, membership) {
-                console.log(membership);
-            });
+    if(account.email.includes("@stud.ntnu.no")) {
+      account.addToGroup(studentHref, function(err, membership) {
+                  console.log(membership);
+              });
+    } else if (account.email.includes("@ntnu.no")) {
+      account.addToGroup(lecturerHref, function(err, membership) {
+                  console.log(membership);
+              });
+    } else {
+      console.log("Not valid email domain");
+    }
 
     const username = account.email;
     connection.query("INSERT INTO users (username) VALUES ('" + username + "')", function(error, result) {
@@ -84,10 +99,6 @@ app.post('/me', stormpath.authenticationRequired, bodyParser.json(), function (r
     req.user.givenName = req.body.givenName;
     req.user.surname = req.body.surname;
     req.user.email = req.body.email;
-
-    if ('color' in req.body.customData) {
-      req.user.customData.color = req.body.customData.color;
-    }
 
     req.user.save(function (err) {
       if (err) {
@@ -141,7 +152,7 @@ app.get('/getFeedback/', function(req, res) {
 
 app.post('/updateCourses/:username/:course', function(req, res) {
   var username = req.params.username;
-  var course = req.params.course;
+  var course = req.params.course == 'Empty' ? '' : req.params.course;
   connection.query("UPDATE users SET courses = '" + course + "'" + " WHERE username = '" + username + "'", function(error, result) {
     if(!!error) {
       console.log("Error");
@@ -167,6 +178,20 @@ app.post('/sendFeedback/:username/:subject/:theme/:grade/:pFeedback/:nFeedback/'
     }
   });
 });
+
+app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
+  var username = req.params.username;
+  var feedbackID = req.params.feedbackID;
+  console.log("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "");
+  connection.query("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 
 
 app.get('*', function (req, res) {

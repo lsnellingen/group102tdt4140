@@ -64,7 +64,7 @@ export default class RegisterPage extends React.Component {
                     <div key="register-button" className="form-group">
                       <div className="col-sm-offset-4 col-sm-4">
                         <p className="alert alert-danger" data-spIf="form.error"><span data-spBind="form.errorMessage" /></p>
-                        <button type="submit" className="btn btn-primary">Register</button>
+                        <button type="submit" className="btn btn-info">Register</button>
                       </div>
                     </div>
                   </div>

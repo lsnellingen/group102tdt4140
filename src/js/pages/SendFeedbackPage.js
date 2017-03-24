@@ -1,6 +1,5 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
-import { UserProfileForm } from 'react-stormpath';
 import axios from 'axios';
 
 export default class SendFeedbackPage extends React.Component {
@@ -46,7 +45,8 @@ export default class SendFeedbackPage extends React.Component {
       theme: "",
       pFeedback: "",
       nFeedback:"",
-      showSuccessful: true
+      showSuccessful: true,
+      showWarning: false
     })
   }
 
@@ -59,7 +59,10 @@ export default class SendFeedbackPage extends React.Component {
     axios.get('/getCourses/' + currentUser)
     .then(res => {
       if(res.data[0].courses == "") {
-        this.setState({ myCourses: ["You are not registered in any courses"] });
+        this.setState({
+          myCourses: [],
+          showWarning: true
+        });
       } else {
         this.setState({ myCourses: res.data[0].courses.split('+') });
       }
@@ -77,6 +80,7 @@ export default class SendFeedbackPage extends React.Component {
   			<div className="container" onSubmit={this.handleFormSubmit.bind(this)}>
 	        	<div className="row">
 	        		<div className="col-xs-10">
+                  <br />
 		              <h3>Send Feedback</h3>
 		              <hr />
 	        		</div>
@@ -92,6 +96,11 @@ export default class SendFeedbackPage extends React.Component {
                         return <option key={course} value={course}>{course}</option>;
                       })}
                   </select>
+                  {this.state.showWarning ?
+                    <div className="col-xs-10 removePadding">
+                      <p className="alert alert-danger userMessage">You are not registered in any courses. Go to the course page and register for courses.</p>
+                    </div>
+                    : null }
                 </div>
               </div>
             </div>
