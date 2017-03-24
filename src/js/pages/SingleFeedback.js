@@ -75,6 +75,7 @@ class SingleFeedback extends Component {
 
         </ul>
       </div>
+      </div>
     );
   }
 }
