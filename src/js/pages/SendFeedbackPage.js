@@ -1,6 +1,5 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
-import { UserProfileForm } from 'react-stormpath';
 import axios from 'axios';
 
 export default class SendFeedbackPage extends React.Component {

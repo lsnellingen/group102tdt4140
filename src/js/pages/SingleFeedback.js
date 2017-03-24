@@ -1,9 +1,10 @@
-// Libs
+// Libs<
 import React, { Component } from 'react';
+import axios from 'axios';
 import UpvoteIcon from 'react-icons/lib/md/thumb-up';
 
 class SingleFeedback extends Component {
-
+  
   constructor(props) {
     super(props);
       this.state = {
@@ -11,6 +12,22 @@ class SingleFeedback extends Component {
       };
     }
 
+  static contextTypes = {
+    user: React.PropTypes.object
+  };
+
+  handleUpvote(event){
+    const upvoter = this.context.user.email;
+    const feedbackID = this.props.feedback.feedbackID;
+
+    axios.post('/upvoteFeedback/' + upvoter +
+               '/' + feedbackID)
+      .then(res => {
+      console.log("Upvote registered");
+    });
+  };
+
+class SingleFeedback extends Component {
   render() {
     return (
       <div className="panel panel-info">
@@ -48,7 +65,16 @@ class SingleFeedback extends Component {
             </div>
           </div>
         </div>
-       </div>
+
+        <ul className="list-group">
+          <li className="list-group-item"><strong>Positive:</strong> {this.props.feedback.positiveFeedback}</li>
+          <li className="list-group-item"><strong>Negative:</strong> {this.props.feedback.negativeFeedback}</li>
+          <li className="list-group-item"><strong>Rating:</strong> {this.props.feedback.grade}</li>
+          <div className="form-group">
+            <button type="upvote" className="btn btn-primary" onClick={this.handleUpvote.bind(this)}>Upvote</button>
+          </div>
+
+        </ul>
       </div>
     );
   }

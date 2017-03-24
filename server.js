@@ -179,6 +179,20 @@ app.post('/sendFeedback/:username/:subject/:theme/:grade/:pFeedback/:nFeedback/'
   });
 });
 
+app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
+  var username = req.params.username;
+  var feedbackID = req.params.feedbackID;
+  console.log("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "");
+  connection.query("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'src/html/index.html'));
