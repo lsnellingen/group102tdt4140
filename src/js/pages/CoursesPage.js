@@ -1,7 +1,9 @@
 // Libs
 import React, { Component } from 'react';
 import axios from 'axios';
-import DeleteIcon from 'react-icons/lib/md/delete';
+import CoursesIcon from 'react-icons/lib/md/toc';
+import DeleteIcon from 'react-icons/lib/md/clear';
+import SearchIcon from 'react-icons/lib/md/search';
 
 class Courses extends Component {
 
@@ -115,6 +117,7 @@ class Courses extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-12">
+            <br />
             <h3>Courses:</h3>
             <hr />
           </div>
@@ -123,7 +126,7 @@ class Courses extends Component {
           <div className="col-xs-6">
             <div className="panel panel-info border-left">
               <div className="panel-heading">
-                <h3 className="panel-title">Your courses:</h3>
+                <h3 className="panel-title"><CoursesIcon size={20} className="vCenterIcon"/> Your courses:</h3>
               </div>
               <div className="panel-body">
                 { this.state.myCourses[0] == "You are not registered in any courses" ?
@@ -134,7 +137,7 @@ class Courses extends Component {
                     <ul className="list-group">
                       { this.state.myCourses.map(course => {
                         return <li key={course} className="list-group-item">{course}
-                                  <DeleteIcon className="pull-right onHover" size={20} onClick={() => this.handleClickOnRemoveButton(course)}/>
+                                  <DeleteIcon className="pull-right fontColor onHover vCenterIcon" size={25}  onClick={() => this.handleClickOnRemoveButton(course)}/>
                                   <div className="clearfix"></div>
                                </li>;
                       })}
@@ -148,10 +151,11 @@ class Courses extends Component {
           <div className="col-xs-6">
             <div className="panel panel-info">
               <div className="panel-heading">
-                <h3 className="panel-title">Find courses:</h3>
+                <h3 className="panel-title"><SearchIcon size={18} className="vCenterIcon" /> Find courses:</h3>
               </div>
               <div className="panel-body">
-                 <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Emnekode" value={this.state.inputValue} onChange={this.handleChange}/>
+                 <h5>Search for course by name or course code:</h5>
+                 <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Course code" value={this.state.inputValue} onChange={this.handleChange}/>
                  <br></br>
                  <ul className="list-group">
                    { (this.state.matchingCourses.length < 7 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,7)).map(course => {

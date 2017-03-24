@@ -54,7 +54,7 @@ export default class ProfilePage extends React.Component {
                           <div className="col-sm-offset-4 col-sm-4">
                             <p className="alert alert-danger" data-spIf="form.error"><span data-spBind="form.errorMessage" /></p>
                             <p className="alert alert-success" data-spIf="form.successful">Profile updated.</p>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className="btn btn-info">
                               <span data-spIf="!form.processing">Update</span>
                               <span data-spIf="form.processing">Updating...</span>
                             </button>

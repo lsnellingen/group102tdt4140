@@ -80,6 +80,7 @@ export default class SendFeedbackPage extends React.Component {
   			<div className="container" onSubmit={this.handleFormSubmit.bind(this)}>
 	        	<div className="row">
 	        		<div className="col-xs-10">
+                  <br />
 		              <h3>Send Feedback</h3>
 		              <hr />
 	        		</div>

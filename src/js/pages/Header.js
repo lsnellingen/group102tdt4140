@@ -10,7 +10,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <nav className="navbar topbar navbar-default navbar-static-top removeMargin">
-        <div className="container-fluid col-xs-9 col-xs-offset-2 headerAlign">
+        <div className="container-fluid col-xs-8 col-xs-offset-2 headerAlign">
           <div className="navbar-header">
             <button type="button" data-toggle="collapse" data-target="#navbar-collapse" className="navbar-toggle collapsed">
               <span className="sr-only">Toggle Navigation</span>
