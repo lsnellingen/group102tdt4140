@@ -150,6 +150,27 @@ app.get('/getFeedback/', function(req, res) {
   });
 });
 
+app.get('/getQuery/', function(req, res) {
+  connection.query("SELECT * FROM query", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
+app.get('/getQueries/:queryID', function(req, res) {
+  var queryID = req.params.queryID;
+  connection.query("SELECT * FROM queries WHERE queryIDfk = '" + queryID + "'", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
 app.post('/updateCourses/:username/:course', function(req, res) {
   var username = req.params.username;
   var course = req.params.course == 'Empty' ? '' : req.params.course;
