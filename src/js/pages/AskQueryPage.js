@@ -60,10 +60,6 @@ class AskQueryPage extends Component {
       for (let question of questions) {
         question.question = question.question.replace(/\?/g, 'QUESTIONMARK');
         if(question.alternatives.length > 0) {
-          console.log('/sendQueries/' + id +
-                     '/' + question.question +
-                     '/' + question.type +
-                     '/' + question.alternatives.join('+'));
           axios.post('/sendQueries/' + id +
                      '/' + question.question +
                      '/' + question.type +
@@ -72,10 +68,6 @@ class AskQueryPage extends Component {
             console.log("Querie done with ID: " + res.data.insertId);
           });
         } else {
-          console.log('/sendQueries/' + id +
-                     '/' + question.question +
-                     '/' + question.type +
-                     '/' + question.alternatives.join('+'));
           axios.post('/sendQueries/' + id +
                      '/' + question.question +
                      '/' + question.type +

@@ -193,6 +193,18 @@ app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
   });
 });
 
+app.post('/sendResponse/:feedbackID/:response', function(req,res) {
+  var feedbackID = req.params.feedbackID;
+  var response = req.params.response;
+  connection.query("UPDATE feedback SET response = '" + response + "' WHERE feedbackID = " + feedbackID, function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.post('/sendQuery/:username/:name/:description/:course', function(req,res) {
   var username = req.params.username;
   var name = req.params.name;
@@ -213,7 +225,7 @@ app.post('/sendQueries/:id/:question/:type/:alternatives', function(req,res) {
   var question = req.params.question.replace(/QUESTIONMARK/g, '?');
   var type = req.params.type;
   var alternatives = req.params.alternatives  == 'Empty' ? '' : req.params.alternatives;
-  connection.query("INSERT INTO queries (queryIDfk, type, question, alternatives) "
+  connection.query("INSERT INTO queries (queryIDfk, question, type, alternatives) "
       + "VALUES ('" + id + "','" + question + "','" + type + "','" + alternatives + "')", function(error, result) {
     if(!!error) {
       console.log("Error");

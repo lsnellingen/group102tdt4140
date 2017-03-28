@@ -79,12 +79,21 @@ ul.sidebar-nav {
   background-color: #e7e7e7;
 }
 
+.removeStyle {
+  list-style-type: none;
+}
+
 /*----------------------OWN CLASSES ------------------- */
 .border-left {
   border-left: 8px solid;
 }
 .border-left>.panel-heading {
   border-top-left-radius: 0px;
+}
+.tableBorderRight {
+  border-right: 1px solid #ddd;
+  text-decoration: none;
+  padding-bottom: 10px !important;
 }
 
 .userMessage {
@@ -112,6 +121,13 @@ ul.sidebar-nav {
 
 .vSpacing {
   margin-bottom: 5px;
+}
+.margin10 {
+  margin: 10px 0;
+}
+
+.marginTop7 {
+margin-top: 7px;
 }
 
 .marginTop {
@@ -163,6 +179,10 @@ ul.sidebar-nav {
 .questionAlternatives {
   min-height: 20px !important;
   padding: 0px !important;
+}
+
+.smallButton {
+  height: 40px;
 }
 
 .mediumButton {
