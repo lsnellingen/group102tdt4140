@@ -150,6 +150,8 @@ app.get('/getFeedback/', function(req, res) {
   });
 });
 
+
+
 app.post('/updateCourses/:username/:course', function(req, res) {
   var username = req.params.username;
   var course = req.params.course == 'Empty' ? '' : req.params.course;
@@ -182,7 +184,6 @@ app.post('/sendFeedback/:username/:subject/:theme/:grade/:pFeedback/:nFeedback/'
 app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
   var username = req.params.username;
   var feedbackID = req.params.feedbackID;
-  console.log("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "");
   connection.query("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "", function(error, result) {
     if(!!error) {
       console.log("Error");
@@ -192,7 +193,35 @@ app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
   });
 });
 
+app.post('/sendQuery/:username/:name/:description/:course', function(req,res) {
+  var username = req.params.username;
+  var name = req.params.name;
+  var description = req.params.description;
+  var course = req.params.course;
+  connection.query("INSERT INTO query (name, description, course, creator) "
+      + "VALUES ('" + name + "','" + description + "','" + course + "','" + username + "')", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
 
+app.post('/sendQueries/:id/:question/:type/:alternatives', function(req,res) {
+  var id = req.params.id;
+  var question = req.params.question.replace(/QUESTIONMARK/g, '?');
+  var type = req.params.type;
+  var alternatives = req.params.alternatives  == 'Empty' ? '' : req.params.alternatives;
+  connection.query("INSERT INTO queries (queryIDfk, type, question, alternatives) "
+      + "VALUES ('" + id + "','" + question + "','" + type + "','" + alternatives + "')", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'src/html/index.html'));

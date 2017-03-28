@@ -70,10 +70,6 @@ export default class SendFeedbackPage extends React.Component {
   }
 
   render() {
-    const radioButtonStyle = {
-      marginLeft: '1vh',
-      marginBottom:'1vh'
-    };
   	return (
 
   		<DocumentTitle title={`Send Feedback`}>
@@ -85,7 +81,7 @@ export default class SendFeedbackPage extends React.Component {
 		              <hr />
 	        		</div>
 	        	</div>
-            <div className="col-xs-10">
+            <div className="col-xs-8 col-xs-offset-1">
             <div className="form-group">
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
@@ -135,39 +131,39 @@ export default class SendFeedbackPage extends React.Component {
                   <p> How would you rate the quality of this issue: </p>
                   <form className='form-inline' onSubmit={this.handleFormSubmit.bind(this)}>
 
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="1" checked={this.state.selectedOption ==='1'}
+                        <input type="radio" value="1" className="radioButtons" checked={this.state.selectedOption ==='1'}
                         onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
-                          1
+                        <span>1</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="2" checked={this.state.selectedOption ==='2'}
+                        <input type="radio" value="2" className="radioButtons" checked={this.state.selectedOption ==='2'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
-                          2
+                      <span>2</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="3" checked={this.state.selectedOption ==='3'}
+                        <input type="radio" value="3" className="radioButtons" checked={this.state.selectedOption ==='3'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                          3
+                      <span>3</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="4" checked={this.state.selectedOption ==='4'}
+                        <input type="radio" value="4" className="radioButtons" checked={this.state.selectedOption ==='4'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                          4
+                      <span>4</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="5" checked={this.state.selectedOption ==='5'}
+                        <input type="radio" value="5" className="radioButtons" checked={this.state.selectedOption ==='5'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                          5
+                      <span>5</span>
                       </label>
                     </div>
 
@@ -183,7 +179,7 @@ export default class SendFeedbackPage extends React.Component {
                     </div> : null }
 
   	            <div className="form-group">
-  		            	<button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
+  		            	<button type="submit" className="btn btn-info hCenter formButtonMargin mediumButton" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
   	            </div>
                 {/* whenClicked is a property not an event, per se. */}
               </div>
