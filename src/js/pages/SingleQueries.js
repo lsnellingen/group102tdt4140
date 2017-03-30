@@ -8,7 +8,8 @@ class SingleQueries extends Component {
   constructor(props){
     super(props);
     this.state = {
-      answer: ''
+      answer: '',
+      myAlternatives: []
     }
   }
   handleOptionChange(field,changeEvent){
@@ -22,6 +23,9 @@ class SingleQueries extends Component {
     user: React.PropTypes.object
   };
 
+  componentDidMount() {
+    this.setState({myAlternatives: this.props.queries.alternatives.split('+')});
+  }
 
   render() {
 
@@ -39,6 +43,13 @@ class SingleQueries extends Component {
               <ul className="list-group removeMargin">
                 <div>
                   <li className="list-group-item"><strong>Question:</strong> {this.props.queries.question}</li>
+
+                  <select type="alternative-selector" className="form-control" id="alternative-selector" name="alternative-selector"  >
+                    <option value="chooseAnswer">Choose an answer</option>
+                      { this.state.myAlternatives.map(alternative => {
+                        return <option key={alternative} value={alternative} >{alternative}</option>;
+                      })}
+                  </select>
                 </div>
               </ul>
             </div>

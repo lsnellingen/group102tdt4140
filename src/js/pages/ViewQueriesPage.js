@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
 
+import Previous from 'react-icons/lib/md/navigate-before';
+import Next from 'react-icons/lib/md/navigate-next';
+
 import SingleQuery from './SingleQuery';
 class ViewQueriesPage extends Component {
 
@@ -12,7 +15,8 @@ class ViewQueriesPage extends Component {
         filterOption: 'chooseCourse' ,
         query: [],
         filteredQuery: [],
-        showWarning: false
+        showWarning: false,
+        currentQuery: 0
       };
     }
 
@@ -49,9 +53,35 @@ class ViewQueriesPage extends Component {
       });
       this.setState({
         filterOption: course,
-        filteredQuery: updatedQueryList
+        filteredQuery: updatedQueryList,
+        currentQuery: 0
        })
     }
+
+  handleFormNext(formNextEvent){
+    if(this.state.currentQuery==this.state.filteredQuery.length-1){
+      this.setState({
+        currentQuery: 0
+      })
+    } else{
+      this.setState({
+        currentQuery: this.state.currentQuery+1
+      })
+    }
+  }
+
+  handleFormPrevious(formPreviousEvent){
+    var filteredQueryLength = this.state.filteredQuery.length-1;
+    if(this.state.currentQuery== 0){
+      this.setState({
+        currentQuery: filteredQueryLength
+      })
+    }else{
+      this.setState({
+        currentQuery: this.state.currentQuery-1
+      })
+    }
+  }
 
   render() {
   	return (
@@ -75,13 +105,25 @@ class ViewQueriesPage extends Component {
               <hr />
             </div>
             { this.state.filteredQuery.length > 0 ?
-              <div className="col-xs-10">
-                <h4>Showing queries in {this.state.filterOption}:</h4>
-                <br />
-              { this.state.filteredQuery.map(query => {
-                return <SingleQuery key={query.queryID} query={query} />;
-              })}
-            </div>
+              <div>
+                {this.state.filteredQuery.length > 1 ?
+                <div className="col-xs-1 onHover removePadding">
+                  <Previous size={60} onClick={this.handleFormPrevious.bind(this)} />
+                </div>
+                : <div className="col-xs-1 removePadding">
+                  </div> }
+                <div className="col-xs-10">
+                  <h4>Showing queries in {this.state.filterOption}: {this.state.currentQuery+1} of {this.state.filteredQuery.length}</h4>
+                  <br />
+                  <SingleQuery query={this.state.filteredQuery[this.state.currentQuery]} />
+                </div>
+                {this.state.filteredQuery.length > 1 ?
+                <div className="col-xs-1 onHover removePadding">
+                  <Next size={60} onClick={this.handleFormNext.bind(this)} />
+                </div>
+                : <div className="col-xs-1 removePadding">
+                  </div> }
+              </div>
             : <div className="col-xs-10">
               { this.state.filterOption == 'chooseCourse' ?
                 <div>
