@@ -43,9 +43,9 @@ class ViewQueriesPage extends Component {
     }
 
     handleFiltering(event) {
-      
       var course = event.target.value;
       var updatedQueryList = [];
+
       this.state.query.forEach(query => {
         if(query.course == course) {
           updatedQueryList.push(query);
@@ -62,6 +62,7 @@ class ViewQueriesPage extends Component {
     if(this.state.currentQuery==this.state.filteredQuery.length-1){
       this.setState({
         currentQuery: 0
+
       })
     } else{
       this.setState({

@@ -10,11 +10,13 @@ class SingleQuery extends Component {
   constructor(props){
     super(props);
     this.state = {
+      queryID: this.props.query.queryID,
       myQueries: [],
       answer: '',
       tAnswer: ''
     }
   }
+
   handleOptionChange(field,changeEvent){
     var object = {};
     object[field] = changeEvent.target.value;
@@ -27,12 +29,24 @@ class SingleQuery extends Component {
   };
 
   componentDidMount() {
-      axios.get('/getQueries/' + this.props.query.queryID)
+      this.setState({
+        queryID: this.props.query.queryID
+      });
+      axios.get('/getQueries/' + this.state.queryID)
       .then(res => {
         this.setState({myQueries: res.data});
       });    
     }
 
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      queryID: nextProps.query.queryID
+    });
+    axios.get('/getQueries/' + nextProps.query.queryID)
+      .then(res => {
+       this.setState({myQueries: res.data});
+    }); 
+  }
 
   render() {
 
