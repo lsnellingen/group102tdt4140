@@ -44,6 +44,7 @@ class SingleQueries extends Component {
       </div>;
     } else if(this.props.queries.type == "Rating"){
       const radioButtonStyle = {
+      marginTop: '1vh',
       marginLeft: '1vh',
       marginBottom:'1vh'
       };
@@ -53,35 +54,35 @@ class SingleQueries extends Component {
             <label>
               <input type="radio" value="1" checked={this.state.selectedOption ==='1'}
               onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
-                1
+                 1
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
               <input type="radio" value="2" checked={this.state.selectedOption ==='2'}
               onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
-                2
+                 2
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
               <input type="radio" value="3" checked={this.state.selectedOption ==='3'}
               onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                3
+                 3
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
               <input type="radio" value="4" checked={this.state.selectedOption ==='4'}
               onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                4
+                 4
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
               <input type="radio" value="5" checked={this.state.selectedOption ==='5'}
               onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                5
+                 5
             </label>
           </div>
         </form>
@@ -107,7 +108,6 @@ class SingleQueries extends Component {
             <div className="col-xs-12 removePadding">
               <ul className="list-group removeMargin">
                 <div>
-                  <li className="list-group-item"><strong>Question:</strong> {this.props.queries.question}</li>
                   {answerType}
                 </div>
               </ul>
