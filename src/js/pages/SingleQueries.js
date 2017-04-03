@@ -8,14 +8,13 @@ class SingleQueries extends Component {
   constructor(props){
     super(props);
     this.state = {
-      answer: '',
+      answers: this.props.queries.answers,
       myAlternatives: []
     }
   }
   handleOptionChange(field,changeEvent){
     var object = {};
     object[field] = changeEvent.target.value;
-
     this.setState(object);
   }
 
@@ -30,7 +29,7 @@ class SingleQueries extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-      this.setState({
+    this.setState({
       myAlternatives: nextProps.queries.alternatives.split('+')
     });
   }
@@ -40,7 +39,7 @@ class SingleQueries extends Component {
     if(this.props.queries.type == "Text"){
       answerType = 
       <div>
-        <textarea type="answerArea" className="form-control" id="answerArea" name="answerArea" placeholder="Write your answer here... " />
+        <textarea type="answerArea" className="form-control" id="answerArea" name="answerArea" onChange={this.handleOptionChange.bind(this,"answers")} placeholder="Write your answer here... " />
       </div>;
     } else if(this.props.queries.type == "Rating"){
       const radioButtonStyle = {
@@ -52,43 +51,43 @@ class SingleQueries extends Component {
         <form className='form-inline'>
           <div className="radio" style={radioButtonStyle}>
             <label>
-              <input type="radio" value="1" checked={this.state.selectedOption ==='1'}
-              onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
+              <input type="radio" value="1" checked={this.state.answers ==='1'}
+              onChange={this.handleOptionChange.bind(this, 'answers')}  />
                  1
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
-              <input type="radio" value="2" checked={this.state.selectedOption ==='2'}
-              onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
+              <input type="radio" value="2" checked={this.state.answers ==='2'}
+              onChange={this.handleOptionChange.bind(this,'answers')}   />
                  2
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
-              <input type="radio" value="3" checked={this.state.selectedOption ==='3'}
-              onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
+              <input type="radio" value="3" checked={this.state.answers ==='3'}
+              onChange={this.handleOptionChange.bind(this,'answers')}  />
                  3
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
-              <input type="radio" value="4" checked={this.state.selectedOption ==='4'}
-              onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
+              <input type="radio" value="4" checked={this.state.answers ==='4'}
+              onChange={this.handleOptionChange.bind(this,'answers')}  />
                  4
             </label>
           </div>
           <div className="radio" style={radioButtonStyle}>
             <label>
-              <input type="radio" value="5" checked={this.state.selectedOption ==='5'}
-              onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
+              <input type="radio" value="5" checked={this.state.answers ==='5'}
+              onChange={this.handleOptionChange.bind(this,'answers')}  />
                  5
             </label>
           </div>
         </form>
     } else{
       answerType = 
-      <select type="alternative-selector" className="form-control" id="alternative-selector" name="alternative-selector"  >
+      <select type="alternative-selector" className="form-control" id="alternative-selector" name="alternative-selector" onChange={this.handleOptionChange.bind(this,"answers")}>
         <option value="chooseAnswer">Choose an answer</option>
         { this.state.myAlternatives.map(alternative => {
            return <option key={alternative} value={alternative} onChange={this.handleOptionChange.bind(this)} >{alternative} </option>;
@@ -119,8 +118,5 @@ class SingleQueries extends Component {
     );
   }
 }
-
-
-
 
 export default SingleQueries;

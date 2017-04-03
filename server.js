@@ -213,7 +213,29 @@ app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
   });
 });
 
+app.post('/answerQuery/:queryID/:username', function(req, res) {
+  var queryID = req.params.queryID;
+  var username = req.params.username;
+  connection.query("UPDATE query SET answered = CONCAT(answered,'" + username + "+')" + " WHERE queryID = " + queryID + "", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
 
+app.post('/answerQueries/:queriesID/:answer', function(req, res) {
+  var queriesID = req.params.queriesID;
+  var answer = req.params.answer;
+  connection.query("UPDATE queries SET answers = CONCAT(answers,'" + answer + "+')" + " WHERE queriesID = " + queriesID + "", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'src/html/index.html'));

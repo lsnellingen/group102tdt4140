@@ -12,8 +12,8 @@ class SingleQuery extends Component {
     this.state = {
       queryID: this.props.query.queryID,
       myQueries: [],
-      answer: '',
-      tAnswer: ''
+      answered: '',
+      showSuccessful: false
     }
   }
 
@@ -22,6 +22,23 @@ class SingleQuery extends Component {
     object[field] = changeEvent.target.value;
 
     this.setState(object);
+  }
+
+  handleFormSubmit(formSubmitEvent){
+    const queryID = this.state.queryID;
+    const username = this.context.user.email;
+    const answeres = '';
+    this.state.myQueries.forEach(queries => {
+      console.log(queries.answers);
+    });
+    axios.post('/answerQuery/' + queryID +
+               '/' + username)
+    .then(res => {
+      console.log("Answer sendt");
+    });
+    this.setState({
+      showSuccessful: true
+    })
   }
 
   static contextTypes = {
@@ -77,12 +94,22 @@ class SingleQuery extends Component {
           </div>
         </div>
         </div>
+
+        {this.state.showSuccessful ?
+          <div className="form-group">
+            <div className="row">
+              <div className="col-xs-9">
+                <p className="alert alert-success userMessage">Answer sendt.</p>
+              </div>
+            </div>
+          </div> : null }
+
+        <div className="form-group">
+          <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
+        </div>
       </div>
     );
   }
 }
-
-
-
 
 export default SingleQuery;
