@@ -12,10 +12,16 @@ class SingleQueries extends Component {
       myAlternatives: []
     }
   }
+
+  getAnswers(){
+    return this.state.queries.answers;
+  }
+
   handleOptionChange(field,changeEvent){
     var object = {};
     object[field] = changeEvent.target.value;
     this.setState(object);
+    this.props.updateState(this.props.queriesNumber, changeEvent.target.value);
   }
 
   static contextTypes = {
@@ -95,18 +101,14 @@ class SingleQueries extends Component {
       </select>
     }
     return (
-      <div className="panel panel-info">
-      <div className="panel-heading clearfix">
-          <div className="col-xs-9 removePadding">
-            <span>{this.props.queries.question}</span>
-          </div>
-        </div>
+      <div className="panel panel-info removePadding">
         <div className="panel-body removePadding">
         <div className="container-fluid">
           <div className="row">
             <div className="col-xs-12 removePadding">
               <ul className="list-group removeMargin">
                 <div>
+                  <li className="list-group-item"><strong>{this.props.queries.question}</strong></li>
                   {answerType}
                 </div>
               </ul>

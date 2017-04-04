@@ -13,32 +13,48 @@ class SingleQuery extends Component {
       queryID: this.props.query.queryID,
       myQueries: [],
       answered: '',
-      showSuccessful: false
+      showSuccessful: false,
+      showUnsuccessful: false
     }
   }
 
-  handleOptionChange(field,changeEvent){
-    var object = {};
-    object[field] = changeEvent.target.value;
-
-    this.setState(object);
+  updateState(key, answer){
+    const myQueries = this.state.myQueries;
+    myQueries[key].answers = answer;
+    this.setState({
+      myQueries,
+      showUnsuccessful: false
+    })
   }
 
   handleFormSubmit(formSubmitEvent){
     const queryID = this.state.queryID;
     const username = this.context.user.email;
     const answeres = '';
+    var unsuccessful = false;
     this.state.myQueries.forEach(queries => {
-      console.log(queries.answers);
+      if(queries.answers.length ==0) {
+        unsuccessful = true;
+        this.setState({
+          showUnsuccessful: true
+        })
+      }
     });
-    axios.post('/answerQuery/' + queryID +
+    if(!unsuccessful){
+      this.state.myQueries.forEach(queries => {
+        axios.post('/answerQueries/' + queries.queriesID +
+                  '/' + queries.answers);
+      });
+      axios.post('/answerQuery/' + queryID +
                '/' + username)
-    .then(res => {
-      console.log("Answer sendt");
-    });
-    this.setState({
-      showSuccessful: true
-    })
+      .then(res => {
+        console.log("Answer sendt");
+      }); 
+      this.setState({
+        showSuccessful: true
+      })
+    }
+
   }
 
   static contextTypes = {
@@ -86,7 +102,7 @@ class SingleQuery extends Component {
                   <li className="list-group-item"><strong>Desctiption:</strong> {this.props.query.description}</li>
                   <li className="list-group-item"><strong>Creator:</strong> {this.props.query.creator}</li>
                   { this.state.myQueries.map(queries => {
-                    return <SingleQueries key={queries.queriesID} queries={queries} />;
+                    return <SingleQueries key={queries.queriesID} queries={queries} queriesNumber={this.state.myQueries.indexOf(queries)} updateState={this.updateState.bind(this)} />;
                   })}
                 </div>
               </ul>
@@ -104,9 +120,18 @@ class SingleQuery extends Component {
             </div>
           </div> : null }
 
+        {this.state.showUnsuccessful ?
+          <div className="form-group">
+            <div className="row">
+              <div className="col-xs-9">
+                <p className="alert alert-danger userMessage">You need to answer all the questions.</p>
+              </div>
+            </div>
+          </div> : null }
+        {!this.state.showSuccessful ?
         <div className="form-group">
           <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
-        </div>
+        </div> : null}
       </div>
     );
   }
