@@ -13,7 +13,9 @@ export default class SendFeedbackPage extends React.Component {
       nFeedback: '',
       date: new Date(),
       myCourses: [],
-      showSuccessful: false
+      showSuccessful: false,
+      showWarning: false,
+      showUnsuccsessfull: false
     }
   }
   handleOptionChange(field,changeEvent){
@@ -21,33 +23,43 @@ export default class SendFeedbackPage extends React.Component {
     object[field] = changeEvent.target.value;
 
     this.setState(object);
+    this.setState({
+      showUnsuccsessfull: false
+    })
   }
   handleFormSubmit(formSubmitEvent){
-    const username = this.context.user.email;
-    const selectedOption = this.state.selectedOption;
-    const subject = this.state.subject;
-    const theme = this.state.theme;
-    const pFeedback = this.state.pFeedback;
-    const nFeedback = this.state.nFeedback;
-    const date = this.state.date;
-    axios.post('/sendFeedback/' + username +
-               '/' + subject +
-               '/' + theme +
-               '/' + selectedOption +
-               '/' + pFeedback +
-               '/' + nFeedback)
-    .then(res => {
-      console.log("Feedback sendt");
-    });
-    this.setState({
-      selectedOption: '',
-      subject: "",
-      theme: "",
-      pFeedback: "",
-      nFeedback:"",
-      showSuccessful: true,
-      showWarning: false
-    })
+    if(this.state.subject.length == 0 || this.state.subject == 'chooseSubject' || this.state.theme.length == 0 || this.state.selectedOption.length == 0 || (this.state.pFeedback.length == 0 && this.state.nFeedback.length == 0)) {
+      this.setState({
+        showUnsuccsessfull: true
+      })
+    } else {
+      const username = this.context.user.email;
+      const selectedOption = this.state.selectedOption;
+      const subject = this.state.subject;
+      const theme = this.state.theme;
+      const pFeedback = this.state.pFeedback;
+      const nFeedback = this.state.nFeedback;
+      const date = this.state.date;
+      axios.post('/sendFeedback/' + username +
+                 '/' + subject +
+                 '/' + theme +
+                 '/' + selectedOption +
+                 '/' + pFeedback +
+                 '/' + nFeedback)
+      .then(res => {
+        console.log("Feedback sendt");
+      });
+      this.setState({
+        selectedOption: '',
+        subject: "",
+        theme: "",
+        pFeedback: "",
+        nFeedback:"",
+        showUnsuccsessfull: false,
+        showSuccessful: true,
+        showWarning: false
+      })
+    }
   }
 
   static contextTypes = {
@@ -70,10 +82,6 @@ export default class SendFeedbackPage extends React.Component {
   }
 
   render() {
-    const radioButtonStyle = {
-      marginLeft: '1vh',
-      marginBottom:'1vh'
-    };
   	return (
 
   		<DocumentTitle title={`Send Feedback`}>
@@ -83,9 +91,12 @@ export default class SendFeedbackPage extends React.Component {
                   <br />
 		              <h3>Send Feedback</h3>
 		              <hr />
+                  <p>Select one of the courses yor're enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
+                  <p></p>
+                  <hr />
 	        		</div>
 	        	</div>
-            <div className="col-xs-10">
+            <div className="col-xs-8 col-xs-offset-1">
             <div className="form-group">
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
@@ -135,39 +146,39 @@ export default class SendFeedbackPage extends React.Component {
                   <p> How would you rate the quality of this issue: </p>
                   <form className='form-inline' onSubmit={this.handleFormSubmit.bind(this)}>
 
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="1" checked={this.state.selectedOption ==='1'}
+                        <input type="radio" value="1" className="radioButtons" checked={this.state.selectedOption ==='1'}
                         onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
-                          1
+                        <span>1</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="2" checked={this.state.selectedOption ==='2'}
+                        <input type="radio" value="2" className="radioButtons" checked={this.state.selectedOption ==='2'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
-                          2
+                      <span>2</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="3" checked={this.state.selectedOption ==='3'}
+                        <input type="radio" value="3" className="radioButtons" checked={this.state.selectedOption ==='3'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                          3
+                      <span>3</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="4" checked={this.state.selectedOption ==='4'}
+                        <input type="radio" value="4" className="radioButtons" checked={this.state.selectedOption ==='4'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                          4
+                      <span>4</span>
                       </label>
                     </div>
-                    <div className="radio" style={radioButtonStyle}>
+                    <div className="radio">
                       <label>
-                        <input type="radio" value="5" checked={this.state.selectedOption ==='5'}
+                        <input type="radio" value="5" className="radioButtons" checked={this.state.selectedOption ==='5'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
-                          5
+                      <span>5</span>
                       </label>
                     </div>
 
@@ -176,14 +187,22 @@ export default class SendFeedbackPage extends React.Component {
                   {this.state.showSuccessful ?
                     <div className="form-group">
                       <div className="row">
-                          <div className="col-xs-9">
+                          <div className="col-xs-12">
                             <p className="alert alert-success userMessage">Feedback sendt.</p>
                           </div>
                       </div>
                     </div> : null }
+                    {this.state.showUnsuccsessfull ?
+                      <div className="form-group">
+                        <div className="row">
+                            <div className="col-xs-12">
+                              <p className="alert alert-danger userMessage">Please fill in all the fields. It is sufficient with either positive or negative feedback.</p>
+                            </div>
+                        </div>
+                      </div> : null }
 
   	            <div className="form-group">
-  		            	<button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
+  		            	<button type="submit" className="btn btn-info hCenter formButtonMargin mediumButton" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
   	            </div>
                 {/* whenClicked is a property not an event, per se. */}
               </div>
