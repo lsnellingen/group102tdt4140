@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexRoute, Route, browserHistory, IndexRedirect } from 'react-router';
 import ReactStormpath, { Router, HomeRoute, LoginRoute, AuthenticatedRoute } from 'react-stormpath';
-import { ChangePasswordPage, MasterPage, IndexPage, LoginPage, RegisterPage, ResetPasswordPage, VerifyEmailPage, ProfilePage, SendFeedbackPage, ViewFeedbackPage } from './pages';
+import { ChangePasswordPage, MasterPage, IndexPage, LoginPage, RegisterPage, ResetPasswordPage, VerifyEmailPage, ProfilePage, SendFeedbackPage, ViewFeedbackPage, SingleQuery } from './pages';
 import CoursesPage from './pages/CoursesPage';
 import AskQueryPage from './pages/AskQueryPage';
 import ViewQueriesPage from './pages/ViewQueriesPage';
