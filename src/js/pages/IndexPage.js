@@ -43,29 +43,12 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
 
-<<<<<<< HEAD
-          <Authenticated>
-            <div className="col-xs-12">
-              <div className="jumbotron">
-                <div className="row">
-                  <div className="col-xs-2 col-xs-offset-1">
-                    <FeedbackIcon size={150} color={'#4C5760'}/>
-                  </div>
-                  <div className="col-xs-7 col-xs-offset-2">
-                    <h2 className="text-center">EDUBOT - A feedback tool for students</h2>
-                    <br />
-                    <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Create a user, register for courses and start sending feedback.</big></div>
-                    <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Choose a topic and tell your lecturer what you like and dislike.</big></div>
-                    <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Rate courses, other feedback and improve your own experience. </big></div>
-                  </div>
-=======
           <div className="col-xs-6">
             <div className="jumbotron">
               <div className="row greyColor">
                 <div>
                   <QueriesIcon className="frontPageIcon" size={30}/>
                   <h3 className="inline">QUERIES</h3>
->>>>>>> ffed0909452e1101777a8a41c2784c5cf996193e
                 </div>
                 <hr className="marginTop7" />
                   <div>
