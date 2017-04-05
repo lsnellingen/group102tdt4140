@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component {
                     <h2 className="text-center">EDUBOT - A feedback tool for students</h2>
                     <br />
                     <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Create a user, register for courses and start sending feedback.</big></div>
-                    <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Choose a subject and tell your lecturer what you like and dislike.</big></div>
+                    <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Choose a topic and tell your lecturer what you like and dislike.</big></div>
                     <div className="vSpacing"><LabelIcon className="vCenterIcon" size={20} color={'#4C5760'}/><big>Rate courses, other feedback and improve your own experience. </big></div>
                   </div>
                 </div>
