@@ -24,6 +24,7 @@ class AddingQuestionForm extends Component {
        } else {
          this.setState({
            type: event.target.value,
+           alternatives: [],
            showWarning: false
           })
        }

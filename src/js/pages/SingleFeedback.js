@@ -9,7 +9,7 @@ class SingleFeedback extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        status: 'reading',
+        status: 'responding',
         showWarning: false,
         response: props.feedback.response,
         liked: false,

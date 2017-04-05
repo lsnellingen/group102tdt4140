@@ -21,6 +21,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 
@@ -203,6 +204,23 @@ margin-top: 7px;
   vertical-align: top;
   margin-right: 3px !important;
   margin-left: 15px !important;
+}
+
+.greyColor {
+  color: #4c5760;
+}
+
+.inline {
+  display: inline;
+}
+.frontPageIcon {
+  vertical-align: bottom !important;
+  margin-right: 30px;
+}
+
+.frontPageSection {
+  line-height: 200%;
+  font-size: 13px;
 }
 
 /*----------------------BOOTSTRAP CLASSES ---------------------------------*/

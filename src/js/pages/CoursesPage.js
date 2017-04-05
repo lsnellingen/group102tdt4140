@@ -120,15 +120,19 @@ class Courses extends Component {
             <br />
             <h3>Courses:</h3>
             <hr />
+            <p>This site provide a full overview of all courses you're enrolled in. You can easily add new courses by searching for name or course code in the find course section.</p>
+            <p>Removing courses is done by clicking the remove button after each course in the list to the left.</p>
+            <hr />
           </div>
 
 
-          <div className="col-xs-6">
+          <div className="col-xs-12 col-md-6">
             <div className="panel panel-info border-left">
               <div className="panel-heading">
                 <h3 className="panel-title"><CoursesIcon size={20} className="vCenterIcon"/> Your courses:</h3>
               </div>
               <div className="panel-body">
+                <h5>List over all courses you are enrolled in:</h5>
                 { this.state.myCourses[0] == "You are not registered in any courses" ?
                     <ul className="list-group">
                       <li className="list-group-item">{this.state.myCourses[0]}</li>
@@ -148,7 +152,7 @@ class Courses extends Component {
             </div>
           </div>
 
-          <div className="col-xs-6">
+          <div className="col-xs-12 col-md-6">
             <div className="panel panel-info">
               <div className="panel-heading">
                 <h3 className="panel-title"><SearchIcon size={18} className="vCenterIcon" /> Find courses:</h3>
@@ -159,7 +163,7 @@ class Courses extends Component {
                  <br></br>
                  <ul className="list-group">
                    { (this.state.matchingCourses.length < 7 ? this.state.matchingCourses : this.state.matchingCourses.slice(0,7)).map(course => {
-                     return <li key={course} className="list-group-item">{course}
+                     return <li key={course} className="list-group-item"><span>{course}</span>
                               <button className="btn btn-default pull-right" onClick={() => this.handleClickOnAddButton(course)}>Add course</button>
                               <div className="clearfix"></div>
                              </li>;

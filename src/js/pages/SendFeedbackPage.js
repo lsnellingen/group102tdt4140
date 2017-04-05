@@ -13,7 +13,9 @@ export default class SendFeedbackPage extends React.Component {
       nFeedback: '',
       date: new Date(),
       myCourses: [],
-      showSuccessful: false
+      showSuccessful: false,
+      showWarning: false,
+      showUnsuccsessfull: false
     }
   }
   handleOptionChange(field,changeEvent){
@@ -21,33 +23,43 @@ export default class SendFeedbackPage extends React.Component {
     object[field] = changeEvent.target.value;
 
     this.setState(object);
+    this.setState({
+      showUnsuccsessfull: false
+    })
   }
   handleFormSubmit(formSubmitEvent){
-    const username = this.context.user.email;
-    const selectedOption = this.state.selectedOption;
-    const subject = this.state.subject;
-    const theme = this.state.theme;
-    const pFeedback = this.state.pFeedback;
-    const nFeedback = this.state.nFeedback;
-    const date = this.state.date;
-    axios.post('/sendFeedback/' + username +
-               '/' + subject +
-               '/' + theme +
-               '/' + selectedOption +
-               '/' + pFeedback +
-               '/' + nFeedback)
-    .then(res => {
-      console.log("Feedback sendt");
-    });
-    this.setState({
-      selectedOption: '',
-      subject: "",
-      theme: "",
-      pFeedback: "",
-      nFeedback:"",
-      showSuccessful: true,
-      showWarning: false
-    })
+    if(this.state.subject.length == 0 || this.state.subject == 'chooseSubject' || this.state.theme.length == 0 || this.state.selectedOption.length == 0 || (this.state.pFeedback.length == 0 && this.state.nFeedback.length == 0)) {
+      this.setState({
+        showUnsuccsessfull: true
+      })
+    } else {
+      const username = this.context.user.email;
+      const selectedOption = this.state.selectedOption;
+      const subject = this.state.subject;
+      const theme = this.state.theme;
+      const pFeedback = this.state.pFeedback;
+      const nFeedback = this.state.nFeedback;
+      const date = this.state.date;
+      axios.post('/sendFeedback/' + username +
+                 '/' + subject +
+                 '/' + theme +
+                 '/' + selectedOption +
+                 '/' + pFeedback +
+                 '/' + nFeedback)
+      .then(res => {
+        console.log("Feedback sendt");
+      });
+      this.setState({
+        selectedOption: '',
+        subject: "",
+        theme: "",
+        pFeedback: "",
+        nFeedback:"",
+        showUnsuccsessfull: false,
+        showSuccessful: true,
+        showWarning: false
+      })
+    }
   }
 
   static contextTypes = {
@@ -79,6 +91,9 @@ export default class SendFeedbackPage extends React.Component {
                   <br />
 		              <h3>Send Feedback</h3>
 		              <hr />
+                  <p>Select one of the courses yor're enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
+                  <p></p>
+                  <hr />
 	        		</div>
 	        	</div>
             <div className="col-xs-8 col-xs-offset-1">
@@ -172,11 +187,19 @@ export default class SendFeedbackPage extends React.Component {
                   {this.state.showSuccessful ?
                     <div className="form-group">
                       <div className="row">
-                          <div className="col-xs-9">
+                          <div className="col-xs-12">
                             <p className="alert alert-success userMessage">Feedback sendt.</p>
                           </div>
                       </div>
                     </div> : null }
+                    {this.state.showUnsuccsessfull ?
+                      <div className="form-group">
+                        <div className="row">
+                            <div className="col-xs-12">
+                              <p className="alert alert-danger userMessage">Please fill in all the fields. It is sufficient with either positive or negative feedback.</p>
+                            </div>
+                        </div>
+                      </div> : null }
 
   	            <div className="form-group">
   		            	<button type="submit" className="btn btn-info hCenter formButtonMargin mediumButton" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
