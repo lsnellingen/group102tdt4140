@@ -150,7 +150,4 @@ class SingleFeedback extends Component {
   }
 }
 
-
-
-
 export default SingleFeedback;
