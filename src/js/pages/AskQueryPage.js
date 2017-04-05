@@ -37,6 +37,14 @@ class AskQueryPage extends Component {
       this.setState({questions: newQuestions});
     }
 
+    deleteQuestion(key) {
+      var newList = this.state.questions;
+      newList.splice(key, 1);
+      this.setState({
+        questions: newList
+      })
+    }
+
     handleQueryRequest(event) {
       event.preventDefault();
       const username = this.context.user.email;
@@ -98,7 +106,7 @@ class AskQueryPage extends Component {
               { this.state.status == 'addingQuestions' ? <AddingQuestionForm addQuestion={this.addQuestion.bind(this)} /> : null }
               { this.state.status == 'querySendt' ? <p className="alert alert-success">Query successfully created. Information is still visible untill you leave this page. </p> : null}
               { this.state.questions.map(question => {
-                return <SingleQuestion key={question.question} number={this.state.questions.indexOf(question) + 1} question={question} />;
+                return <SingleQuestion key={question.question} number={this.state.questions.indexOf(question) + 1} deleteQuestion={this.deleteQuestion.bind(this)} question={question} />;
               })}
             </div>
             <div className="col-xs-4">
