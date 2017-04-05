@@ -85,8 +85,11 @@ class ViewQueriesPage extends Component {
   }
 
   render() {
+    const center = {
+      textAlign: 'center'
+      };
   	return (
-  		<DocumentTitle title={`Ask query`}>
+  		<DocumentTitle title={`View queries`}>
         <div className="container">
             <div className="row">
               <div className="col-xs-12">
@@ -109,19 +112,23 @@ class ViewQueriesPage extends Component {
               <div>
                 
                 <div className="col-xs-10">
-                  <h4> 
+                  <h4 style={center}> 
                     {this.state.filteredQuery.length > 1 ?
                       <div className="pull-left onHover removePadding">
                         <Previous size={30} onClick={this.handleFormPrevious.bind(this)} />
                       </div>
-                      : <div className="col-xs-1 removePadding">
+                      : <div className="pull-left onHover removePadding">
+                         <Previous size={30} hidden/>
                         </div> }
-                   Showing queries in {this.state.filterOption}: {this.state.currentQuery+1} of {this.state.filteredQuery.length}
+                   
+                    Showing queries in {this.state.filterOption}: {this.state.currentQuery+1} of {this.state.filteredQuery.length}
+                   
                     {this.state.filteredQuery.length > 1 ?
-                      <div className="pull-left onHover removePadding">
+                      <div className="pull-right onHover removePadding">
                         <Next size={30} onClick={this.handleFormNext.bind(this)} />
                       </div>
-                      : <div className="col-xs-1 removePadding">
+                      : <div className="pull-right onHover removePadding">
+                          <Next size={30} hidden />
                         </div> }
                    </h4>
                   <br />
