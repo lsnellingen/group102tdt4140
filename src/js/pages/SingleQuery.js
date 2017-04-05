@@ -130,7 +130,7 @@ class SingleQuery extends Component {
           </div> : null }
         {!this.state.showSuccessful ?
         <div className="form-group">
-          <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
+          <button type="submit" className="btn btn-info mediumButton hCenter" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
         </div> : null}
       </div>
     );

@@ -54,41 +54,43 @@ class SingleQueries extends Component {
       marginBottom:'1vh'
       };
       answerType =
-        <form className='form-inline'>
-          <div className="radio" style={radioButtonStyle}>
-            <label>
-              <input type="radio" value="1" checked={this.state.answers ==='1'}
-              onChange={this.handleOptionChange.bind(this, 'answers')}  />
-                 1
-            </label>
-          </div>
-          <div className="radio" style={radioButtonStyle}>
-            <label>
-              <input type="radio" value="2" checked={this.state.answers ==='2'}
-              onChange={this.handleOptionChange.bind(this,'answers')}   />
-                 2
-            </label>
-          </div>
-          <div className="radio" style={radioButtonStyle}>
-            <label>
-              <input type="radio" value="3" checked={this.state.answers ==='3'}
-              onChange={this.handleOptionChange.bind(this,'answers')}  />
-                 3
-            </label>
-          </div>
-          <div className="radio" style={radioButtonStyle}>
-            <label>
-              <input type="radio" value="4" checked={this.state.answers ==='4'}
-              onChange={this.handleOptionChange.bind(this,'answers')}  />
-                 4
-            </label>
-          </div>
-          <div className="radio" style={radioButtonStyle}>
-            <label>
-              <input type="radio" value="5" checked={this.state.answers ==='5'}
-              onChange={this.handleOptionChange.bind(this,'answers')}  />
-                 5
-            </label>
+        <form className='form-inline vCenter'>
+          <div className="vCenter">
+            <div className="radio" style={radioButtonStyle}>
+              <label>
+                <input type="radio" value="1" checked={this.state.answers ==='1'}
+                onChange={this.handleOptionChange.bind(this, 'answers')}  />
+                   1
+              </label>
+            </div>
+            <div className="radio" style={radioButtonStyle}>
+              <label>
+                <input type="radio" value="2" checked={this.state.answers ==='2'}
+                onChange={this.handleOptionChange.bind(this,'answers')}   />
+                   2
+              </label>
+            </div>
+            <div className="radio" style={radioButtonStyle}>
+              <label>
+                <input type="radio" value="3" checked={this.state.answers ==='3'}
+                onChange={this.handleOptionChange.bind(this,'answers')}  />
+                   3
+              </label>
+            </div>
+            <div className="radio" style={radioButtonStyle}>
+              <label>
+                <input type="radio" value="4" checked={this.state.answers ==='4'}
+                onChange={this.handleOptionChange.bind(this,'answers')}  />
+                   4
+              </label>
+            </div>
+            <div className="radio" style={radioButtonStyle}>
+              <label>
+                <input type="radio" value="5" checked={this.state.answers ==='5'}
+                onChange={this.handleOptionChange.bind(this,'answers')}  />
+                   5
+              </label>
+            </div>
           </div>
         </form>
     } else{
