@@ -41,15 +41,31 @@ describe('SendFeedbackPage', () => {
       console.log(view.state.pFeedback)*/
       expect(view.state.nFeedback).toBe(node.value);
     });
-  /*  test('Handle selectedOption form change',()=>{
+   test('Handle selectedOption form change',()=>{
       var view = ReactTestUtils.renderIntoDocument(<SendFeedbackPage/>)
-      const node = view.refs.radio1;
+      const node1 = view.refs.radio1;
+      const node2 = view.refs.radio2;
+      const node3 = view.refs.radio3;
+      const node4 = view.refs.radio4;
+      const node5 = view.refs.radio5;
 
-      ReactTestUtils.Simulate.change(view.handleOptionChange(1,'selectedOption'));
-      //var result = view.addition(2,3);
-      console.log(view.state.selectedOption)
-      /*expect(view.state.nFeedback).toBe(node.value);
-    });*/
+      ReactTestUtils.Simulate.change(node1,view.handleOptionChange.bind(view,'selectedOption'));
+      expect(view.state.selectedOption).toBe("1");
+
+      ReactTestUtils.Simulate.change(node2,view.handleOptionChange.bind(view,'selectedOption'));
+      expect(view.state.selectedOption).toBe("2");
+      expect(view.state.selectedOption).not.toBe("1");
+
+      ReactTestUtils.Simulate.change(node3,view.handleOptionChange.bind(view,'selectedOption'));
+      expect(view.state.selectedOption).not.toBe("2");
+
+      ReactTestUtils.Simulate.change(node4,view.handleOptionChange.bind(view,'selectedOption'));
+      expect(view.state.selectedOption).toBe("4");
+
+      ReactTestUtils.Simulate.change(node5,view.handleOptionChange.bind(view,'selectedOption'));
+      expect(view.state.selectedOption).toBe("5");
+
+    });
 
     test('getting courses',() => {
       var user = {email: "joachiee@stud.ntnu.no"}

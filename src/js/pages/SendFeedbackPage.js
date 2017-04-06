@@ -145,28 +145,28 @@ export default class SendFeedbackPage extends React.Component {
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="2" checked={this.state.selectedOption ==='2'}
+                        <input ref="radio2" type="radio" value="2" checked={this.state.selectedOption ==='2'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
                           2
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="3" checked={this.state.selectedOption ==='3'}
+                        <input ref="radio3" type="radio" value="3" checked={this.state.selectedOption ==='3'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                           3
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="4" checked={this.state.selectedOption ==='4'}
+                        <input ref="radio4" type="radio" value="4" checked={this.state.selectedOption ==='4'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                           4
                       </label>
                     </div>
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="5" checked={this.state.selectedOption ==='5'}
+                        <input ref="radio5" type="radio" value="5" checked={this.state.selectedOption ==='5'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                           5
                       </label>
