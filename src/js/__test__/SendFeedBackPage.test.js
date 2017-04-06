@@ -67,6 +67,27 @@ describe('SendFeedbackPage', () => {
 
     });
 
+    test('Handle theme select form change',()=>{
+       var view = ReactTestUtils.renderIntoDocument(<SendFeedbackPage/>)
+       const themeCurriculum = view.refs.theme_curriculum;
+       const themeLecture = view.refs.theme_lecture;
+       const themeAssignments = view.refs.theme_assignments;
+       const themeOther = view.refs.theme_other;
+
+
+       ReactTestUtils.Simulate.change(themeLecture,view.handleOptionChange.bind(view,'theme'));
+       expect(view.state.theme).toBe("Lecture");
+
+       ReactTestUtils.Simulate.change(themeCurriculum,view.handleOptionChange.bind(view,'theme'));
+       expect(view.state.theme).toBe("Curriculum");
+
+       ReactTestUtils.Simulate.change(themeAssignments,view.handleOptionChange.bind(view,'theme'));
+       expect(view.state.theme).toBe("Assignments");
+
+       ReactTestUtils.Simulate.change(themeOther,view.handleOptionChange.bind(view,'theme'));
+       expect(view.state.theme).toBe("Other");
+     });
+
     test('getting courses',() => {
       var user = {email: "joachiee@stud.ntnu.no"}
       const context = {user};

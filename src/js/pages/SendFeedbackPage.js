@@ -109,12 +109,12 @@ export default class SendFeedbackPage extends React.Component {
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
                   <p>Choose the subject to give feedback: </p>
-                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.theme} onChange={this.handleOptionChange.bind(this,"theme")}>
+                  <select ref="theme_select" type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.theme} onChange={this.handleOptionChange.bind(this,"theme")}>
                     <option value="chooseSubject">Choose subject</option>
-                    <option value="Lecture">Lecture</option>
-                    <option value="Curriculum">Curriculum</option>
-                    <option value="Assignments">Assignments</option>
-                    <option value="Other">Other</option>
+                    <option ref="theme_lecture" value="Lecture">Lecture</option>
+                    <option ref="theme_curriculum" value="Curriculum">Curriculum</option>
+                    <option ref="theme_assignments" value="Assignments">Assignments</option>
+                    <option ref="theme_other" value="Other">Other</option>
                   </select>
                 </div>
               </div>
