@@ -21,8 +21,21 @@ describe('SendFeedbackPage', () => {
 
 
     });
+    //TDT4120 - Algoritmer og datastrukturer
+  /*  test('Handle subject select form change',()=>{
+       var view = ReactTestUtils.renderIntoDocument(<SendFeedbackPage/>)
+       view.state.myCourses = ["TDT4120 - Algoritmer og datastrukturer", "TDT4222 - Sjokolade"]
+
+       const subjectSelector = view.refs.subject_selector;
+       const TDT4120= view.refs.noe;
+
+       ReactTestUtils.Simulate.change(TDT4120,view.handleOptionChange.bind(view,'theme'));
+       expect(view.state.myCourses).toBe("Lecture");
+
+     });*/
 
     test('Handle pFeedback form change',()=>{
+
       var view = ReactTestUtils.renderIntoDocument(<SendFeedbackPage/>)
       const node = view.refs.pFeedback;
       node.value = "Testing the pFeedback Textarea 123";
