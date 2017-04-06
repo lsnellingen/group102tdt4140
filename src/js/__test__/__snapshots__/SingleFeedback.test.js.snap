@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleFeedback renders without crashing 1`] = `
+<div
+  className="panel panel-info"
+>
+  <div
+    className="panel-heading"
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-9 removePadding"
+        >
+          <span>
+            TDT4140
+          </span>
+        </div>
+        <div
+          className="col-xs-3"
+        >
+          <p
+            className="pull-right removeMargin"
+          >
+            <small>
+              22-02-17
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="panel-body removePadding"
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-9 removePadding"
+        >
+          <ul
+            className="list-group removeMargin"
+          >
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Matter of issue:
+              </strong>
+               
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Positive:
+              </strong>
+               
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Negative:
+              </strong>
+               
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Rating:
+              </strong>
+               
+            </li>
+          </ul>
+        </div>
+        <div
+          className="col-xs-3"
+        >
+          <div>
+            <svg
+              className="text-center hCenterIcon fontColor onHover"
+              fill="currentColor"
+              height={30}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": undefined,
+                  "verticalAlign": "middle",
+                }
+              }
+              viewBox="0 0 40 40"
+              width={30}
+            >
+              <g>
+                <path
+                  d="m38.4 16.6l-0.1 0.2h0.1v3.2c0 0.5-0.1 0.9-0.3 1.3l-5.1 11.7c-0.4 1.1-1.6 2-3 2h-15c-1.8 0-3.4-1.6-3.4-3.4v-16.6c0-0.9 0.4-1.7 1.1-2.3l10.9-11.1 1.8 1.8c0.5 0.5 0.7 1.1 0.7 1.8v0.5l-1.6 7.7h10.5c1.8 0 3.4 1.4 3.4 3.2z m-36.8 18.4v-20h6.8v20h-6.8z"
+                />
+              </g>
+            </svg>
+            <h6
+              className="text-center "
+            >
+              Upvote feedback
+            </h6>
+            <hr />
+            <h3
+              className="text-center"
+            >
+              13
+            </h3>
+            <h6
+              className="text-center"
+            >
+              People have liked this feedback
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

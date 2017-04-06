@@ -122,14 +122,14 @@ export default class SendFeedbackPage extends React.Component {
   	        	<div className="form-group">
   		        	<div className="row">
   			            <div className="col-xs-12">
-  			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.pFeedback} onChange={this.handleOptionChange.bind(this,"pFeedback")} placeholder="Write your positive feedback here... " />
+  			            	<textarea ref="pFeedback" type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.pFeedback} onChange={this.handleOptionChange.bind(this,"pFeedback")} placeholder="Write your positive feedback here... " />
   			            </div>
   		          </div>
   	          </div>
                 <div className="form-group">
     		        	<div className="row">
     			            <div className="col-xs-12">
-    			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.nFeedback} onChange={this.handleOptionChange.bind(this,"nFeedback")} placeholder="Write your negative feedback here... " />
+    			            	<textarea ref="nFeedback" type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.nFeedback} onChange={this.handleOptionChange.bind(this,"nFeedback")} placeholder="Write your negative feedback here... " />
     			            </div>
     		            </div>
     	            </div>
@@ -138,7 +138,7 @@ export default class SendFeedbackPage extends React.Component {
 
                     <div className="radio" style={radioButtonStyle}>
                       <label>
-                        <input type="radio" value="1" checked={this.state.selectedOption ==='1'}
+                        <input ref="radio1" type="radio" value="1" checked={this.state.selectedOption ==='1'}
                         onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
                           1
                       </label>

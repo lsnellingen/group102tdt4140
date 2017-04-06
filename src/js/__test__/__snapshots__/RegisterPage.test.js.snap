@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterPage renders without crashing 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <h3>
+        Registration
+      </h3>
+      <hr />
+    </div>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div>
+      <div
+        className="sp-login-form"
+      >
+        <span />
+        <div
+          className="row"
+          data-spIf="!account.created"
+        >
+          <div
+            className="col-xs-12"
+          >
+            <div
+              className="form-horizontal"
+            >
+              <div
+                className="form-group"
+              >
+                <label
+                  className="col-xs-12 col-sm-4 control-label"
+                  htmlFor="givenName"
+                >
+                  First Name
+                </label>
+                <div
+                  className="col-xs-12 col-sm-4"
+                >
+                  <input
+                    className="form-control"
+                    defaultValue=""
+                    id="givenName"
+                    name="givenName"
+                    onChange={[Function]}
+                    placeholder="First Name"
+                    required={true}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <label
+                  className="col-xs-12 col-sm-4 control-label"
+                  htmlFor="surname"
+                >
+                  Last Name
+                </label>
+                <div
+                  className="col-xs-12 col-sm-4"
+                >
+                  <input
+                    className="form-control"
+                    defaultValue=""
+                    id="surname"
+                    name="surname"
+                    onChange={[Function]}
+                    placeholder="Last Name"
+                    required={true}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <label
+                  className="col-xs-12 col-sm-4 control-label"
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <div
+                  className="col-xs-12 col-sm-4"
+                >
+                  <input
+                    className="form-control"
+                    defaultValue=""
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="Email"
+                    required={true}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <label
+                  className="col-xs-12 col-sm-4 control-label"
+                  htmlFor="password"
+                >
+                  Password
+                </label>
+                <div
+                  className="col-xs-12 col-sm-4"
+                >
+                  <input
+                    className="form-control"
+                    defaultValue=""
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    required={true}
+                    type="password"
+                  />
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="col-sm-offset-4 col-sm-4"
+                >
+                  <span />
+                  <button
+                    className="btn btn-info"
+                    disabled={false}
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

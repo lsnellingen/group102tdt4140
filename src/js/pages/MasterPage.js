@@ -15,19 +15,21 @@ export default class MasterPage extends React.Component {
 
   render() {
     return (
-      <DocumentTitle title='eduBot - Feedback for students and lecturers'>
-        <div className="MasterPage">
-          <div className="row">
-            <Header />
-            <div className='col-xs-2 marginTop50'>
-              <Sidebar />
-            </div>
-            <div className = 'col-xs-10 marginTop50'>
-              { this.props.children }
+      <div>
+        <DocumentTitle title='eduBot - Feedback for students and lecturers'>
+          <div className="MasterPage">
+            <div className="row">
+              <Header />
+              <div className='col-xs-2 marginTop50'>
+                <Sidebar />
+              </div>
+              <div className = 'col-xs-10 marginTop50'>
+                { this.props.children }
+              </div>
             </div>
           </div>
-        </div>
-      </DocumentTitle>
+        </DocumentTitle>
+      </div>
     );
   }
 }
