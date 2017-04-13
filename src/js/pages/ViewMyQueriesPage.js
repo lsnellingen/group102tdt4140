@@ -76,10 +76,7 @@ class viewMyQueriesPage extends React.Component{
       		noQueries: true
       	});
       }
-      
-
     }
-
 
 	render(){
 		return (
@@ -105,7 +102,9 @@ class viewMyQueriesPage extends React.Component{
 	            { this.state.filterOption !== 'chooseCourse' ?
 	            	<div>
 			            { this.state.noQueries ?
-			            	<h5>You have no queries in this course.</h5>
+			           	  <div className="col-xs-12 col-sm-12">
+			            		<h5>You have no queries in this course.</h5>
+			              </div>
 			            :<div className="col-xs-12 col-sm-12">
 			              <p>Choose a query to see results: </p>
 			              <select type="query-selector" className="form-control" id="query-selector" name="query-selector">
@@ -116,7 +115,10 @@ class viewMyQueriesPage extends React.Component{
 			              </select>
 			              <hr />
 			            </div>} 
-		            </div> : <h5>Choose a course to choose query.</h5>}  
+		            </div> : 
+			            <div className="col-xs-12 col-sm-12">
+			            	<h5>Choose a course to choose query.</h5>
+			        	</div>}  
 	        </div>
 	       </DocumentTitle>
 	    )
