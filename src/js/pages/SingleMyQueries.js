@@ -37,11 +37,13 @@ class SingleMyQueries extends Component {
   render(){
     let result = null;
     if(this.state.type == "Text"){
+      var textIndex = 0;
       result = 
       <div>
         {this.state.answers.map(answers => {
+          textIndex++;
           return (
-            <p>
+            <p key={textIndex}>
               {answers}
             </p>
             )
@@ -53,11 +55,11 @@ class SingleMyQueries extends Component {
           ratingArray[(parseInt(answers)-1)] = ratingArray[(parseInt(answers)-1)] + 1;
       })
       const data = [
-        {name: '1', result: ratingArray[0], amt: 2400},
-        {name: '2', result: ratingArray[1], amt: 2210},
-        {name: '3', result: ratingArray[2], amt: 2290},
-        {name: '4', result: ratingArray[3], amt: 2000},
-        {name: '5', result: ratingArray[4], amt: 2181},
+        {name: '1', result: ratingArray[0]},
+        {name: '2', result: ratingArray[1]},
+        {name: '3', result: ratingArray[2]},
+        {name: '4', result: ratingArray[3]},
+        {name: '5', result: ratingArray[4]},
       ];
       result = 
       <BarChart width={600} height={300} data={data}
@@ -81,9 +83,9 @@ class SingleMyQueries extends Component {
       })
       for (var j = 0; j < (alternativesArray.length); j++) { 
         if (alternativesArray[j] == 0){
-          data.push({name: this.state.myAlternatives[j], result: 0, amt: 2400});
+          data.push({name: this.state.myAlternatives[j], result: 0});
         }else{
-          data.push({name: this.state.myAlternatives[j], result: alternativesArray[j], amt: 2400});
+          data.push({name: this.state.myAlternatives[j], result: alternativesArray[j]});
         }
       }
       result = 
