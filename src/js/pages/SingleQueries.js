@@ -8,7 +8,7 @@ class SingleQueries extends Component {
   constructor(props){
     super(props);
     this.state = {
-      answers: this.props.queries.answers,
+      answers: '',
       myAlternatives: []
     }
   }
@@ -96,7 +96,7 @@ class SingleQueries extends Component {
     } else{
       answerType =
       <select type="alternative-selector" className="form-control" id="alternative-selector" name="alternative-selector" onChange={this.handleOptionChange.bind(this,"answers")}>
-        <option value="chooseAnswer">Choose an answer</option>
+        <option value="" onChange={this.handleOptionChange.bind(this)}>Choose an answer</option>
         { this.state.myAlternatives.map(alternative => {
            return <option key={alternative} value={alternative} onChange={this.handleOptionChange.bind(this)} >{alternative} </option>;
         })}
