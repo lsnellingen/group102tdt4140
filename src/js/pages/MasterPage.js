@@ -30,7 +30,6 @@ export default class MasterPage extends React.Component {
             </div>
           </div>
           </div>
-        </div>
       </DocumentTitle>
     );
   }
