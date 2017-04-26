@@ -2,6 +2,7 @@ import React from 'react'
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
 
+import SingleMyQuery from './SingleMyQuery';
 class viewMyQueriesPage extends React.Component{
 
 	constructor(props) {
@@ -11,7 +12,8 @@ class viewMyQueriesPage extends React.Component{
 	      	noCourses: false,
 	      	myQueries: [],
 	      	noQueries: false,
-	      	filterOption: 'chooseCourse'
+	      	filterOption: 'chooseCourse',
+	      	selectedQuery: 'chooseQuery'
 	      };
     }
 
@@ -45,18 +47,6 @@ class viewMyQueriesPage extends React.Component{
     }
 
     handleFiltering(event) {
-      const currentUser = this.context.user.email;
-      axios.get('/getMyQueries/' + currentUser)
-	  .then(res => {
-	    if(res.data[0].length == 0) {
-	      this.setState({
-	    	myQueries: [],
-	    	noQueries: true
-	      });
-	    } else{	
-	   	  this.setState({myQueries: res.data});
-	    }
-	  });
       var course = event.target.value;
       var updatedQueriesList = [];
       this.state.myQueries.forEach(query => {
@@ -68,14 +58,23 @@ class viewMyQueriesPage extends React.Component{
       	this.setState({
 	        filterOption: course,
 	        myQueries: updatedQueriesList,
-	        noQueries: false
+	        noQueries: false,
+	      	selectedQuery: 'chooseQuery'
 	       })
       } else {
       	this.setState({
       		filterOption: course, 
-      		noQueries: true
+      		noQueries: true,
+	      	selectedQuery: 'chooseQuery'
       	});
       }
+    }
+
+    handleQueryFiltering(event){
+    	const targetedQuery = event.target.value;
+    	this.setState({
+    		selectedQuery: targetedQuery
+    	})
     }
 
 	render(){
@@ -107,12 +106,17 @@ class viewMyQueriesPage extends React.Component{
 			              </div>
 			            :<div className="col-xs-12 col-sm-12">
 			              <p>Choose a query to see results: </p>
-			              <select type="query-selector" className="form-control" id="query-selector" name="query-selector">
+			              <select type="query-selector" className="form-control" id="query-selector" name="query-selector" value={this.state.selectedQuery} onChange={this.handleQueryFiltering.bind(this)}> 
 			                <option value="chooseQuery">Choose query</option>
 			                { this.state.myQueries.map(query => {
-		                    return <option key={query.queryID} value={query.queryID} >{query.name}</option>;
+		                    return <option key={query.queryID} value={query.queryID} >{query.name} </option>;
 		                  })}
 			              </select>
+			              { this.state.selectedQuery !== 'chooseQuery' ?
+				              <div>
+				              	<SingleMyQuery queryID={this.state.selectedQuery}  />
+				              </div>
+				           : null}
 			              <hr />
 			            </div>} 
 		            </div> : 
