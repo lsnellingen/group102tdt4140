@@ -49,7 +49,7 @@ class SingleQuery extends Component {
                '/' + username)
       .then(res => {
         console.log("Answer sendt");
-      }); 
+      });
       this.setState({
         showSuccessful: true
       })
@@ -68,7 +68,7 @@ class SingleQuery extends Component {
       axios.get('/getQueries/' + this.state.queryID)
       .then(res => {
         this.setState({myQueries: res.data});
-      });    
+      });
     }
 
   componentWillReceiveProps(nextProps){
@@ -91,7 +91,7 @@ class SingleQuery extends Component {
       <div className="panel panel-info">
         <div className="panel-heading clearfix">
           <div className="col-xs-9 removePadding">
-            <span>{this.props.query.name}</span>
+            <h5>{this.props.query.name}</h5>
           </div>
           <div className="col-xs-3">
             <p className="pull-right removeMargin"><small>{this.props.query.date.substring(0,10)}</small></p>
@@ -103,11 +103,27 @@ class SingleQuery extends Component {
             <div className="col-xs-12 removePadding">
               <ul className="list-group removeMargin">
                 <div>
-                  <li className="list-group-item"><strong>Desctiption:</strong> {this.props.query.description}</li>
-                  <li className="list-group-item"><strong>Creator:</strong> {this.props.query.creator}</li>
-                  { this.state.myQueries.map(queries => {
-                    return <SingleQueries key={queries.queriesID} queries={queries} queriesNumber={this.state.myQueries.indexOf(queries)} updateState={this.updateState.bind(this)} />;
-                  })}
+                  <div className="col-xs-12">
+                    <table className="table removeMargin">
+                      <tbody>
+                        <tr>
+                          <td><strong>Description:</strong> {this.props.query.description}</td>
+                        </tr>
+                        <tr className="border-bottom">
+                          <td><strong>Creator:</strong> {this.props.query.creator}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="col-xs-10 col-xs-offset-1">
+                    <br />
+                    <h4>Questions:</h4>
+                    <hr />
+                    { this.state.myQueries.map(queries => {
+                      return <SingleQueries key={queries.queriesID} queries={queries} queriesNumber={this.state.myQueries.indexOf(queries)} updateState={this.updateState.bind(this)} />;
+                    })}
+                  </div>
                 </div>
               </ul>
             </div>
@@ -134,7 +150,7 @@ class SingleQuery extends Component {
           </div> : null }
         {!this.state.showSuccessful ?
         <div className="form-group">
-          <button type="submit" className="btn btn-info mediumButton hCenter" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
+          <button type="submit" className="btn btn-info mediumButton hCenter sendResponseButton" onClick={this.handleFormSubmit.bind(this)}>Send response</button>
         </div> : null}
       </div>
     );
