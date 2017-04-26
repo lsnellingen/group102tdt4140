@@ -68,7 +68,6 @@ class SingleMyQueries extends Component {
        <YAxis/>
        <CartesianGrid strokeDasharray="3 3"/>
        <Tooltip/>
-       <Legend />
        <Bar dataKey="result" fill="#8884d8" />
       </BarChart>
     } else {
@@ -95,7 +94,6 @@ class SingleMyQueries extends Component {
        <YAxis/>
        <CartesianGrid strokeDasharray="3 3"/>
        <Tooltip/>
-       <Legend />
        <Bar dataKey="result" fill="#8884d8" />
       </BarChart>
     }
