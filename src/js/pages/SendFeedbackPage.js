@@ -92,6 +92,7 @@ export default class SendFeedbackPage extends React.Component {
 		              <h3>Send Feedback</h3>
 		              <hr />
                   <p>Select one of the courses youre enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
+                  <p>Select one of the courses you are enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
                   <p></p>
                   <hr />
 	        		</div>

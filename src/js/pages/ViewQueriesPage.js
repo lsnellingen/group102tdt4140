@@ -39,7 +39,7 @@ class ViewQueriesPage extends Component {
       axios.get('/getQuery/')
       .then(res => {
         this.setState({ query: res.data})
-      });    
+      });
     }
 
     handleFiltering(event) {
@@ -110,28 +110,27 @@ class ViewQueriesPage extends Component {
             </div>
             { this.state.filteredQuery.length > 0 ?
               <div>
-                
                 <div className="col-xs-10">
-                  <h4 style={center}> 
+                  <h4 style={center}>
                     {this.state.filteredQuery.length > 1 ?
-                      <div className="pull-left onHover removePadding">
-                        <Previous size={30} onClick={this.handleFormPrevious.bind(this)} />
+                      <div className="inline onHover removePadding">
+                        <Previous size={40} onClick={this.handleFormPrevious.bind(this)} />
                       </div>
-                      : <div className="pull-left onHover removePadding">
-                         <Previous size={30} hidden/>
+                      : <div className="inline onHover removePadding">
+                         <Previous size={40} hidden/>
                         </div> }
-                   
+                        <span className="sideMargin">
                     Showing queries in {this.state.filterOption}: {this.state.currentQuery+1} of {this.state.filteredQuery.length}
-                   
+                  </span>
                     {this.state.filteredQuery.length > 1 ?
-                      <div className="pull-right onHover removePadding">
-                        <Next size={30} onClick={this.handleFormNext.bind(this)} />
+                      <div className="inline onHover removePadding">
+                        <Next size={40} onClick={this.handleFormNext.bind(this)} />
                       </div>
-                      : <div className="pull-right onHover removePadding">
-                          <Next size={30} hidden />
+                      : <div className="inline onHover removePadding">
+                          <Next size={40} hidden />
                         </div> }
                    </h4>
-                  <br />
+                  <br /><br />
                   <SingleQuery query={this.state.filteredQuery[this.state.currentQuery]} />
                 </div>
               </div>

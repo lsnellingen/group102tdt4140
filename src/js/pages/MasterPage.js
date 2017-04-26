@@ -15,7 +15,6 @@ export default class MasterPage extends React.Component {
 
   render() {
     return (
-      <div>
       <DocumentTitle title='eduBot - Feedback for students and lecturers'>
         <div className="MasterPage">
           <div className="row">
@@ -26,11 +25,13 @@ export default class MasterPage extends React.Component {
             <div className = 'col-sm-10 col-xs-12 marginTop50'>
               { this.props.children }
             </div>
+            <div className = 'col-sm-10 col-xs-12 marginTop50'>
+              { this.props.children }
+            </div>
           </div>
           </div>
-          </DocumentTitle>
-      </div>
-
+        </div>
+      </DocumentTitle>
     );
   }
 }

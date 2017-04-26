@@ -118,7 +118,10 @@ class Courses extends Component {
         <div className="row">
           <div className="col-xs-12">
             <br />
-            <h3>Courses:</h3>
+            <h3>Courses</h3>
+            <hr />
+            <p>This site provide a full overview of all courses you're enrolled in. You can easily add new courses by searching for name or course code in the find course section.</p>
+            <p>Removing courses is done by clicking the remove button after each course in the list to the left.</p>
             <hr />
             <p>This site provide a full overview of all courses youre enrolled in. You can easily add new courses by searching for name or course code in the find course section.</p>
             <p>Removing courses is done by clicking the remove button after each course in the list to the left.</p>
@@ -139,6 +142,7 @@ class Courses extends Component {
                     </ul>
                     :
                     <ul className="list-group">
+                      <h5>List over all courses you are enrolled in:</h5>
                       { this.state.myCourses.map(course => {
                         return <li key={course} className="list-group-item">{course}
                                   <DeleteIcon className="pull-right fontColor onHover vCenterIcon" size={25}  onClick={() => this.handleClickOnRemoveButton(course)}/>
