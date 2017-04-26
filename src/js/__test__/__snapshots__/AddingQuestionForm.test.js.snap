@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddingQuestionForm renders without crashing 1`] = `
+<div
+  className="panel panel-info"
+>
+  <div
+    className="panel-heading"
+  >
+    Add new question:
+  </div>
+  <div
+    className="panel-body"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-7"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              <p>
+                Question:
+              </p>
+              <input
+                className="form-control"
+                id="question"
+                onChange={[Function]}
+                placeholder="Question"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <p>
+                Type of question:
+              </p>
+              <select
+                className="form-control"
+                id="subject-selector"
+                name="subject-selector"
+                onChange={[Function]}
+                type="subject-selector"
+                value="chooseType"
+              >
+                <option
+                  value="chooseType"
+                >
+                  Choose type
+                </option>
+                <option
+                  value="Text"
+                >
+                  Text
+                </option>
+                <option
+                  value="Multiple choice"
+                >
+                  Multiple choice
+                </option>
+                <option
+                  value="Yes or No"
+                >
+                  Yes or No
+                </option>
+                <option
+                  value="Rating"
+                >
+                  Rating
+                </option>
+              </select>
+            </div>
+            <div
+              className="form-group"
+            >
+              <button
+                className="btn btn-info hCenter formButtonMargin"
+                type="submit"
+              >
+                Add question
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

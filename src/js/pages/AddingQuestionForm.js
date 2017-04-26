@@ -88,16 +88,16 @@ class AddingQuestionForm extends Component {
 
                   <div className="form-group">
                     <p>Question:</p>
-                    <input type="text" className="form-control" id="question" placeholder="Question" value={this.state.question} onChange={this.handleQuestionChange.bind(this)}/>
+                    <input ref="input_question" type="text" className="form-control" id="question" placeholder="Question" value={this.state.question} onChange={this.handleQuestionChange.bind(this)}/>
                   </div>
                   <div className="form-group">
                     <p>Type of question:</p>
-                    <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.type} onChange={this.handleFiltering.bind(this)}>
+                    <select ref="subject_selector" type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.type} onChange={this.handleFiltering.bind(this)}>
                       <option value="chooseType">Choose type</option>
-                      <option value="Text">Text</option>
-                      <option value="Multiple choice">Multiple choice</option>
-                      <option value="Yes or No">Yes or No</option>
-                      <option value="Rating">Rating</option>
+                      <option ref="type_text" value="Text">Text</option>
+                      <option ref="type_mc" value="Multiple choice">Multiple choice</option>
+                      <option ref="type_yn" value="Yes or No">Yes or No</option>
+                      <option ref="type_rating" value="Rating">Rating</option>
                     </select>
                   </div>
                   { this.state.type == 'Multiple choice' ?
@@ -107,8 +107,8 @@ class AddingQuestionForm extends Component {
                         <div className="col-xs-8">
                           <p>Alternatives:</p>
                           <div className="form-inline">
-                            <input type="text" className="form-control" id="question" placeholder="Alternative" value={this.state.currentAlternative} onChange={this.handleAlternativeChange.bind(this)} />
-                            <button className="btn btn-info marginLeft20" onClick={this.handleAddAlternative.bind(this)}>Add alternative</button>
+                            <input ref="alternatives" type="text" className="form-control" id="question" placeholder="Alternative" value={this.state.currentAlternative} onChange={this.handleAlternativeChange.bind(this)} />
+                            <button ref="alternative_button" className="btn btn-info marginLeft20" onClick={this.handleAddAlternative.bind(this)}>Add alternative</button>
                           </div>
                         </div>
                         <div className="col-xs-4 margin-top20">
@@ -127,7 +127,7 @@ class AddingQuestionForm extends Component {
                       </div>
                       : null }
                   <div className="form-group">
-                    <button type="submit" className="btn btn-info hCenter formButtonMargin">Add question</button>
+                    <button ref="submit_button" type="submit" className="btn btn-info hCenter formButtonMargin">Add question</button>
                   </div>
                 </form>
               </div>

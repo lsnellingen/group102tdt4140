@@ -140,7 +140,7 @@ export default class IndexPage extends React.Component {
                 </div>
                 <div className="panel-body">
                   <p>Let your lecturers know what you think, logg in and start sending feedback now.</p>
-                  <Link to="/login"><button className="btn btn-default">LOGG INN</button></Link>
+                  <Link to="/login"><button ref="login_button" className="btn btn-default">LOGG INN</button></Link>
                 </div>
               </div>
             </div>

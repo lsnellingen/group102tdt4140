@@ -1,0 +1,825 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfilePage renders without crashing 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <SideEffect(DocumentTitle)
+    title="My Profile"
+>
+    <div
+        className="container"
+    >
+        <div
+            className="row"
+        >
+            <div
+                className="col-xs-12"
+            >
+                <h3>
+                    My Profile
+                </h3>
+                <hr />
+            </div>
+        </div>
+        <div
+            className="row"
+        >
+            <div
+                className="col-xs-12"
+            >
+                <UserProfileForm>
+                    <div
+                        className="sp-update-profile-form"
+                    >
+                        <div
+                            className="row"
+                        >
+                            <div
+                                className="col-xs-12"
+                            >
+                                <div
+                                    className="form-horizontal"
+                                >
+                                    <div
+                                        className="form-group"
+                                    >
+                                        <label
+                                            className="col-xs-12 col-sm-4 control-label"
+                                            htmlFor="givenName"
+                                        >
+                                            First name
+                                        </label>
+                                        <div
+                                            className="col-xs-12 col-sm-4"
+                                        >
+                                            <input
+                                                className="form-control"
+                                                id="givenName"
+                                                name="givenName"
+                                                placeholder="First name"
+                                                required={true}
+                                                type="text"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="form-group"
+                                    >
+                                        <label
+                                            className="col-xs-12 col-sm-4 control-label"
+                                            htmlFor="surname"
+                                        >
+                                            Last name
+                                        </label>
+                                        <div
+                                            className="col-xs-12 col-sm-4"
+                                        >
+                                            <input
+                                                className="form-control"
+                                                id="surname"
+                                                name="surname"
+                                                placeholder="Last name"
+                                                required={true}
+                                                type="text"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="form-group"
+                                    >
+                                        <label
+                                            className="col-xs-12 col-sm-4 control-label"
+                                            htmlFor="email"
+                                        >
+                                            Email
+                                        </label>
+                                        <div
+                                            className="col-xs-12 col-sm-4"
+                                        >
+                                            <input
+                                                className="form-control"
+                                                id="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                required={true}
+                                                type="email"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="form-group"
+                                    >
+                                        <label
+                                            className="col-xs-12 col-sm-4 control-label"
+                                            htmlFor="password"
+                                        >
+                                            New Password
+                                        </label>
+                                        <div
+                                            className="col-xs-12 col-sm-4"
+                                        >
+                                            <input
+                                                className="form-control"
+                                                id="password"
+                                                name="password"
+                                                placeholder="Password"
+                                                type="password"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="form-group"
+                                    >
+                                        <label
+                                            className="col-xs-12 col-sm-4 control-label"
+                                            htmlFor="password"
+                                        >
+                                            Current Password
+                                        </label>
+                                        <div
+                                            className="col-xs-12 col-sm-4"
+                                        >
+                                            <input
+                                                className="form-control"
+                                                id="password"
+                                                name="existingPassword"
+                                                placeholder="Password"
+                                                type="password"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="form-group"
+                                    >
+                                        <div
+                                            className="col-sm-offset-4 col-sm-4"
+                                        >
+                                            <p
+                                                className="alert alert-danger"
+                                                data-spIf="form.error"
+                                            >
+                                                <span
+                                                    data-spBind="form.errorMessage"
+                                                />
+                                            </p>
+                                            <p
+                                                className="alert alert-success"
+                                                data-spIf="form.successful"
+                                            >
+                                                Profile updated.
+                                            </p>
+                                            <button
+                                                className="btn btn-info"
+                                                type="submit"
+                                            >
+                                                <span
+                                                    data-spIf="!form.processing"
+                                                >
+                                                    Update
+                                                </span>
+                                                <span
+                                                    data-spIf="form.processing"
+                                                >
+                                                    Updating...
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </UserProfileForm>
+            </div>
+        </div>
+    </div>
+</SideEffect(DocumentTitle)>,
+  "nodes": Array [
+    <SideEffect(DocumentTitle)
+      title="My Profile"
+>
+      <div
+            className="container"
+      >
+            <div
+                  className="row"
+            >
+                  <div
+                        className="col-xs-12"
+                  >
+                        <h3>
+                              My Profile
+                        </h3>
+                        <hr />
+                  </div>
+            </div>
+            <div
+                  className="row"
+            >
+                  <div
+                        className="col-xs-12"
+                  >
+                        <UserProfileForm>
+                              <div
+                                    className="sp-update-profile-form"
+                              >
+                                    <div
+                                          className="row"
+                                    >
+                                          <div
+                                                className="col-xs-12"
+                                          >
+                                                <div
+                                                      className="form-horizontal"
+                                                >
+                                                      <div
+                                                            className="form-group"
+                                                      >
+                                                            <label
+                                                                  className="col-xs-12 col-sm-4 control-label"
+                                                                  htmlFor="givenName"
+                                                            >
+                                                                  First name
+                                                            </label>
+                                                            <div
+                                                                  className="col-xs-12 col-sm-4"
+                                                            >
+                                                                  <input
+                                                                        className="form-control"
+                                                                        id="givenName"
+                                                                        name="givenName"
+                                                                        placeholder="First name"
+                                                                        required={true}
+                                                                        type="text"
+                                                                  />
+                                                            </div>
+                                                      </div>
+                                                      <div
+                                                            className="form-group"
+                                                      >
+                                                            <label
+                                                                  className="col-xs-12 col-sm-4 control-label"
+                                                                  htmlFor="surname"
+                                                            >
+                                                                  Last name
+                                                            </label>
+                                                            <div
+                                                                  className="col-xs-12 col-sm-4"
+                                                            >
+                                                                  <input
+                                                                        className="form-control"
+                                                                        id="surname"
+                                                                        name="surname"
+                                                                        placeholder="Last name"
+                                                                        required={true}
+                                                                        type="text"
+                                                                  />
+                                                            </div>
+                                                      </div>
+                                                      <div
+                                                            className="form-group"
+                                                      >
+                                                            <label
+                                                                  className="col-xs-12 col-sm-4 control-label"
+                                                                  htmlFor="email"
+                                                            >
+                                                                  Email
+                                                            </label>
+                                                            <div
+                                                                  className="col-xs-12 col-sm-4"
+                                                            >
+                                                                  <input
+                                                                        className="form-control"
+                                                                        id="email"
+                                                                        name="email"
+                                                                        placeholder="Email"
+                                                                        required={true}
+                                                                        type="email"
+                                                                  />
+                                                            </div>
+                                                      </div>
+                                                      <div
+                                                            className="form-group"
+                                                      >
+                                                            <label
+                                                                  className="col-xs-12 col-sm-4 control-label"
+                                                                  htmlFor="password"
+                                                            >
+                                                                  New Password
+                                                            </label>
+                                                            <div
+                                                                  className="col-xs-12 col-sm-4"
+                                                            >
+                                                                  <input
+                                                                        className="form-control"
+                                                                        id="password"
+                                                                        name="password"
+                                                                        placeholder="Password"
+                                                                        type="password"
+                                                                  />
+                                                            </div>
+                                                      </div>
+                                                      <div
+                                                            className="form-group"
+                                                      >
+                                                            <label
+                                                                  className="col-xs-12 col-sm-4 control-label"
+                                                                  htmlFor="password"
+                                                            >
+                                                                  Current Password
+                                                            </label>
+                                                            <div
+                                                                  className="col-xs-12 col-sm-4"
+                                                            >
+                                                                  <input
+                                                                        className="form-control"
+                                                                        id="password"
+                                                                        name="existingPassword"
+                                                                        placeholder="Password"
+                                                                        type="password"
+                                                                  />
+                                                            </div>
+                                                      </div>
+                                                      <div
+                                                            className="form-group"
+                                                      >
+                                                            <div
+                                                                  className="col-sm-offset-4 col-sm-4"
+                                                            >
+                                                                  <p
+                                                                        className="alert alert-danger"
+                                                                        data-spIf="form.error"
+                                                                  >
+                                                                        <span
+                                                                              data-spBind="form.errorMessage"
+                                                                        />
+                                                                  </p>
+                                                                  <p
+                                                                        className="alert alert-success"
+                                                                        data-spIf="form.successful"
+                                                                  >
+                                                                        Profile updated.
+                                                                  </p>
+                                                                  <button
+                                                                        className="btn btn-info"
+                                                                        type="submit"
+                                                                  >
+                                                                        <span
+                                                                              data-spIf="!form.processing"
+                                                                        >
+                                                                              Update
+                                                                        </span>
+                                                                        <span
+                                                                              data-spIf="form.processing"
+                                                                        >
+                                                                              Updating...
+                                                                        </span>
+                                                                  </button>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </UserProfileForm>
+                  </div>
+            </div>
+      </div>
+</SideEffect(DocumentTitle)>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <ProfilePage />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": ProfilePage {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <SideEffect(DocumentTitle)
+          title="My Profile"
+>
+          <div
+                    className="container"
+          >
+                    <div
+                              className="row"
+                    >
+                              <div
+                                        className="col-xs-12"
+                              >
+                                        <h3>
+                                                  My Profile
+                                        </h3>
+                                        <hr />
+                              </div>
+                    </div>
+                    <div
+                              className="row"
+                    >
+                              <div
+                                        className="col-xs-12"
+                              >
+                                        <UserProfileForm>
+                                                  <div
+                                                            className="sp-update-profile-form"
+                                                  >
+                                                            <div
+                                                                      className="row"
+                                                            >
+                                                                      <div
+                                                                                className="col-xs-12"
+                                                                      >
+                                                                                <div
+                                                                                          className="form-horizontal"
+                                                                                >
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="givenName"
+                                                                                                    >
+                                                                                                              First name
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="givenName"
+                                                                                                                        name="givenName"
+                                                                                                                        placeholder="First name"
+                                                                                                                        required={true}
+                                                                                                                        type="text"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="surname"
+                                                                                                    >
+                                                                                                              Last name
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="surname"
+                                                                                                                        name="surname"
+                                                                                                                        placeholder="Last name"
+                                                                                                                        required={true}
+                                                                                                                        type="text"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="email"
+                                                                                                    >
+                                                                                                              Email
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="email"
+                                                                                                                        name="email"
+                                                                                                                        placeholder="Email"
+                                                                                                                        required={true}
+                                                                                                                        type="email"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="password"
+                                                                                                    >
+                                                                                                              New Password
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="password"
+                                                                                                                        name="password"
+                                                                                                                        placeholder="Password"
+                                                                                                                        type="password"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="password"
+                                                                                                    >
+                                                                                                              Current Password
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="password"
+                                                                                                                        name="existingPassword"
+                                                                                                                        placeholder="Password"
+                                                                                                                        type="password"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <div
+                                                                                                              className="col-sm-offset-4 col-sm-4"
+                                                                                                    >
+                                                                                                              <p
+                                                                                                                        className="alert alert-danger"
+                                                                                                                        data-spIf="form.error"
+                                                                                                              >
+                                                                                                                        <span
+                                                                                                                                  data-spBind="form.errorMessage"
+                                                                                                                        />
+                                                                                                              </p>
+                                                                                                              <p
+                                                                                                                        className="alert alert-success"
+                                                                                                                        data-spIf="form.successful"
+                                                                                                              >
+                                                                                                                        Profile updated.
+                                                                                                              </p>
+                                                                                                              <button
+                                                                                                                        className="btn btn-info"
+                                                                                                                        type="submit"
+                                                                                                              >
+                                                                                                                        <span
+                                                                                                                                  data-spIf="!form.processing"
+                                                                                                                        >
+                                                                                                                                  Update
+                                                                                                                        </span>
+                                                                                                                        <span
+                                                                                                                                  data-spIf="form.processing"
+                                                                                                                        >
+                                                                                                                                  Updating...
+                                                                                                                        </span>
+                                                                                                              </button>
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                </div>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+                                        </UserProfileForm>
+                              </div>
+                    </div>
+          </div>
+</SideEffect(DocumentTitle)>,
+        "_debugID": 2,
+        "_renderedOutput": <SideEffect(DocumentTitle)
+          title="My Profile"
+>
+          <div
+                    className="container"
+          >
+                    <div
+                              className="row"
+                    >
+                              <div
+                                        className="col-xs-12"
+                              >
+                                        <h3>
+                                                  My Profile
+                                        </h3>
+                                        <hr />
+                              </div>
+                    </div>
+                    <div
+                              className="row"
+                    >
+                              <div
+                                        className="col-xs-12"
+                              >
+                                        <UserProfileForm>
+                                                  <div
+                                                            className="sp-update-profile-form"
+                                                  >
+                                                            <div
+                                                                      className="row"
+                                                            >
+                                                                      <div
+                                                                                className="col-xs-12"
+                                                                      >
+                                                                                <div
+                                                                                          className="form-horizontal"
+                                                                                >
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="givenName"
+                                                                                                    >
+                                                                                                              First name
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="givenName"
+                                                                                                                        name="givenName"
+                                                                                                                        placeholder="First name"
+                                                                                                                        required={true}
+                                                                                                                        type="text"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="surname"
+                                                                                                    >
+                                                                                                              Last name
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="surname"
+                                                                                                                        name="surname"
+                                                                                                                        placeholder="Last name"
+                                                                                                                        required={true}
+                                                                                                                        type="text"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="email"
+                                                                                                    >
+                                                                                                              Email
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="email"
+                                                                                                                        name="email"
+                                                                                                                        placeholder="Email"
+                                                                                                                        required={true}
+                                                                                                                        type="email"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="password"
+                                                                                                    >
+                                                                                                              New Password
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="password"
+                                                                                                                        name="password"
+                                                                                                                        placeholder="Password"
+                                                                                                                        type="password"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <label
+                                                                                                              className="col-xs-12 col-sm-4 control-label"
+                                                                                                              htmlFor="password"
+                                                                                                    >
+                                                                                                              Current Password
+                                                                                                    </label>
+                                                                                                    <div
+                                                                                                              className="col-xs-12 col-sm-4"
+                                                                                                    >
+                                                                                                              <input
+                                                                                                                        className="form-control"
+                                                                                                                        id="password"
+                                                                                                                        name="existingPassword"
+                                                                                                                        placeholder="Password"
+                                                                                                                        type="password"
+                                                                                                              />
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="form-group"
+                                                                                          >
+                                                                                                    <div
+                                                                                                              className="col-sm-offset-4 col-sm-4"
+                                                                                                    >
+                                                                                                              <p
+                                                                                                                        className="alert alert-danger"
+                                                                                                                        data-spIf="form.error"
+                                                                                                              >
+                                                                                                                        <span
+                                                                                                                                  data-spBind="form.errorMessage"
+                                                                                                                        />
+                                                                                                              </p>
+                                                                                                              <p
+                                                                                                                        className="alert alert-success"
+                                                                                                                        data-spIf="form.successful"
+                                                                                                              >
+                                                                                                                        Profile updated.
+                                                                                                              </p>
+                                                                                                              <button
+                                                                                                                        className="btn btn-info"
+                                                                                                                        type="submit"
+                                                                                                              >
+                                                                                                                        <span
+                                                                                                                                  data-spIf="!form.processing"
+                                                                                                                        >
+                                                                                                                                  Update
+                                                                                                                        </span>
+                                                                                                                        <span
+                                                                                                                                  data-spIf="form.processing"
+                                                                                                                        >
+                                                                                                                                  Updating...
+                                                                                                                        </span>
+                                                                                                              </button>
+                                                                                                    </div>
+                                                                                          </div>
+                                                                                </div>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+                                        </UserProfileForm>
+                              </div>
+                    </div>
+          </div>
+</SideEffect(DocumentTitle)>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <ProfilePage />,
+}
+`;

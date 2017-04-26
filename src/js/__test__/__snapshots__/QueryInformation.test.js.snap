@@ -1,0 +1,1301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryInformation render without name 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="panel panel-info"
+>
+    <div
+        className="panel-heading"
+    >
+        <h3
+            className="panel-title"
+        >
+            Query information:
+        </h3>
+    </div>
+    <div
+        className="panel-body"
+    >
+        <table
+            className="table"
+        >
+            <tbody>
+                <tr>
+                    <th>
+                        Name:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Description:
+                    </th>
+                    <td>
+                        This is a test
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Course:
+                    </th>
+                    <td>
+                        TDT4120 - Algoritmer og datastrukturer
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Creator:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Number of questions:
+                    </th>
+                    <td>
+                        4
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="panel panel-info"
+>
+      <div
+            className="panel-heading"
+      >
+            <h3
+                  className="panel-title"
+            >
+                  Query information:
+            </h3>
+      </div>
+      <div
+            className="panel-body"
+      >
+            <table
+                  className="table"
+            >
+                  <tbody>
+                        <tr>
+                              <th>
+                                    Name:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Description:
+                              </th>
+                              <td>
+                                    This is a test
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Course:
+                              </th>
+                              <td>
+                                    TDT4120 - Algoritmer og datastrukturer
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Creator:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Number of questions:
+                              </th>
+                              <td>
+                                    4
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <QueryInformation
+        numberOfQuestions={4}
+        query={
+                Object {
+                        "course": "TDT4120 - Algoritmer og datastrukturer",
+                        "description": "This is a test",
+                        "name": "",
+                      }
+        }
+/>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": QueryInformation {
+        "_reactInternalInstance": [Circular],
+        "context": Object {
+          "user": undefined,
+        },
+        "props": Object {
+          "numberOfQuestions": 4,
+          "query": Object {
+            "course": "TDT4120 - Algoritmer og datastrukturer",
+            "description": "This is a test",
+            "name": "",
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td>
+                                                            This is a test
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td>
+                                                            TDT4120 - Algoritmer og datastrukturer
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+        "_debugID": 4,
+        "_renderedOutput": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td>
+                                                            This is a test
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td>
+                                                            TDT4120 - Algoritmer og datastrukturer
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <QueryInformation
+    numberOfQuestions={4}
+    query={
+        Object {
+            "course": "TDT4120 - Algoritmer og datastrukturer",
+            "description": "This is a test",
+            "name": "",
+          }
+    }
+/>,
+}
+`;
+
+exports[`QueryInformation renders without course 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="panel panel-info"
+>
+    <div
+        className="panel-heading"
+    >
+        <h3
+            className="panel-title"
+        >
+            Query information:
+        </h3>
+    </div>
+    <div
+        className="panel-body"
+    >
+        <table
+            className="table"
+        >
+            <tbody>
+                <tr>
+                    <th>
+                        Name:
+                    </th>
+                    <td>
+                        Hanse
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Description:
+                    </th>
+                    <td>
+                        This is a test
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Course:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Creator:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Number of questions:
+                    </th>
+                    <td>
+                        4
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="panel panel-info"
+>
+      <div
+            className="panel-heading"
+      >
+            <h3
+                  className="panel-title"
+            >
+                  Query information:
+            </h3>
+      </div>
+      <div
+            className="panel-body"
+      >
+            <table
+                  className="table"
+            >
+                  <tbody>
+                        <tr>
+                              <th>
+                                    Name:
+                              </th>
+                              <td>
+                                    Hanse
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Description:
+                              </th>
+                              <td>
+                                    This is a test
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Course:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Creator:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Number of questions:
+                              </th>
+                              <td>
+                                    4
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <QueryInformation
+        numberOfQuestions={4}
+        query={
+                Object {
+                        "course": "",
+                        "description": "This is a test",
+                        "name": "Hanse",
+                      }
+        }
+/>,
+      "_debugID": 7,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": QueryInformation {
+        "_reactInternalInstance": [Circular],
+        "context": Object {
+          "user": undefined,
+        },
+        "props": Object {
+          "numberOfQuestions": 4,
+          "query": Object {
+            "course": "",
+            "description": "This is a test",
+            "name": "Hanse",
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 4,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td>
+                                                            Hanse
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td>
+                                                            This is a test
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+        "_debugID": 8,
+        "_renderedOutput": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td>
+                                                            Hanse
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td>
+                                                            This is a test
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <QueryInformation
+    numberOfQuestions={4}
+    query={
+        Object {
+            "course": "",
+            "description": "This is a test",
+            "name": "Hanse",
+          }
+    }
+/>,
+}
+`;
+
+exports[`QueryInformation renders without crashing 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="panel panel-info"
+>
+    <div
+        className="panel-heading"
+    >
+        <h3
+            className="panel-title"
+        >
+            Query information:
+        </h3>
+    </div>
+    <div
+        className="panel-body"
+    >
+        <table
+            className="table"
+        >
+            <tbody>
+                <tr>
+                    <th>
+                        Name:
+                    </th>
+                    <td>
+                        Hanse
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Description:
+                    </th>
+                    <td>
+                        This is a test
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Course:
+                    </th>
+                    <td>
+                        TDT4120 - Algoritmer og datastrukturer
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Creator:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Number of questions:
+                    </th>
+                    <td>
+                        4
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="panel panel-info"
+>
+      <div
+            className="panel-heading"
+      >
+            <h3
+                  className="panel-title"
+            >
+                  Query information:
+            </h3>
+      </div>
+      <div
+            className="panel-body"
+      >
+            <table
+                  className="table"
+            >
+                  <tbody>
+                        <tr>
+                              <th>
+                                    Name:
+                              </th>
+                              <td>
+                                    Hanse
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Description:
+                              </th>
+                              <td>
+                                    This is a test
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Course:
+                              </th>
+                              <td>
+                                    TDT4120 - Algoritmer og datastrukturer
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Creator:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Number of questions:
+                              </th>
+                              <td>
+                                    4
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <QueryInformation
+        numberOfQuestions={4}
+        query={
+                Object {
+                        "course": "TDT4120 - Algoritmer og datastrukturer",
+                        "description": "This is a test",
+                        "name": "Hanse",
+                      }
+        }
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": QueryInformation {
+        "_reactInternalInstance": [Circular],
+        "context": Object {
+          "user": undefined,
+        },
+        "props": Object {
+          "numberOfQuestions": 4,
+          "query": Object {
+            "course": "TDT4120 - Algoritmer og datastrukturer",
+            "description": "This is a test",
+            "name": "Hanse",
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td>
+                                                            Hanse
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td>
+                                                            This is a test
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td>
+                                                            TDT4120 - Algoritmer og datastrukturer
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td>
+                                                            Hanse
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td>
+                                                            This is a test
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td>
+                                                            TDT4120 - Algoritmer og datastrukturer
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <QueryInformation
+    numberOfQuestions={4}
+    query={
+        Object {
+            "course": "TDT4120 - Algoritmer og datastrukturer",
+            "description": "This is a test",
+            "name": "Hanse",
+          }
+    }
+/>,
+}
+`;
+
+exports[`QueryInformation renders without description 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="panel panel-info"
+>
+    <div
+        className="panel-heading"
+    >
+        <h3
+            className="panel-title"
+        >
+            Query information:
+        </h3>
+    </div>
+    <div
+        className="panel-body"
+    >
+        <table
+            className="table"
+        >
+            <tbody>
+                <tr>
+                    <th>
+                        Name:
+                    </th>
+                    <td>
+                        Hanse
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Description:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Course:
+                    </th>
+                    <td>
+                        TDT4120 - Algoritmer og datastrukturer
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Creator:
+                    </th>
+                    <td />
+                </tr>
+                <tr>
+                    <th>
+                        Number of questions:
+                    </th>
+                    <td>
+                        4
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="panel panel-info"
+>
+      <div
+            className="panel-heading"
+      >
+            <h3
+                  className="panel-title"
+            >
+                  Query information:
+            </h3>
+      </div>
+      <div
+            className="panel-body"
+      >
+            <table
+                  className="table"
+            >
+                  <tbody>
+                        <tr>
+                              <th>
+                                    Name:
+                              </th>
+                              <td>
+                                    Hanse
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Description:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Course:
+                              </th>
+                              <td>
+                                    TDT4120 - Algoritmer og datastrukturer
+                              </td>
+                        </tr>
+                        <tr>
+                              <th>
+                                    Creator:
+                              </th>
+                              <td />
+                        </tr>
+                        <tr>
+                              <th>
+                                    Number of questions:
+                              </th>
+                              <td>
+                                    4
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <QueryInformation
+        numberOfQuestions={4}
+        query={
+                Object {
+                        "course": "TDT4120 - Algoritmer og datastrukturer",
+                        "description": "",
+                        "name": "Hanse",
+                      }
+        }
+/>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": QueryInformation {
+        "_reactInternalInstance": [Circular],
+        "context": Object {
+          "user": undefined,
+        },
+        "props": Object {
+          "numberOfQuestions": 4,
+          "query": Object {
+            "course": "TDT4120 - Algoritmer og datastrukturer",
+            "description": "",
+            "name": "Hanse",
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td>
+                                                            Hanse
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td>
+                                                            TDT4120 - Algoritmer og datastrukturer
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+        "_debugID": 6,
+        "_renderedOutput": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <h3
+                              className="panel-title"
+                    >
+                              Query information:
+                    </h3>
+          </div>
+          <div
+                    className="panel-body"
+          >
+                    <table
+                              className="table"
+                    >
+                              <tbody>
+                                        <tr>
+                                                  <th>
+                                                            Name:
+                                                  </th>
+                                                  <td>
+                                                            Hanse
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Description:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Course:
+                                                  </th>
+                                                  <td>
+                                                            TDT4120 - Algoritmer og datastrukturer
+                                                  </td>
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Creator:
+                                                  </th>
+                                                  <td />
+                                        </tr>
+                                        <tr>
+                                                  <th>
+                                                            Number of questions:
+                                                  </th>
+                                                  <td>
+                                                            4
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <QueryInformation
+    numberOfQuestions={4}
+    query={
+        Object {
+            "course": "TDT4120 - Algoritmer og datastrukturer",
+            "description": "",
+            "name": "Hanse",
+          }
+    }
+/>,
+}
+`;

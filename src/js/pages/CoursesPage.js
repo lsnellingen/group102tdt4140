@@ -120,7 +120,7 @@ class Courses extends Component {
             <br />
             <h3>Courses:</h3>
             <hr />
-            <p>This site provide a full overview of all courses you're enrolled in. You can easily add new courses by searching for name or course code in the find course section.</p>
+            <p>This site provide a full overview of all courses youre enrolled in. You can easily add new courses by searching for name or course code in the find course section.</p>
             <p>Removing courses is done by clicking the remove button after each course in the list to the left.</p>
             <hr />
           </div>
