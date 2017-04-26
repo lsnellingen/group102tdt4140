@@ -36,7 +36,6 @@ class SingleMyQuery extends Component {
 
     render(){
 		return (
-		<div className="panel panel-info removePadding">
         <div className="panel-body removePadding">
         <div className="container-fluid">
           <div className="row">
@@ -52,7 +51,6 @@ class SingleMyQuery extends Component {
           </div>
         </div>
         </div>
-      </div>
 		);
 	}
 }
