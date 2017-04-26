@@ -148,6 +148,7 @@ class SingleQuery extends Component {
                 <p className="alert alert-danger userMessage">You need to answer all the questions.</p>
               </div>
             </div>
+          </div>
           </div> : null }
         {!this.state.showSuccessful ?
         <div className="form-group">

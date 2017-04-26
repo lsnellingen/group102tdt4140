@@ -126,7 +126,7 @@ class viewMyQueriesPage extends React.Component{
 			        	</div>}
 	        </div>
 	       </DocumentTitle>
-	    )
+	    );
 	}
 }
 export default viewMyQueriesPage;
