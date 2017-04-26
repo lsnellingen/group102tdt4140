@@ -9,6 +9,7 @@ import CoursesIcon from 'react-icons/lib/md/toc';
 import SendFeedbackIcon from 'react-icons/lib/md/send';
 import ViewFeedbackIcon from 'react-icons/lib/md/comment';
 import AskQuery from 'react-icons/lib/fa/question';
+import MyQueries from 'react-icons/lib/md/equalizer';
 
 import { LoginLink, LogoutLink, NotAuthenticated, Authenticated } from 'react-stormpath';
 
@@ -40,7 +41,7 @@ export default class Sidebar extends React.Component {
               <li><Link to="/SendFeedback" className="clearfix" activeClassName="sidebarOnActive"><span className="pull-left">Send feedback</span><SendFeedbackIcon className="pull-right vCenterIcon" size={20} /></Link> </li>
               <li> <Link to="/ViewFeedback" className="clearfix" activeClassName="sidebarOnActive"><span className="pull-left">View feedback</span ><ViewFeedbackIcon className="pull-right vCenterIcon" size={20} /></Link> </li>
               <li> <Link to="/AskQuery" className="clearfix" activeClassName="sidebarOnActive"><span className="pull-left">Ask query</span ><AskQuery className="pull-right vCenterIcon" size={23} /></Link> </li>
-              <li> <Link to="/MyQueries" className="clearfix" activeClassName="sidebarOnActive"><span className="pull-left">My queries</span ><AskQuery className="pull-right vCenterIcon" size={23} /></Link> </li>
+              <li> <Link to="/MyQueries" className="clearfix" activeClassName="sidebarOnActive"><span className="pull-left">My queries</span ><MyQueries className="pull-right vCenterIcon" size={23} /></Link> </li>
             </Authenticated>
 
             <NotAuthenticated>
