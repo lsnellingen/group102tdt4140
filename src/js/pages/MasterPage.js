@@ -26,8 +26,8 @@ export default class MasterPage extends React.Component {
               { this.props.children }
             </div>
           </div>
-        </div>
-      </DocumentTitle>
+        </DocumentTitle>
+      </div>
     );
   }
 }

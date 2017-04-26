@@ -101,10 +101,10 @@ export default class SendFeedbackPage extends React.Component {
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
                   <p>Choose the course to give feedback: </p>
-                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.subject}  onChange={this.handleOptionChange.bind(this,"subject")}>
-                    <option value="chooseSubject">Choose course</option>
+                  <select ref="subject_selector" type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.subject}  onChange={this.handleOptionChange.bind(this,"subject")}>
+                    <option  value="chooseSubject">Choose course</option>
                       { this.state.myCourses.map(function(course){
-                        return <option key={course} value={course}>{course}</option>;
+                        return <option ref="noe" key={course} value={course}>{course}</option>;
                       })}
                   </select>
                   {this.state.showWarning ?
@@ -118,13 +118,13 @@ export default class SendFeedbackPage extends React.Component {
             <div className="form-group">
               <div className="row">
                 <div className="col-xs-12 col-sm-12">
-                  <p>Choose the topic to give feedback: </p>
-                  <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.theme} onChange={this.handleOptionChange.bind(this,"theme")}>
-                    <option value="chooseSubject">Choose topic</option>
-                    <option value="Lecture">Lecture</option>
-                    <option value="Curriculum">Curriculum</option>
-                    <option value="Assignments">Assignments</option>
-                    <option value="Other">Other</option>
+                  <p>Choose the subject to give feedback: </p>
+                  <select ref="theme_select" type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.theme} onChange={this.handleOptionChange.bind(this,"theme")}>
+                    <option value="chooseSubject">Choose subject</option>
+                    <option ref="theme_lecture" value="Lecture">Lecture</option>
+                    <option ref="theme_curriculum" value="Curriculum">Curriculum</option>
+                    <option ref="theme_assignments" value="Assignments">Assignments</option>
+                    <option ref="theme_other" value="Other">Other</option>
                   </select>
                 </div>
               </div>
@@ -132,14 +132,14 @@ export default class SendFeedbackPage extends React.Component {
   	        	<div className="form-group">
   		        	<div className="row">
   			            <div className="col-xs-12">
-  			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.pFeedback} onChange={this.handleOptionChange.bind(this,"pFeedback")} placeholder="Write your positive feedback here... " />
+  			            	<textarea ref="pFeedback" type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.pFeedback} onChange={this.handleOptionChange.bind(this,"pFeedback")} placeholder="Write your positive feedback here... " />
   			            </div>
   		          </div>
   	          </div>
                 <div className="form-group">
     		        	<div className="row">
     			            <div className="col-xs-12">
-    			            	<textarea type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.nFeedback} onChange={this.handleOptionChange.bind(this,"nFeedback")} placeholder="Write your negative feedback here... " />
+    			            	<textarea ref="nFeedback" type="feedback" className="form-control" id="feedback" name="feedback" value={this.state.nFeedback} onChange={this.handleOptionChange.bind(this,"nFeedback")} placeholder="Write your negative feedback here... " />
     			            </div>
     		            </div>
     	            </div>
@@ -148,35 +148,35 @@ export default class SendFeedbackPage extends React.Component {
 
                     <div className="radio">
                       <label>
-                        <input type="radio" value="1" className="radioButtons" checked={this.state.selectedOption ==='1'}
+                        <input ref="radio1" type="radio" value="1" checked={this.state.selectedOption ==='1'}
                         onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
                         <span>1</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input type="radio" value="2" className="radioButtons" checked={this.state.selectedOption ==='2'}
+                        <input ref="radio2" type="radio" value="2" checked={this.state.selectedOption ==='2'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
                       <span>2</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input type="radio" value="3" className="radioButtons" checked={this.state.selectedOption ==='3'}
+                        <input ref="radio3" type="radio" value="3" checked={this.state.selectedOption ==='3'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                       <span>3</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input type="radio" value="4" className="radioButtons" checked={this.state.selectedOption ==='4'}
+                        <input ref="radio4" type="radio" value="4" checked={this.state.selectedOption ==='4'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                       <span>4</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input type="radio" value="5" className="radioButtons" checked={this.state.selectedOption ==='5'}
+                        <input ref="radio5" type="radio" value="5" checked={this.state.selectedOption ==='5'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                       <span>5</span>
                       </label>
