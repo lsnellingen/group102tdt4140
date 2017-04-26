@@ -4,8 +4,8 @@ This is an simple installation guide to help you run the project locally on your
 
 ## 1. Getting Started
 
-To run this project on your local computer, you will need to have
-[Node.js][] installed. The project is also using [Stormpath][] to handle authentication.
+To run this project on your local computer, you will need to have [Node.js][] installed.
+The system is also using [mySQLAdmin][] from NTNU to serve the database. To be able to connect to the database when running the project locally, you have to connect to NTNU's servers.
 
 ## 2. Installation
 
@@ -16,8 +16,8 @@ $ npm install
 ```
 
 ## 3. Provide Stormpath Configuration To Your Application
-
-Provide the **API Key ID**, **API Key Secret**, and **Application Href** to your environment, with one of these strategies:
+To handle authentication the system is using [Stormpath][].
+Therefor you need to provide the **API Key ID**, **API Key Secret**, and **Application Href** to your environment, with one of these strategies:
 
 **Unix Environment Variables:**
 
@@ -64,5 +64,6 @@ Application running at http://localhost:3000
 
 The application should now be running in your browser at [http://localhost:3000](http://localhost:3000).
 
+[mySQLAdmin]: https://mysqladmin.it.ntnu.no/
 [Node.js]: https://nodejs.org
 [Stormpath]: https://stormpath.com
