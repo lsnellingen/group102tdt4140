@@ -91,7 +91,8 @@ export default class SendFeedbackPage extends React.Component {
                   <br />
 		              <h3>Send Feedback</h3>
 		              <hr />
-                  <p>Select one of the courses yor're enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
+                  <p>Select one of the courses youre enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
+                  <p>Select one of the courses you are enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
                   <p></p>
                   <hr />
 	        		</div>
@@ -104,7 +105,7 @@ export default class SendFeedbackPage extends React.Component {
                   <select ref="subject_selector" type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.subject}  onChange={this.handleOptionChange.bind(this,"subject")}>
                     <option  value="chooseSubject">Choose course</option>
                       { this.state.myCourses.map(function(course){
-                        return <option ref="noe" key={course} value={course}>{course}</option>;
+                        return <option ref={"noe"} key={course} value={course}>{course}</option>;
                       })}
                   </select>
                   {this.state.showWarning ?
@@ -202,7 +203,7 @@ export default class SendFeedbackPage extends React.Component {
                       </div> : null }
 
   	            <div className="form-group">
-  		            	<button type="submit" className="btn btn-info hCenter formButtonMargin mediumButton" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
+  		            	<button ref="submit_button" type="submit" className="btn btn-info hCenter formButtonMargin mediumButton" onClick={this.handleFormSubmit.bind(this)}>Submit</button>
   	            </div>
                 {/* whenClicked is a property not an event, per se. */}
               </div>

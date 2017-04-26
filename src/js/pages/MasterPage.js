@@ -25,6 +25,10 @@ export default class MasterPage extends React.Component {
             <div className = 'col-sm-10 col-xs-12 marginTop50'>
               { this.props.children }
             </div>
+            <div className = 'col-sm-10 col-xs-12 marginTop50'>
+              { this.props.children }
+            </div>
+          </div>
           </div>
         </div>
       </DocumentTitle>

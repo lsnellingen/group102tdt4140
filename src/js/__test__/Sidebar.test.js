@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Sidebar from '../pages/Sidebar';
 import renderer from 'react-test-renderer';
@@ -11,8 +11,8 @@ describe('Sidebar', () => {
     test('renders without crashing', () => {
 
 
-      const tree = renderer.create(
-        <Sidebar/>).toJSON();
+      const tree = shallow(
+        <Sidebar/>);
 
 
       expect(tree).toMatchSnapshot();
@@ -21,4 +21,4 @@ describe('Sidebar', () => {
 
 
     });
-});*/
+});

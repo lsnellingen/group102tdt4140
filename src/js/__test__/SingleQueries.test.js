@@ -1,20 +1,18 @@
-// Libs
 import React from 'react';
-import { Link } from 'react-router';
-import { LoginLink, LogoutLink, NotAuthenticated, Authenticated } from 'react-stormpath';
-
+import ReactDOM from 'react-dom';
+import SingleQueries from '../pages/SingleQueries';
 import renderer from 'react-test-renderer';
-import Header from '../pages/Header';
+import { RegistrationForm, LoginLink } from 'react-stormpath';
 import {shallow} from 'enzyme';
 
- describe('Header', () => {
+describe('SingleQueries', () => {
   var ReactTestUtils = require('react-addons-test-utils') // ES5 with npm
 
     test('renders without crashing', () => {
 
 
       const tree = shallow(
-        <Header/>);
+        <SingleQueries queries={{answers:"Testing answers"}}/>);
 
 
       expect(tree).toMatchSnapshot();

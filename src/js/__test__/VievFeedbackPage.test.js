@@ -10,15 +10,21 @@ describe('ViewFeedbackPage', () => {
 
     test('renders without crashing', () => {
       /*const renderer = ReactTestUtils.createRenderer();*/
-
-      const tree = renderer.create(
-        <ViewFeedbackPage/>).toJSON();
+      const context={user:{email:'hans@ntnu.no',customData:{courses:"TDT4120 - Algoritmer og datastrukturer"}}};
+      const tree = shallow(
+        <ViewFeedbackPage/>, {context});
 
 
       expect(tree).toMatchSnapshot();
 
 
 
+
+    });
+    test('render with one feedback', () => {
+      /*user:{email:"larsnee@gmail.com"}*/
+      const context={user:{email:'hans@ntnu.no',customData:{courses:"TDT4120 - Algoritmer og datastrukturer"}}};
+      var view = ReactTestUtils.renderIntoDocument(<ViewFeedbackPage/>, {context});
 
     });
 });

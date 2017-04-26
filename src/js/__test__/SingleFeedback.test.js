@@ -10,15 +10,24 @@ describe('SingleFeedback', () => {
 
     test('renders without crashing', () => {
       /*const renderer = ReactTestUtils.createRenderer();*/
+      const users = {email: "joachiee@ntnu.no"};
+      const context = {user:{name: "joachim", email:"joachiee@ntnu.no"}};
 
-      const tree = renderer.create(
-        <SingleFeedback feedback={{course:"TDT4140", date: "22-02-17"}}/>).toJSON();
+      const upvoter = {email: "hans@ntnu.no"};
+      const tree = shallow(
+        <SingleFeedback feedback={{response:"Heisann hoppsan", likes: 4, date: "Fri Apr 07 2017 12:40:30 GMT+0200 (Vest-Europa (sommertid))",upvoters: "hans@ntnu.no"}}/>,{ context });
 
-
+      console.log(tree.props)
       expect(tree).toMatchSnapshot();
 
 
 
 
+    });
+    test('render with one feedback', () => {
+      /*user:{email:"larsnee@gmail.com"}*/
+      const context={user:{email:'hans@ntnu.no'}};
+      var view = shallow(<SingleFeedback feedback={{response:"Heisann hoppsan", likes: 4, date: "Fri Apr 07 2017 12:40:30 GMT+0200 (Vest-Europa (sommertid))",upvoters: "hans@ntnu.no"}} />, {context});
+      
     });
 });

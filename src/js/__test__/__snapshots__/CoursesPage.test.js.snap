@@ -15,9 +15,16 @@ exports[`CoursesPage renders without crashing 1`] = `
         Courses:
       </h3>
       <hr />
+      <p>
+        This site provide a full overview of all courses youre enrolled in. You can easily add new courses by searching for name or course code in the find course section.
+      </p>
+      <p>
+        Removing courses is done by clicking the remove button after each course in the list to the left.
+      </p>
+      <hr />
     </div>
     <div
-      className="col-xs-6"
+      className="col-xs-12 col-md-6"
     >
       <div
         className="panel panel-info border-left"
@@ -54,6 +61,9 @@ exports[`CoursesPage renders without crashing 1`] = `
         <div
           className="panel-body"
         >
+          <h5>
+            List over all courses you are enrolled in:
+          </h5>
           <ul
             className="list-group"
           />
@@ -61,7 +71,7 @@ exports[`CoursesPage renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="col-xs-6"
+      className="col-xs-12 col-md-6"
     >
       <div
         className="panel panel-info"

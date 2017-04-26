@@ -1,132 +1,777 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SingleFeedback renders without crashing 1`] = `
-<div
-  className="panel panel-info"
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="panel panel-info"
 >
-  <div
-    className="panel-heading"
-  >
     <div
-      className="container-fluid"
+        className="panel-heading"
     >
-      <div
-        className="row"
-      >
         <div
-          className="col-xs-9 removePadding"
+            className="container-fluid"
         >
-          <span>
-            TDT4140
-          </span>
+            <div
+                className="row"
+            >
+                <div
+                    className="col-xs-9 removePadding"
+                >
+                    <span />
+                </div>
+                <div
+                    className="col-xs-3"
+                >
+                    <p
+                        className="pull-right removeMargin"
+                    >
+                        <small>
+                            Fri Apr 07
+                        </small>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div
-          className="col-xs-3"
-        >
-          <p
-            className="pull-right removeMargin"
-          >
-            <small>
-              22-02-17
-            </small>
-          </p>
-        </div>
-      </div>
     </div>
-  </div>
-  <div
-    className="panel-body removePadding"
-  >
     <div
-      className="container-fluid"
+        className="panel-body removePadding"
     >
-      <div
-        className="row"
-      >
         <div
-          className="col-xs-9 removePadding"
+            className="container-fluid"
         >
-          <ul
-            className="list-group removeMargin"
-          >
-            <li
-              className="list-group-item"
+            <div
+                className="row"
             >
-              <strong>
-                Matter of issue:
-              </strong>
-               
-            </li>
-            <li
-              className="list-group-item"
-            >
-              <strong>
-                Positive:
-              </strong>
-               
-            </li>
-            <li
-              className="list-group-item"
-            >
-              <strong>
-                Negative:
-              </strong>
-               
-            </li>
-            <li
-              className="list-group-item"
-            >
-              <strong>
-                Rating:
-              </strong>
-               
-            </li>
-          </ul>
+                <div
+                    className="col-xs-9 removePadding"
+                >
+                    <ul
+                        className="list-group removeMargin removeStyle"
+                    >
+                        <li
+                            className="list-group-item"
+                        >
+                            <strong>
+                                Matter of issue:
+                            </strong>
+                             
+                        </li>
+                        <li
+                            className="list-group-item"
+                        >
+                            <strong>
+                                Positive:
+                            </strong>
+                             
+                        </li>
+                        <li
+                            className="list-group-item"
+                        >
+                            <strong>
+                                Negative:
+                            </strong>
+                             
+                        </li>
+                        <li
+                            className="list-group-item"
+                        >
+                            <strong>
+                                Rating:
+                            </strong>
+                             
+                        </li>
+                        <Authenticated
+                            inGroup="Lecturer"
+                        >
+                            <li
+                                className="list-group-item"
+                            >
+                                <span>
+                                    Send a response on this feedback:
+                                </span>
+                                <div
+                                    className="row"
+                                >
+                                    <div
+                                        className="col-xs-8"
+                                    >
+                                        <input
+                                            className="form-control margin10"
+                                            id="question"
+                                            onChange={[Function]}
+                                            placeholder="Your response"
+                                            type="text"
+                                            value="Heisann hoppsan"
+                                        />
+                                    </div>
+                                    <div
+                                        className="col-xs-4"
+                                    >
+                                        <button
+                                            className="btn btn-info hCenter smallButton marginTop7"
+                                            onClick={[Function]}
+                                        >
+                                            Add response
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </Authenticated>
+                        <Authenticated
+                            inGroup="Student"
+                        >
+                            <li
+                                className="list-group-item"
+                            >
+                                <h3
+                                    className="removeMargin"
+                                >
+                                    <small>
+                                        Lecturer response:
+                                    </small>
+                                </h3>
+                                <h5>
+                                    <em>
+                                        Heisann hoppsan
+                                    </em>
+                                </h5>
+                                 
+                            </li>
+                        </Authenticated>
+                    </ul>
+                </div>
+                <div
+                    className="col-xs-3"
+                >
+                    <div>
+                        <MdThumbUp
+                            className="text-center hCenter marginTop20 fontColor onHover"
+                            onClick={[Function]}
+                            size={30}
+                        />
+                        <h6
+                            className="text-center "
+                        >
+                            Upvote feedback
+                        </h6>
+                        <hr />
+                        <h3
+                            className="text-center"
+                        />
+                        <h6
+                            className="text-center"
+                        >
+                            People have liked this feedback
+                        </h6>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div
-          className="col-xs-3"
-        >
-          <div>
-            <svg
-              className="text-center hCenterIcon fontColor onHover"
-              fill="currentColor"
-              height={30}
-              preserveAspectRatio="xMidYMid meet"
-              style={
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="panel panel-info"
+>
+      <div
+            className="panel-heading"
+      >
+            <div
+                  className="container-fluid"
+            >
+                  <div
+                        className="row"
+                  >
+                        <div
+                              className="col-xs-9 removePadding"
+                        >
+                              <span />
+                        </div>
+                        <div
+                              className="col-xs-3"
+                        >
+                              <p
+                                    className="pull-right removeMargin"
+                              >
+                                    <small>
+                                          Fri Apr 07
+                                    </small>
+                              </p>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <div
+            className="panel-body removePadding"
+      >
+            <div
+                  className="container-fluid"
+            >
+                  <div
+                        className="row"
+                  >
+                        <div
+                              className="col-xs-9 removePadding"
+                        >
+                              <ul
+                                    className="list-group removeMargin removeStyle"
+                              >
+                                    <li
+                                          className="list-group-item"
+                                    >
+                                          <strong>
+                                                Matter of issue:
+                                          </strong>
+                                           
+                                    </li>
+                                    <li
+                                          className="list-group-item"
+                                    >
+                                          <strong>
+                                                Positive:
+                                          </strong>
+                                           
+                                    </li>
+                                    <li
+                                          className="list-group-item"
+                                    >
+                                          <strong>
+                                                Negative:
+                                          </strong>
+                                           
+                                    </li>
+                                    <li
+                                          className="list-group-item"
+                                    >
+                                          <strong>
+                                                Rating:
+                                          </strong>
+                                           
+                                    </li>
+                                    <Authenticated
+                                          inGroup="Lecturer"
+                                    >
+                                          <li
+                                                className="list-group-item"
+                                          >
+                                                <span>
+                                                      Send a response on this feedback:
+                                                </span>
+                                                <div
+                                                      className="row"
+                                                >
+                                                      <div
+                                                            className="col-xs-8"
+                                                      >
+                                                            <input
+                                                                  className="form-control margin10"
+                                                                  id="question"
+                                                                  onChange={[Function]}
+                                                                  placeholder="Your response"
+                                                                  type="text"
+                                                                  value="Heisann hoppsan"
+                                                            />
+                                                      </div>
+                                                      <div
+                                                            className="col-xs-4"
+                                                      >
+                                                            <button
+                                                                  className="btn btn-info hCenter smallButton marginTop7"
+                                                                  onClick={[Function]}
+                                                            >
+                                                                  Add response
+                                                            </button>
+                                                      </div>
+                                                </div>
+                                          </li>
+                                    </Authenticated>
+                                    <Authenticated
+                                          inGroup="Student"
+                                    >
+                                          <li
+                                                className="list-group-item"
+                                          >
+                                                <h3
+                                                      className="removeMargin"
+                                                >
+                                                      <small>
+                                                            Lecturer response:
+                                                      </small>
+                                                </h3>
+                                                <h5>
+                                                      <em>
+                                                            Heisann hoppsan
+                                                      </em>
+                                                </h5>
+                                                 
+                                          </li>
+                                    </Authenticated>
+                              </ul>
+                        </div>
+                        <div
+                              className="col-xs-3"
+                        >
+                              <div>
+                                    <MdThumbUp
+                                          className="text-center hCenter marginTop20 fontColor onHover"
+                                          onClick={[Function]}
+                                          size={30}
+                                    />
+                                    <h6
+                                          className="text-center "
+                                    >
+                                          Upvote feedback
+                                    </h6>
+                                    <hr />
+                                    <h3
+                                          className="text-center"
+                                    />
+                                    <h6
+                                          className="text-center"
+                                    >
+                                          People have liked this feedback
+                                    </h6>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>,
+  ],
+  "options": Object {
+    "context": Object {
+      "user": Object {
+        "email": "joachiee@ntnu.no",
+        "name": "joachim",
+      },
+    },
+  },
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {
+        "user": Object {
+          "email": "joachiee@ntnu.no",
+          "name": "joachim",
+        },
+      },
+      "_currentElement": <SingleFeedback
+        feedback={
                 Object {
-                  "color": undefined,
-                  "verticalAlign": "middle",
-                }
-              }
-              viewBox="0 0 40 40"
-              width={30}
-            >
-              <g>
-                <path
-                  d="m38.4 16.6l-0.1 0.2h0.1v3.2c0 0.5-0.1 0.9-0.3 1.3l-5.1 11.7c-0.4 1.1-1.6 2-3 2h-15c-1.8 0-3.4-1.6-3.4-3.4v-16.6c0-0.9 0.4-1.7 1.1-2.3l10.9-11.1 1.8 1.8c0.5 0.5 0.7 1.1 0.7 1.8v0.5l-1.6 7.7h10.5c1.8 0 3.4 1.4 3.4 3.2z m-36.8 18.4v-20h6.8v20h-6.8z"
-                />
-              </g>
-            </svg>
-            <h6
-              className="text-center "
-            >
-              Upvote feedback
-            </h6>
-            <hr />
-            <h3
-              className="text-center"
-            >
-              13
-            </h3>
-            <h6
-              className="text-center"
-            >
-              People have liked this feedback
-            </h6>
+                        "date": "Fri Apr 07 2017 12:40:30 GMT+0200 (Vest-Europa (sommertid))",
+                        "likes": 4,
+                        "response": "Heisann hoppsan",
+                        "upvoters": "hans@ntnu.no",
+                      }
+        }
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": SingleFeedback {
+        "_reactInternalInstance": [Circular],
+        "context": Object {
+          "user": Object {
+            "email": "joachiee@ntnu.no",
+            "name": "joachim",
+          },
+        },
+        "props": Object {
+          "feedback": Object {
+            "date": "Fri Apr 07 2017 12:40:30 GMT+0200 (Vest-Europa (sommertid))",
+            "likes": 4,
+            "response": "Heisann hoppsan",
+            "upvoters": "hans@ntnu.no",
+          },
+        },
+        "refs": Object {},
+        "state": Object {
+          "liked": false,
+          "likes": undefined,
+          "response": "Heisann hoppsan",
+          "showWarning": false,
+          "status": "responding",
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <div
+                              className="container-fluid"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <div
+                                                  className="col-xs-9 removePadding"
+                                        >
+                                                  <span />
+                                        </div>
+                                        <div
+                                                  className="col-xs-3"
+                                        >
+                                                  <p
+                                                            className="pull-right removeMargin"
+                                                  >
+                                                            <small>
+                                                                      Fri Apr 07
+                                                            </small>
+                                                  </p>
+                                        </div>
+                              </div>
+                    </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          <div
+                    className="panel-body removePadding"
+          >
+                    <div
+                              className="container-fluid"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <div
+                                                  className="col-xs-9 removePadding"
+                                        >
+                                                  <ul
+                                                            className="list-group removeMargin removeStyle"
+                                                  >
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Matter of issue:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Positive:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Negative:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Rating:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <Authenticated
+                                                                      inGroup="Lecturer"
+                                                            >
+                                                                      <li
+                                                                                className="list-group-item"
+                                                                      >
+                                                                                <span>
+                                                                                          Send a response on this feedback:
+                                                                                </span>
+                                                                                <div
+                                                                                          className="row"
+                                                                                >
+                                                                                          <div
+                                                                                                    className="col-xs-8"
+                                                                                          >
+                                                                                                    <input
+                                                                                                              className="form-control margin10"
+                                                                                                              id="question"
+                                                                                                              onChange={[Function]}
+                                                                                                              placeholder="Your response"
+                                                                                                              type="text"
+                                                                                                              value="Heisann hoppsan"
+                                                                                                    />
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="col-xs-4"
+                                                                                          >
+                                                                                                    <button
+                                                                                                              className="btn btn-info hCenter smallButton marginTop7"
+                                                                                                              onClick={[Function]}
+                                                                                                    >
+                                                                                                              Add response
+                                                                                                    </button>
+                                                                                          </div>
+                                                                                </div>
+                                                                      </li>
+                                                            </Authenticated>
+                                                            <Authenticated
+                                                                      inGroup="Student"
+                                                            >
+                                                                      <li
+                                                                                className="list-group-item"
+                                                                      >
+                                                                                <h3
+                                                                                          className="removeMargin"
+                                                                                >
+                                                                                          <small>
+                                                                                                    Lecturer response:
+                                                                                          </small>
+                                                                                </h3>
+                                                                                <h5>
+                                                                                          <em>
+                                                                                                    Heisann hoppsan
+                                                                                          </em>
+                                                                                </h5>
+                                                                                 
+                                                                      </li>
+                                                            </Authenticated>
+                                                  </ul>
+                                        </div>
+                                        <div
+                                                  className="col-xs-3"
+                                        >
+                                                  <div>
+                                                            <MdThumbUp
+                                                                      className="text-center hCenter marginTop20 fontColor onHover"
+                                                                      onClick={[Function]}
+                                                                      size={30}
+                                                            />
+                                                            <h6
+                                                                      className="text-center "
+                                                            >
+                                                                      Upvote feedback
+                                                            </h6>
+                                                            <hr />
+                                                            <h3
+                                                                      className="text-center"
+                                                            />
+                                                            <h6
+                                                                      className="text-center"
+                                                            >
+                                                                      People have liked this feedback
+                                                            </h6>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          className="panel panel-info"
+>
+          <div
+                    className="panel-heading"
+          >
+                    <div
+                              className="container-fluid"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <div
+                                                  className="col-xs-9 removePadding"
+                                        >
+                                                  <span />
+                                        </div>
+                                        <div
+                                                  className="col-xs-3"
+                                        >
+                                                  <p
+                                                            className="pull-right removeMargin"
+                                                  >
+                                                            <small>
+                                                                      Fri Apr 07
+                                                            </small>
+                                                  </p>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="panel-body removePadding"
+          >
+                    <div
+                              className="container-fluid"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <div
+                                                  className="col-xs-9 removePadding"
+                                        >
+                                                  <ul
+                                                            className="list-group removeMargin removeStyle"
+                                                  >
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Matter of issue:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Positive:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Negative:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <li
+                                                                      className="list-group-item"
+                                                            >
+                                                                      <strong>
+                                                                                Rating:
+                                                                      </strong>
+                                                                       
+                                                            </li>
+                                                            <Authenticated
+                                                                      inGroup="Lecturer"
+                                                            >
+                                                                      <li
+                                                                                className="list-group-item"
+                                                                      >
+                                                                                <span>
+                                                                                          Send a response on this feedback:
+                                                                                </span>
+                                                                                <div
+                                                                                          className="row"
+                                                                                >
+                                                                                          <div
+                                                                                                    className="col-xs-8"
+                                                                                          >
+                                                                                                    <input
+                                                                                                              className="form-control margin10"
+                                                                                                              id="question"
+                                                                                                              onChange={[Function]}
+                                                                                                              placeholder="Your response"
+                                                                                                              type="text"
+                                                                                                              value="Heisann hoppsan"
+                                                                                                    />
+                                                                                          </div>
+                                                                                          <div
+                                                                                                    className="col-xs-4"
+                                                                                          >
+                                                                                                    <button
+                                                                                                              className="btn btn-info hCenter smallButton marginTop7"
+                                                                                                              onClick={[Function]}
+                                                                                                    >
+                                                                                                              Add response
+                                                                                                    </button>
+                                                                                          </div>
+                                                                                </div>
+                                                                      </li>
+                                                            </Authenticated>
+                                                            <Authenticated
+                                                                      inGroup="Student"
+                                                            >
+                                                                      <li
+                                                                                className="list-group-item"
+                                                                      >
+                                                                                <h3
+                                                                                          className="removeMargin"
+                                                                                >
+                                                                                          <small>
+                                                                                                    Lecturer response:
+                                                                                          </small>
+                                                                                </h3>
+                                                                                <h5>
+                                                                                          <em>
+                                                                                                    Heisann hoppsan
+                                                                                          </em>
+                                                                                </h5>
+                                                                                 
+                                                                      </li>
+                                                            </Authenticated>
+                                                  </ul>
+                                        </div>
+                                        <div
+                                                  className="col-xs-3"
+                                        >
+                                                  <div>
+                                                            <MdThumbUp
+                                                                      className="text-center hCenter marginTop20 fontColor onHover"
+                                                                      onClick={[Function]}
+                                                                      size={30}
+                                                            />
+                                                            <h6
+                                                                      className="text-center "
+                                                            >
+                                                                      Upvote feedback
+                                                            </h6>
+                                                            <hr />
+                                                            <h3
+                                                                      className="text-center"
+                                                            />
+                                                            <h6
+                                                                      className="text-center"
+                                                            >
+                                                                      People have liked this feedback
+                                                            </h6>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <SingleFeedback
+    feedback={
+        Object {
+            "date": "Fri Apr 07 2017 12:40:30 GMT+0200 (Vest-Europa (sommertid))",
+            "likes": 4,
+            "response": "Heisann hoppsan",
+            "upvoters": "hans@ntnu.no",
+          }
+    }
+/>,
+}
 `;

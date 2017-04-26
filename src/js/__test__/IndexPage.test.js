@@ -26,8 +26,8 @@ describe('IndexPage', () => {
     test('renders without crashing', () => {
       /*const renderer = ReactTestUtils.createRenderer();*/
 
-      const tree = renderer.create(
-        <IndexPage/>).toJSON();
+      const tree = shallow(
+        <IndexPage/>);
 
 
       expect(tree).toMatchSnapshot();
@@ -38,11 +38,11 @@ describe('IndexPage', () => {
     });
     test('login-button links to appropriate page',() => {
 
-      Example = renderer.create(
-        <IndexPage/>
-      );
-      Example = ReactTestUtils.renderIntoDocument(<button/>);
-      Example.doClick();
+
+      const test = ReactTestUtils.renderIntoDocument(<IndexPage/>);
+      const loginButton = test.refs.login_button;
+      //ReactTestUtils.Simulate.click(loginButton);
+
       /*ReactTestUtils.Simulate.click(<id{login-button"}/>);*/
     });
 });

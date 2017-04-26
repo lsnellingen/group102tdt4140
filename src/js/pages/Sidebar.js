@@ -9,6 +9,7 @@ import CoursesIcon from 'react-icons/lib/md/toc';
 import SendFeedbackIcon from 'react-icons/lib/md/send';
 import ViewFeedbackIcon from 'react-icons/lib/md/comment';
 import AskQuery from 'react-icons/lib/fa/question';
+
 import MyQueries from 'react-icons/lib/md/equalizer';
 
 import { LoginLink, LogoutLink, NotAuthenticated, Authenticated } from 'react-stormpath';

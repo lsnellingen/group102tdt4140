@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SendFeedbackPage from '../pages/SendFeedbackPage';
 import renderer from 'react-test-renderer';
+import axios from 'axios';
 
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 describe('SendFeedbackPage', () => {
   var ReactTestUtils = require('react-addons-test-utils') // ES5 with npm
 
     test('renders without crashing', () => {
       /*const renderer = ReactTestUtils.createRenderer();*/
-
-      const tree = renderer.create(
-        <SendFeedbackPage/>).toJSON();
-
+      const context = {user:{email: 'hans@ntnu.no'}};
+      const tree = shallow(
+        <SendFeedbackPage/>,{context});
 
       expect(tree).toMatchSnapshot();
 
@@ -22,15 +22,22 @@ describe('SendFeedbackPage', () => {
 
     });
     //TDT4120 - Algoritmer og datastrukturer
-  /*  test('Handle subject select form change',()=>{
+    /*test('Handle subject select form change',()=>{
        var view = ReactTestUtils.renderIntoDocument(<SendFeedbackPage/>)
        view.state.myCourses = ["TDT4120 - Algoritmer og datastrukturer", "TDT4222 - Sjokolade"]
-
+       console.log(view.state.myCourses);
        const subjectSelector = view.refs.subject_selector;
-       const TDT4120= view.refs.noe;
+       const TDT4120= "TDT4120 - Algoritmer og datastrukturer";
 
-       ReactTestUtils.Simulate.change(TDT4120,view.handleOptionChange.bind(view,'theme'));
+       ReactTestUtils.Simulate.change(TDT4120,view.handleOptionChange.bind(view,'subject'));
        expect(view.state.myCourses).toBe("Lecture");
+
+     });
+     /*test('handle subject select form change',()=>{
+       const context = {user:{email: "hans@ntnu.no"}};
+
+       const wrapper = shallow(<SendFeedbackPage/>, {context});
+       expect(wrapper.state.myCourses).toBe('hans@ntnu.no');
 
      });*/
 
@@ -107,6 +114,64 @@ describe('SendFeedbackPage', () => {
       const wrapper = shallow(<SendFeedbackPage/>, {context});
       wrapper.setContext(context);
       wrapper.instance().componentDidMount();
-      console.log(wrapper.instance().state.date);
+
+      console.log(wrapper.instance().state.myCourses);
+    });
+    test('submitting, (If error is email undefined then the test onsubmit succesfully goes to sending the form)',() =>{
+      const fakeContext = { user: { email: "hans@ntnu.no" } };
+      const contextTypes = { user: React.PropTypes.object };
+      const sendFeedbackComponent = wrapWithContext(fakeContext, contextTypes, <SendFeedbackPage/>);
+
+      var view = ReactTestUtils.renderIntoDocument(<SendFeedbackPage/>);
+      
+      //view.state.myCourses = ["TDT4120 - Algoritmer og datastrukturer", "TDT4222 - Sjokolade"]
+      const submitButton = view.refs.submit_button;
+      const themeLecture = view.refs.theme_lecture;
+      const node1 = view.refs.radio1;
+      const node = view.refs.pFeedback;
+      const nodeN = view.refs.nFeedback;
+
+
+      ReactTestUtils.Simulate.click(submitButton);
+      expect(view.state.showUnsuccsessfull).toBe(true);
+
+      ReactTestUtils.Simulate.change(themeLecture,view.handleOptionChange.bind(view,'theme'));
+
+      ReactTestUtils.Simulate.click(submitButton);
+      expect(view.state.showUnsuccsessfull).toBe(true);
+
+      ReactTestUtils.Simulate.change(node1,view.handleOptionChange.bind(view,'selectedOption'));
+      ReactTestUtils.Simulate.click(submitButton);
+      expect(view.state.showUnsuccsessfull).toBe(true);
+
+
+      node.value = "Testing the pFeedback Textarea 123";
+      ReactTestUtils.Simulate.change(node);
+      ReactTestUtils.Simulate.click(submitButton);
+      expect(view.state.showUnsuccsessfull).toBe(true);
+
+
+      node.value = "Testing the nFeedback Textarea 123";
+      ReactTestUtils.Simulate.change(nodeN);
+      ReactTestUtils.Simulate.click(submitButton);
+      expect(view.state.showUnsuccsessfull).toBe(true);
+
+      view.state.subject = "TDT4120 - Algoritmer og datastrukturer";
+      ReactTestUtils.Simulate.click(submitButton);
+
+      expect(view.state.showUnsuccsessfull).toBe(true);
+
     });
 });
+function wrapWithContext(context, contextTypes, children) {
+    const wrapperWithContext = React.createClass({
+        childContextTypes: contextTypes,
+        getChildContext() {
+            return context;
+        },
+        render() {
+            return children;
+        },
+    });
+    return React.createElement(wrapperWithContext);
+}

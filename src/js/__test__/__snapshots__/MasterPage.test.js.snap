@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MasterPage renders without crashing 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div>
+    <SideEffect(DocumentTitle)
+        title="eduBot - Feedback for students and lecturers"
+    >
+        <div
+            className="MasterPage"
+        >
+            <div
+                className="row"
+            >
+                <Header />
+                <div
+                    className="col-sm-2 col-xs-12 marginTop50"
+                >
+                    <Sidebar />
+                </div>
+                <div
+                    className="col-sm-10 col-xs-12 marginTop50"
+                />
+            </div>
+        </div>
+    </SideEffect(DocumentTitle)>
+</div>,
+  "nodes": Array [
+    <div>
+      <SideEffect(DocumentTitle)
+            title="eduBot - Feedback for students and lecturers"
+      >
+            <div
+                  className="MasterPage"
+            >
+                  <div
+                        className="row"
+                  >
+                        <Header />
+                        <div
+                              className="col-sm-2 col-xs-12 marginTop50"
+                        >
+                              <Sidebar />
+                        </div>
+                        <div
+                              className="col-sm-10 col-xs-12 marginTop50"
+                        />
+                  </div>
+            </div>
+      </SideEffect(DocumentTitle)>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <MasterPage />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": MasterPage {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div>
+          <SideEffect(DocumentTitle)
+                    title="eduBot - Feedback for students and lecturers"
+          >
+                    <div
+                              className="MasterPage"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <Header />
+                                        <div
+                                                  className="col-sm-2 col-xs-12 marginTop50"
+                                        >
+                                                  <Sidebar />
+                                        </div>
+                                        <div
+                                                  className="col-sm-10 col-xs-12 marginTop50"
+                                        />
+                              </div>
+                    </div>
+          </SideEffect(DocumentTitle)>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div>
+          <SideEffect(DocumentTitle)
+                    title="eduBot - Feedback for students and lecturers"
+          >
+                    <div
+                              className="MasterPage"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <Header />
+                                        <div
+                                                  className="col-sm-2 col-xs-12 marginTop50"
+                                        >
+                                                  <Sidebar />
+                                        </div>
+                                        <div
+                                                  className="col-sm-10 col-xs-12 marginTop50"
+                                        />
+                              </div>
+                    </div>
+          </SideEffect(DocumentTitle)>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <MasterPage />,
+}
+`;

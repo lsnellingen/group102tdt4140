@@ -110,7 +110,6 @@ class ViewQueriesPage extends Component {
             </div>
             { this.state.filteredQuery.length > 0 ?
               <div>
-
                 <div className="col-xs-10">
                   <h4 style={center}>
                     {this.state.filteredQuery.length > 1 ?

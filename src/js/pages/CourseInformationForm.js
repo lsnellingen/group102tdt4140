@@ -68,7 +68,7 @@ class CourseInformationForm extends Component {
                 <form onSubmit={this.handleSubmit.bind(this)}>
                   <div className="form-group">
                     <p>Choose course:</p>
-                    <select type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.course} onChange={this.handleFiltering.bind(this)}>
+                    <select ref="subject_selector" type="subject-selector" className="form-control" id="subject-selector" name="subject-selector" value={this.state.course} onChange={this.handleFiltering.bind(this)}>
                       <option value="chooseCourse">Choose course</option>
                         { this.state.myCourses.map(course => {
                           return <option key={course} value={course} >{course}</option>;
@@ -82,18 +82,18 @@ class CourseInformationForm extends Component {
                   </div>
                   <div className="form-group">
                     <p>Name:</p>
-                    <input type="text" className="form-control" id="name" placeholder="Name" value={this.state.name} onChange={this.handleOptionChange.bind(this,"name")}/>
+                    <input ref="name" type="text" className="form-control" id="name" placeholder="Name" value={this.state.name} onChange={this.handleOptionChange.bind(this,"name")}/>
                   </div>
                   <div className="form-group">
                     <p>Short description: </p>
-                    <textarea type="text" className="form-control" id="description" placeholder="Description" value={this.state.description} onChange={this.handleOptionChange.bind(this,"description")}/>
+                    <textarea ref="description" type="text" className="form-control" id="description" placeholder="Description" value={this.state.description} onChange={this.handleOptionChange.bind(this,"description")}/>
                   </div>
                   {this.state.showMessage ?
                     <div className="form-group removePadding">
                       <p className="alert alert-danger userMessage">You have to fill in all sections.</p>
                     </div>
                     : null }
-                  <button type="submit" className="btn btn-info hCenter formButtonMargin mediumButton">Start adding questions</button>
+                  <button ref="submit_button" type="submit" className="btn btn-info hCenter formButtonMargin mediumButton">Start adding questions</button>
                 </form>
               </div>
             </div>
