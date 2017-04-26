@@ -150,6 +150,38 @@ app.get('/getFeedback/', function(req, res) {
   });
 });
 
+app.get('/getQuery/', function(req, res) {
+  connection.query("SELECT * FROM query", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
+app.get('/getMyQueries/:creator', function(req, res) {
+  var creator = req.params.creator;
+  connection.query("SELECT * FROM query WHERE creator = '" + creator + "'", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
+app.get('/getQueries/:queryID', function(req, res) {
+  var queryID = req.params.queryID;
+  connection.query("SELECT * FROM queries WHERE queryIDfk = '" + queryID + "'", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
 app.post('/updateCourses/:username/:course', function(req, res) {
   var username = req.params.username;
   var course = req.params.course == 'Empty' ? '' : req.params.course;
@@ -179,6 +211,87 @@ app.post('/sendFeedback/:username/:subject/:theme/:grade/:pFeedback/:nFeedback/'
   });
 });
 
+app.post('/upvoteFeedback/:username/:feedbackID', function(req,res) {
+  var username = req.params.username;
+  var feedbackID = req.params.feedbackID;
+  connection.query("UPDATE feedback SET upvotes = upvotes + 1, upvoters = CONCAT(upvoters,'" + username + "+')" + " WHERE feedbackID = " + feedbackID + "", function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+
+app.post('/sendResponse/:feedbackID/:response', function(req,res) {
+  var feedbackID = req.params.feedbackID;
+  var response = req.params.response;
+  connection.query("UPDATE feedback SET response = '" + response + "' WHERE feedbackID = " + feedbackID, function(error, result) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.post('/sendQuery/:username/:name/:description/:course', function(req,res) {
+  var username = req.params.username;
+  var name = req.params.name;
+  var description = req.params.description;
+  var course = req.params.course;
+  connection.query("INSERT INTO query (name, description, course, creator) "
+      + "VALUES ('" + name + "','" + description + "','" + course + "','" + username + "')", function(error, result) {
+        if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.post('/answerQuery/:queryID/:username', function(req, res) {
+  var queryID = req.params.queryID;
+  var username = req.params.username;
+  connection.query("UPDATE query SET answered = CONCAT(answered,'" + username + "+')" + " WHERE queryID = " + queryID + "", function(error, result) {
+
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+
+app.post('/sendQueries/:id/:question/:type/:alternatives', function(req,res) {
+  var id = req.params.id;
+  var question = req.params.question.replace(/QUESTIONMARK/g, '?');
+  var type = req.params.type;
+  var alternatives = req.params.alternatives  == 'Empty' ? '' : req.params.alternatives;
+  connection.query("INSERT INTO queries (queryIDfk, question, type, alternatives) "
+      + "VALUES ('" + id + "','" + question + "','" + type + "','" + alternatives + "')", function(error, result) {
+        if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.post('/answerQueries/:queriesID/:answer', function(req, res) {
+  var queriesID = req.params.queriesID;
+  var answer = req.params.answer;
+  connection.query("UPDATE queries SET answers = CONCAT(answers,'" + answer + "+')" + " WHERE queriesID = " + queriesID + "", function(error, result) {
+
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'src/html/index.html'));

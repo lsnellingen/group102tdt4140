@@ -8,24 +8,22 @@ import axios from 'axios';
 // Components
 import Sidebar from './Sidebar';
 import Header from './Header';
-/*import Footer from './Footer'; */
+import Footer from './Footer';
 
 
 export default class MasterPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <DocumentTitle title='eduBot - Feedback for students and lecturers'>
-          <div className="MasterPage">
-            <div className="row">
-              <Header />
-              <div className='col-xs-2 marginTop50'>
-                <Sidebar />
-              </div>
-              <div className = 'col-xs-10 marginTop50'>
-                { this.props.children }
-              </div>
+      <DocumentTitle title='eduBot - Feedback for students and lecturers'>
+        <div className="MasterPage">
+          <div className="row">
+            <Header />
+            <div className='col-sm-2 col-xs-12 marginTop50'>
+              <Sidebar />
+            </div>
+            <div className = 'col-sm-10 col-xs-12 marginTop50'>
+              { this.props.children }
             </div>
           </div>
         </DocumentTitle>
