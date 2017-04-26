@@ -96,6 +96,9 @@ ul.sidebar-nav {
   text-decoration: none;
   padding-bottom: 10px !important;
 }
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+}
 
 .userMessage {
   margin-top: 10px;
@@ -151,9 +154,18 @@ margin-top: 7px;
   margin-left: 20px;
 }
 
+.sideMargin {
+  margin: 0 50px 0 50px;
+}
+
 .formButtonMargin {
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.sendResponseButton {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .removePadding {
@@ -277,8 +289,7 @@ margin-top: 7px;
     max-width: 50vw;
     height: 25vh;
     font-size:14pt;
-    overflow-y: auto;;
-
+    overflow-y: auto;
 }
 
 

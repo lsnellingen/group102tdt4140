@@ -132,13 +132,13 @@ class Courses extends Component {
                 <h3 className="panel-title"><CoursesIcon size={20} className="vCenterIcon"/> Your courses:</h3>
               </div>
               <div className="panel-body">
-                <h5>List over all courses you are enrolled in:</h5>
                 { this.state.myCourses[0] == "You are not registered in any courses" ?
                     <ul className="list-group">
                       <li className="list-group-item">{this.state.myCourses[0]}</li>
                     </ul>
                     :
                     <ul className="list-group">
+                      <h5>List over all courses you are enrolled in:</h5>
                       { this.state.myCourses.map(course => {
                         return <li key={course} className="list-group-item">{course}
                                   <DeleteIcon className="pull-right fontColor onHover vCenterIcon" size={25}  onClick={() => this.handleClickOnRemoveButton(course)}/>
