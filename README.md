@@ -1,51 +1,38 @@
-#Stormpath is Joining Okta
-We are incredibly excited to announce that [Stormpath is joining forces with Okta](https://stormpath.com/blog/stormpaths-new-path?utm_source=github&utm_medium=readme&utm-campaign=okta-announcement). Please visit [the Migration FAQs](https://stormpath.com/oktaplusstormpath?utm_source=github&utm_medium=readme&utm-campaign=okta-announcement) for a detailed look at what this means for Stormpath users.
+# Installation Guide
 
-We're available to answer all questions at [support@stormpath.com](mailto:support@stormpath.com).
-
-# Stormpath React + Express Fullstack Example Project
-
-This repository is an example fullstack web application using React on the
-front-end and Express.js as your back-end server. It uses [express-stormpath][]
-and [stormpath-sdk-react][] to authenticate users, protect your server API,
-and render default login and registration screens in your React application.
+This is an simple installation guide to help you run the project locally on your computer.
 
 ## 1. Getting Started
 
-To run this example project on your local computer, you will need to have
-[Node.js][] installed and a [Stormpath][] tenant account.
-If you don't have a Stormpath account, sign up for a free account at [https://api.stormpath.com/register](https://api.stormpath.com/register).
+To run this project on your local computer, you will need to have
+[Node.js][] installed. The project is also using [Stormpath][] to handle authentication.
 
 ## 2. Installation
 
-Clone this repository, then using a terminal, navigate to the directory and run the following:
+Clone this repository, then using a terminal, navigate to the directory and run the following to install dependencies:
 
 ```bash
 $ npm install
 ```
 
-## 3. Gather Stormpath Configuration
-
-You'll need to [Download an API Key Pair](https://docs.stormpath.com/rest/product-guide/latest/quickstart.html#create-an-api-key-pair) from the [Stormpath Admin Console][], and find the **Application Href** (also called **REST URL**) of the Application that you will use for your project. The default application is called "My Application" and you can use that to get started.
-
-## 4. Provide Configuration To Your Application
+## 3. Provide Stormpath Configuration To Your Application
 
 Provide the **API Key ID**, **API Key Secret**, and **Application Href** to your environment, with one of these strategies:
 
 **Unix Environment Variables:**
 
 ```bash
-export STORMPATH_CLIENT_APIKEY_ID=YOUR_ID_HERE
-export STORMPATH_CLIENT_APIKEY_SECRET=YOUR_SECRET_HERE
-export STORMPATH_APPLICATION_HREF=YOUR_APP_HREF
+export STORMPATH_CLIENT_APIKEY_ID=1UV54NYI5FOVJ0ZALMDI61H44
+export STORMPATH_CLIENT_APIKEY_SECRET=bTBWPPwfSCD1lo+V1JcX5WM9+SP04b3l8wvt66CNWck
+export STORMPATH_APPLICATION_HREF=https://api.stormpath.com/v1/applications/1wXstL8o0iF3jRr5Kf3zFk
 ```
 
 **Windows Environment Variables:**
 
 ```bash
-set STORMPATH_CLIENT_APIKEY_ID=YOUR_ID_HERE
-set STORMPATH_CLIENT_APIKEY_SECRET=YOUR_SECRET_HERE
-set STORMPATH_APPLICATION_HREF=YOUR_APP_HREF
+set STORMPATH_CLIENT_APIKEY_ID=1UV54NYI5FOVJ0ZALMDI61H44
+set STORMPATH_CLIENT_APIKEY_SECRET=bTBWPPwfSCD1lo+V1JcX5WM9+SP04b3l8wvt66CNWck
+set STORMPATH_APPLICATION_HREF=https://api.stormpath.com/v1/applications/1wXstL8o0iF3jRr5Kf3zFk
 ```
 
 **Place them in a file named `stormpath.yml`, in the directory where you run the dev server:**
@@ -53,10 +40,10 @@ set STORMPATH_APPLICATION_HREF=YOUR_APP_HREF
 ```yaml
 client:
   apiKey:
-    id: YOUR_API_KEY_ID
-    secret: YOUR_API_KEY_SECRET
+    id: 1UV54NYI5FOVJ0ZALMDI61H44
+    secret: bTBWPPwfSCD1lo+V1JcX5WM9+SP04b3l8wvt66CNWck
 application:
-  href: https://api.stormpath.com/v1/applications/XXXX
+  href: https://api.stormpath.com/v1/applications/1wXstL8o0iF3jRr5Kf3zFk
 ```
 
 ## 4. Usage
@@ -77,16 +64,5 @@ Application running at http://localhost:3000
 
 The application should now be running in your browser at [http://localhost:3000](http://localhost:3000).
 
-## Support
-
-We're here to help if you get stuck.  There are several ways that you can get in touch with a member of our team:
-
-* Send an email to [support@stormpath.com](mailto:support@stormpath.com)
-* Open a Github Issue on this repository.
-* Join us on our Slack channel: [https://talkstormpath.shipit.xyz/](https://talkstormpath.shipit.xyz/)
-
 [Node.js]: https://nodejs.org
 [Stormpath]: https://stormpath.com
-[Stormpath Admin Console]: https://api.stormpath.com
-[stormpath-sdk-react]: https://github.com/stormpath/stormpath-sdk-react
-[express-stormpath]: https://github.com/stormpath/express-stormpath
