@@ -43,7 +43,7 @@ class SingleQueries extends Component {
   render() {
     let answerType = null;
     if(this.props.queries.type == "Text"){
-      answerType = 
+      answerType =
       <div>
         <textarea type="answerArea" className="form-control" id="answerArea" name="answerArea" onChange={this.handleOptionChange.bind(this,"answers")} placeholder="Write your answer here... " />
       </div>;
@@ -94,7 +94,7 @@ class SingleQueries extends Component {
           </div>
         </form>
     } else{
-      answerType = 
+      answerType =
       <select type="alternative-selector" className="form-control" id="alternative-selector" name="alternative-selector" onChange={this.handleOptionChange.bind(this,"answers")}>
         <option value="chooseAnswer">Choose an answer</option>
         { this.state.myAlternatives.map(alternative => {
@@ -103,21 +103,10 @@ class SingleQueries extends Component {
       </select>
     }
     return (
-      <div className="panel panel-info removePadding">
-        <div className="panel-body removePadding">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-xs-12 removePadding">
-              <ul className="list-group removeMargin">
-                <div>
-                  <li className="list-group-item"><strong>{this.props.queries.question}</strong></li>
-                  {answerType}
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
-        </div>
+      <div className="">
+        <p>{this.props.queries.question}</p>
+        {answerType}
+        <br />
       </div>
     );
   }
