@@ -95,7 +95,7 @@ class AskQueryPage extends Component {
 
             <div className="col-xs-12">
               <br />
-              <h3>Ask query:</h3>
+              <h3>Ask query</h3>
               <hr />
             </div>
 

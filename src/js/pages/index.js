@@ -9,4 +9,4 @@ export SendFeedbackPage from './SendFeedbackPage'
 export SingleQuery from './SingleQuery';
 export VerifyEmailPage from './VerifyEmailPage'
 export ViewFeedbackPage from './ViewFeedbackPage'
-
+export ViewMyQueriesPage from './ViewMyQueriesPAge'

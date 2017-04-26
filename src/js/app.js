@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexRoute, Route, browserHistory, IndexRedirect } from 'react-router';
 import ReactStormpath, { Router, HomeRoute, LoginRoute, AuthenticatedRoute } from 'react-stormpath';
-import { ChangePasswordPage, MasterPage, IndexPage, LoginPage, RegisterPage, ResetPasswordPage, VerifyEmailPage, ProfilePage, SendFeedbackPage, ViewFeedbackPage, SingleQuery } from './pages';
+import { ChangePasswordPage, MasterPage, IndexPage, LoginPage, RegisterPage, ResetPasswordPage, VerifyEmailPage, ProfilePage, SendFeedbackPage, ViewFeedbackPage, SingleQuery, ViewMyQueriesPage } from './pages';
 import CoursesPage from './pages/CoursesPage';
 import AskQueryPage from './pages/AskQueryPage';
 import ViewQueriesPage from './pages/ViewQueriesPage';
@@ -27,6 +27,7 @@ ReactDOM.render(
       </AuthenticatedRoute>
       <AuthenticatedRoute inGroup="Lecturer">
         <Route path='/AskQuery' component={AskQueryPage} />
+        <Route path='/MyQueries' component={ViewMyQueriesPage} />
       </AuthenticatedRoute>
       <AuthenticatedRoute inGroup="Student">
         <Route path='/ViewQueries' component={ViewQueriesPage} />
