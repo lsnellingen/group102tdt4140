@@ -160,6 +160,17 @@ app.get('/getQuery/', function(req, res) {
   });
 });
 
+app.get('/getMyQueries/:creator', function(req, res) {
+  var creator = req.params.creator;
+  connection.query("SELECT * FROM query WHERE creator = '" + creator + "'", function(error, rows, fields) {
+    if(!!error) {
+      console.log("Error");
+    } else {
+      res.send(rows);
+    }
+  });
+});
+
 app.get('/getQueries/:queryID', function(req, res) {
   var queryID = req.params.queryID;
   connection.query("SELECT * FROM queries WHERE queryIDfk = '" + queryID + "'", function(error, rows, fields) {

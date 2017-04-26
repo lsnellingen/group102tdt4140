@@ -77,7 +77,11 @@ class SingleQuery extends Component {
     });
     axios.get('/getQueries/' + nextProps.query.queryID)
       .then(res => {
-       this.setState({myQueries: res.data});
+       this.setState({
+        myQueries: res.data,
+        showUnsuccessful: false,
+        showSuccessful: false
+      });
     }); 
   }
 
