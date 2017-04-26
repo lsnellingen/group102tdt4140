@@ -33,7 +33,7 @@ class SingleQuery extends Component {
     const answeres = '';
     var unsuccessful = false;
     this.state.myQueries.forEach(queries => {
-      if(queries.answers.length ==0) {
+      if(queries.answers.length == 0) {
         unsuccessful = true;
         this.setState({
           showUnsuccessful: true
@@ -82,7 +82,7 @@ class SingleQuery extends Component {
         showUnsuccessful: false,
         showSuccessful: false
       });
-    }); 
+    });
   }
 
   render() {
@@ -134,7 +134,7 @@ class SingleQuery extends Component {
         {this.state.showSuccessful ?
           <div className="form-group">
             <div className="row">
-              <div className="col-xs-9">
+              <div className="col-xs-9 col-xs-offset-1">
                 <p className="alert alert-success userMessage">Answer sendt.</p>
               </div>
             </div>
@@ -143,7 +143,7 @@ class SingleQuery extends Component {
         {this.state.showUnsuccessful ?
           <div className="form-group">
             <div className="row">
-              <div className="col-xs-9">
+              <div className="col-xs-9 col-xs-offset-1">
                 <p className="alert alert-danger userMessage">You need to answer all the questions.</p>
               </div>
             </div>

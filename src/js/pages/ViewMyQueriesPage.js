@@ -40,7 +40,7 @@ class viewMyQueriesPage extends React.Component{
 	      		myQueries: [],
 	      		noQueries: true
 	      	});
-	      } else{	
+	      } else{
 	     	  this.setState({myQueries: res.data});
 	      }
 	    });
@@ -63,7 +63,7 @@ class viewMyQueriesPage extends React.Component{
 	       })
       } else {
       	this.setState({
-      		filterOption: course, 
+      		filterOption: course,
       		noQueries: true,
 	      	selectedQuery: 'chooseQuery'
       	});
@@ -106,23 +106,24 @@ class viewMyQueriesPage extends React.Component{
 			              </div>
 			            :<div className="col-xs-12 col-sm-12">
 			              <p>Choose a query to see results: </p>
-			              <select type="query-selector" className="form-control" id="query-selector" name="query-selector" value={this.state.selectedQuery} onChange={this.handleQueryFiltering.bind(this)}> 
+			              <select type="query-selector" className="form-control" id="query-selector" name="query-selector" value={this.state.selectedQuery} onChange={this.handleQueryFiltering.bind(this)}>
 			                <option value="chooseQuery">Choose query</option>
 			                { this.state.myQueries.map(query => {
 		                    return <option key={query.queryID} value={query.queryID} >{query.name} </option>;
 		                  })}
 			              </select>
+										<hr />
 			              { this.state.selectedQuery !== 'chooseQuery' ?
 				              <div>
 				              	<SingleMyQuery queryID={this.state.selectedQuery}  />
 				              </div>
 				           : null}
 			              <hr />
-			            </div>} 
-		            </div> : 
+			            </div>}
+		            </div> :
 			            <div className="col-xs-12 col-sm-12">
 			            	<h5>Choose a course to choose query.</h5>
-			        	</div>}  
+			        	</div>}
 	        </div>
 	       </DocumentTitle>
 	    )
