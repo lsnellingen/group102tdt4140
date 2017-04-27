@@ -5,7 +5,7 @@ This is an simple installation guide to help you run the project locally on your
 ## 1. Getting Started
 
 To run this project on your local computer, you will need to have [Node.js][] installed.
-The system is also using [mySQLAdmin][] from NTNU to serve the database. To be able to connect to the database when running the project locally, you have to connect to NTNU's servers.
+The system is using [mySQLAdmin][] from NTNU to serve the database. To be able to connect to the database when running the project locally, you have be on the NTNU network server.
 
 ## 2. Installation
 
