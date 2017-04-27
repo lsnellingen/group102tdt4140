@@ -130,9 +130,9 @@ export default class IndexPage extends React.Component {
                   <h4 className="text-center">Get started!</h4>
                 </div>
                 <div className="panel-body">
-                  <h5>Start sending feedback to your lecturers, right away!</h5>
+                  <h5>Start sending feedback, creating queries and make your teching environment a better place.</h5>
                   <p><em>
-                    Create a user, sign up for courses and send feedback
+                    Create a user, join the community and sign up for courses.
                   </em></p>
                 <Link to="/register"><button className="btn btn-default">REGISTER</button></Link>
                 </div>
@@ -144,7 +144,7 @@ export default class IndexPage extends React.Component {
                   <h4 className="text-center">Already have a user?</h4>
                 </div>
                 <div className="panel-body">
-                  <p>Let your lecturers know what you think, logg in and start sending feedback now.</p>
+                  <p>Log in to see if someone has responded to your feedback or some of your queries. If your lucky, maybe you even have some likes.</p>
                   <Link to="/login"><button ref="login_button" className="btn btn-default">LOGG INN</button></Link>
                 </div>
               </div>
