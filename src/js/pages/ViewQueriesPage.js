@@ -94,7 +94,9 @@ class ViewQueriesPage extends Component {
             <div className="row">
               <div className="col-xs-12">
                   <br />
-                  <h3>View Queries</h3>
+                  <h3>Answer Queries</h3>
+                  <hr />
+                  <p>Choose a course, find a query and tell your lecturers what you think by answering their questions.</p>
                   <hr />
               </div>
             </div>
@@ -138,7 +140,7 @@ class ViewQueriesPage extends Component {
               { this.state.filterOption == 'chooseCourse' ?
                 <div>
                   {this.state.showWarning ?
-                    <div className="col-xs-10 removePadding">
+                    <div className="col-xs-11 removePadding">
                       <p className="alert alert-danger userMessage">You are not registered in any courses. Go to the course page and register for courses.</p>
                     </div>
                     : <h5>Choose an option to view queries.</h5> }

@@ -97,6 +97,8 @@ class AskQueryPage extends Component {
               <br />
               <h3>Ask query</h3>
               <hr />
+                <p>Create your own query consisting of custom questions for your students. Choose from rating, yes/no, text or simply create your own custom alternatives. </p>
+                <hr />
             </div>
 
             <div className="col-xs-11">
@@ -104,10 +106,17 @@ class AskQueryPage extends Component {
             </div>
             <div className="col-xs-8">
               { this.state.status == 'addingQuestions' ? <AddingQuestionForm addQuestion={this.addQuestion.bind(this)} /> : null }
-              { this.state.status == 'querySendt' ? <p className="alert alert-success">Query successfully created. Information is still visible untill you leave this page. </p> : null}
-              { this.state.questions.map(question => {
-                return <SingleQuestion key={question.question} number={this.state.questions.indexOf(question) + 1} deleteQuestion={this.deleteQuestion.bind(this)} question={question} />;
-              })}
+              { this.state.status == 'querySendt' ?
+                <div>
+                  <p className="alert alert-success">Query successfully created. You can go to my queries to view the results.</p>
+                </div> : null}
+                { this.state.status == 'addingQuestions' ?
+                  <div>
+                    { this.state.questions.map(question => {
+                      return <SingleQuestion key={question.question} number={this.state.questions.indexOf(question) + 1} deleteQuestion={this.deleteQuestion.bind(this)} question={question} />;
+                    })}
+                  </div>
+                  : null}
             </div>
             <div className="col-xs-4">
               { this.state.status == 'addingQuestions' || this.state.status == 'querySendt' ?

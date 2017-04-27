@@ -70,6 +70,8 @@ export default class ViewFeedbackPage extends React.Component {
                   <br />
 		              <h3>View Feedback</h3>
 		              <hr />
+                  <p>Select one of the courses you're enrolled in to view feedback for this course. You can easily upvote fedback from others if you agree on the students thoughts and viewpoints.</p>
+                  <hr />
 	        		</div>
 	        	</div>
             <div className="col-xs-12 col-sm-12">
@@ -94,7 +96,7 @@ export default class ViewFeedbackPage extends React.Component {
               { this.state.filterOption == 'chooseCourse' ?
                 <div>
                   {this.state.showWarning ?
-                    <div className="col-sm-10 col-xs-12 removePadding">
+                    <div className="col-sm-11 col-xs-12 removePadding">
                       <p className="alert alert-danger userMessage">You are not registered in any courses. Go to the course page and register for courses.</p>
                     </div>
                     : <h5>Choose an option to view feedback.</h5> }

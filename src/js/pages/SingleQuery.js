@@ -68,6 +68,10 @@ class SingleQuery extends Component {
       axios.get('/getQueries/' + this.state.queryID)
       .then(res => {
         this.setState({myQueries: res.data});
+        this.state.myQueries.forEach((queries, index) => {
+          console.log(index);
+          this.state.myQueries[index].answers = '';
+        })
       });
     }
 
@@ -134,7 +138,7 @@ class SingleQuery extends Component {
         {this.state.showSuccessful ?
           <div className="form-group">
             <div className="row">
-              <div className="col-xs-9 col-xs-offset-1">
+              <div className="col-xs-10 col-xs-offset-1">
                 <p className="alert alert-success userMessage">Answer sendt.</p>
               </div>
             </div>
@@ -143,7 +147,7 @@ class SingleQuery extends Component {
         {this.state.showUnsuccessful ?
           <div className="form-group">
             <div className="row">
-              <div className="col-xs-9 col-xs-offset-1">
+              <div className="col-xs-10 col-xs-offset-1">
                 <p className="alert alert-danger userMessage">You need to answer all the questions.</p>
               </div>
             </div>

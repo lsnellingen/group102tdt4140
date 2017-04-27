@@ -12,6 +12,7 @@ export default class RegisterPage extends React.Component {
             <div className="col-xs-12">
               <h3>Registration</h3>
               <hr />
+              <br />
             </div>
           </div>
           <RegistrationForm>

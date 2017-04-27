@@ -12,6 +12,7 @@ export default class LoginPage extends React.Component {
             <div className="col-xs-12">
               <h3>Login</h3>
               <hr />
+              <br />
             </div>
           </div>
           <LoginForm />

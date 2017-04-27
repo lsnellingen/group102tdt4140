@@ -17,7 +17,7 @@ class SingleMyQueries extends Component {
 	static contextTypes = {
       user: React.PropTypes.object
     };
-    
+
     componentDidMount() {
     	this.setState({
         myAlternatives: this.props.queries.alternatives.split('+'),
@@ -38,17 +38,17 @@ class SingleMyQueries extends Component {
     let result = null;
     if(this.state.type == "Text"){
       var textIndex = 0;
-      result = 
+      result =
       <div>
         {this.state.answers.map(answers => {
           textIndex++;
           return (
-            <p key={textIndex}>
+            <p className="marginLeft20" key={textIndex}>
               {answers}
             </p>
             )
         })}
-      </div>  
+      </div>
     } else if(this.state.type == "Rating"){
       var ratingArray = [0,0,0,0,0];
       this.state.answers.map(answers => {
@@ -61,7 +61,7 @@ class SingleMyQueries extends Component {
         {name: '4', result: ratingArray[3]},
         {name: '5', result: ratingArray[4]},
       ];
-      result = 
+      result =
       <BarChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="name"/>
@@ -74,20 +74,20 @@ class SingleMyQueries extends Component {
       var alternativesArray = new Array(this.state.myAlternatives.length).fill(0);
       const data = [];
       this.state.answers.map(answers => {
-        for (var i = 0; i < this.state.myAlternatives.length; i++) { 
+        for (var i = 0; i < this.state.myAlternatives.length; i++) {
             if (this.state.myAlternatives[i] == answers){
               alternativesArray[i]++;
             };
         }
       })
-      for (var j = 0; j < (alternativesArray.length); j++) { 
+      for (var j = 0; j < (alternativesArray.length); j++) {
         if (alternativesArray[j] == 0){
           data.push({name: this.state.myAlternatives[j], result: 0});
         }else{
           data.push({name: this.state.myAlternatives[j], result: alternativesArray[j]});
         }
       }
-      result = 
+      result =
       <BarChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="name"/>
@@ -112,6 +112,7 @@ class SingleMyQueries extends Component {
             <div className="col-xs-12 removePadding">
               <ul className="list-group removeMargin">
                 <div>
+								<br />
                 {result}
                 </div>
               </ul>

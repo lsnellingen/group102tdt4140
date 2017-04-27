@@ -72,14 +72,21 @@ export default class IndexPage extends React.Component {
                     <h4 className="text-center">Get started!</h4>
                   </div>
                   <div className="panel-body">
-                    <div className="col-xs-4">
-                      <p>Search, find and choose courses you want to participate in.</p>
-                      <br></br>
+                    <div className="col-xs-5">
+                      <p>Search, find and choose courses you want to participate in....</p>
+                      <br />
                       <Link to="/emner"><button className="btn btn-default">GO TO COURSES</button></Link>
                     </div>
-                    <div className="col-xs-7 col-xs-offset-1">
-                      <p></p>
-                    </div>
+                    <Authenticated inGroup="Student" className="col-xs-7">
+                      <p>..or maybe you allready are enrolled in courses? Then start sending feedback right now!</p>
+                        <br />
+                        <Link to="/SendFeedback"><button className="btn btn-default">SEND FEEDBACK</button></Link>
+                    </Authenticated>
+                    <Authenticated inGroup="Lecturer" className="col-xs-7">
+                      <p>..or maybe you allready are enrolled in courses? Then start viewing feedback right now!</p>
+                        <br />
+                        <Link to="/ViewFeedback"><button className="btn btn-default">VIEW FEEDBACK</button></Link>
+                    </Authenticated>
                   </div>
                 </div>
               </div>

@@ -11,6 +11,7 @@ export default class ProfilePage extends React.Component {
             <div className="col-xs-12">
               <h3>My Profile</h3>
               <hr />
+              <br />
             </div>
           </div>
           <div className="row">

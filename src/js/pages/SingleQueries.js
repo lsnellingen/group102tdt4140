@@ -113,4 +113,3 @@ class SingleQueries extends Component {
 }
 
 export default SingleQueries;
-

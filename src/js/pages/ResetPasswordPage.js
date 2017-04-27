@@ -12,6 +12,7 @@ export default class ResetPasswordPage extends React.Component {
             <div className="col-xs-12">
               <h3>Forgot Password</h3>
               <hr />
+              <br />
             </div>
           </div>
           <ResetPasswordForm />

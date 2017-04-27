@@ -13,6 +13,7 @@ export default class ChangePasswordPage extends React.Component {
             <div className="col-xs-12">
               <h3>Change Password</h3>
               <hr />
+              <br />
             </div>
           </div>
           <div className="row">

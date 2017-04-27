@@ -86,9 +86,11 @@ class viewMyQueriesPage extends React.Component{
 	                  <br />
 	                  <h3>My Queries</h3>
 	                  <hr />
+										<p>Here can you easily view responses from students on your queries. Choose a course and a query and see answers and statistics from students.</p>
+	                  <hr />
 	              </div>
 	            </div>
-	            <div className="col-xs-12 col-sm-12">
+	            <div className="col-sm-10 col-xs-12">
 	              <p>Choose a course to choose query: </p>
 	              <select type="course-selector" className="form-control" id="course-selector" name="course-selector" value={this.state.filterOption} onChange={this.handleFiltering.bind(this)}>
 	                <option value="chooseCourse">Choose course</option>
@@ -101,10 +103,10 @@ class viewMyQueriesPage extends React.Component{
 	            { this.state.filterOption !== 'chooseCourse' ?
 	            	<div>
 			            { this.state.noQueries ?
-			           	  <div className="col-xs-12 col-sm-12">
+			           	  <div className="col-sm-10 col-xs-12">
 			            		<h5>You have no queries in this course.</h5>
 			              </div>
-			            :<div className="col-xs-12 col-sm-12">
+			            :<div className="col-sm-10 col-xs-12">
 			              <p>Choose a query to see results: </p>
 			              <select type="query-selector" className="form-control" id="query-selector" name="query-selector" value={this.state.selectedQuery} onChange={this.handleQueryFiltering.bind(this)}>
 			                <option value="chooseQuery">Choose query</option>
@@ -121,8 +123,12 @@ class viewMyQueriesPage extends React.Component{
 			              <hr />
 			            </div>}
 		            </div> :
-			            <div className="col-xs-12 col-sm-12">
-			            	<h5>Choose a course to choose query.</h5>
+			            <div className="col-sm-10 col-xs-12">
+										{ this.state.noCourses ?
+											<div className="col-xs-12 removePadding">
+	                      <p className="alert alert-danger userMessage">You are not registered in any courses. Go to the course page and register for courses.</p>
+	                    </div>
+											: <h5>Choose a course to see queries.</h5>}
 			        	</div>}
 	        </div>
 	       </DocumentTitle>

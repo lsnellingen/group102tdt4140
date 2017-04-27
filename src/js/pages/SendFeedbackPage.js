@@ -91,7 +91,7 @@ export default class SendFeedbackPage extends React.Component {
                   <br />
 		              <h3>Send Feedback</h3>
 		              <hr />
-                  <p>Select one of the courses youre enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
+                  <p>Select one of the courses you're enrolled in and start sending specific feedback to your lecturer.<br/>When done sending feedback, you can go to the view feedback section and see all the feedback sendt in a specific course.</p>
                   <hr />
 	        		</div>
 	        	</div>
@@ -107,7 +107,7 @@ export default class SendFeedbackPage extends React.Component {
                       })}
                   </select>
                   {this.state.showWarning ?
-                    <div className="col-xs-10 removePadding">
+                    <div className="col-xs-12 removePadding">
                       <p className="alert alert-danger userMessage">You are not registered in any courses. Go to the course page and register for courses.</p>
                     </div>
                     : null }
@@ -147,35 +147,35 @@ export default class SendFeedbackPage extends React.Component {
 
                     <div className="radio">
                       <label>
-                        <input ref="radio1" type="radio" value="1" checked={this.state.selectedOption ==='1'}
+                        <input className="radioButtons" ref="radio1" type="radio" value="1" checked={this.state.selectedOption ==='1'}
                         onChange={this.handleOptionChange.bind(this, 'selectedOption')}  />
-                        <span>1</span>
+                      <span>1</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input ref="radio2" type="radio" value="2" checked={this.state.selectedOption ==='2'}
+                        <input className="radioButtons" ref="radio2" type="radio" value="2" checked={this.state.selectedOption ==='2'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}   />
                       <span>2</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input ref="radio3" type="radio" value="3" checked={this.state.selectedOption ==='3'}
+                        <input className="radioButtons" ref="radio3" type="radio" value="3" checked={this.state.selectedOption ==='3'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                       <span>3</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input ref="radio4" type="radio" value="4" checked={this.state.selectedOption ==='4'}
+                        <input className="radioButtons" ref="radio4" type="radio" value="4" checked={this.state.selectedOption ==='4'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                       <span>4</span>
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input ref="radio5" type="radio" value="5" checked={this.state.selectedOption ==='5'}
+                        <input className="radioButtons" ref="radio5" type="radio" value="5" checked={this.state.selectedOption ==='5'}
                         onChange={this.handleOptionChange.bind(this,'selectedOption')}  />
                       <span>5</span>
                       </label>
